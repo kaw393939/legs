@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - "main"
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: HTMLHint
+        run: npx htmlhint "src/**/*.html"
+
+      - name: Stylelint
+        run: npx stylelint "src/**/*.css"
+
+      - name: a11y smoke (axe-cli)
+        run: |
+          npx serve -s src -l 5000 &
+          npx axe http://localhost:5000/index.html --exit
+
+      - name: Link Checker
+        run: npx linkinator "src/**/*.html" --silent
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: src
