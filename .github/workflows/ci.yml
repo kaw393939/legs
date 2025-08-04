@@ -16,6 +16,9 @@ jobs:
       - name: HTMLHint
         run: npx htmlhint "src/**/*.html"
 
+      - name: Install Stylelint Dependencies
+        run: npm install stylelint stylelint-config-standard --save-dev
+
       - name: Stylelint
         run: npx stylelint "src/**/*.css"
 
