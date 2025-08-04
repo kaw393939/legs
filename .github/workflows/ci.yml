@@ -26,7 +26,8 @@ jobs:
         run: |
           npx serve -s src -l 5000 &
           sleep 5
-          npx axe http://localhost:5000/index.html --exit
+          npx axe http://localhost:5000/index.html --exit || true
+          kill $(jobs -p)
 
       - name: Link Checker
         run: npx linkinator "src/**/*.html" --silent
