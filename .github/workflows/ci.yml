@@ -24,7 +24,8 @@ jobs:
 
       - name: a11y smoke (axe-cli)
         run: |
-          ./node_modules/.bin/serve -s src -l 5000 &
+          npx serve -s src -l 5000 &
+          sleep 5
           npx axe http://localhost:5000/index.html --exit
 
       - name: Link Checker
