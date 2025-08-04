@@ -1,0 +1,328 @@
+/* Golden Ratio Design Tokens - Complete Implementation */
+:root {
+  /* Golden Ratio Constants */
+  --phi: 1.618033988749;
+  --phi-inverse: 0.618033988749;
+  --phi-squared: 2.618033988749;
+  --phi-cubed: 4.236067977499;
+
+  /* Golden Ratio Typography Scale */
+  --fs-caption: 0.618rem;     /* ~9.888px */
+  --fs-body-sm: 0.75rem;      /* 12px */
+  --fs-body: 1rem;            /* 16px - base */
+  --fs-body-lg: 1.125rem;     /* 18px */
+  --fs-h4: 1.272rem;          /* ~20.35px */
+  --fs-h3: 1.618rem;          /* ~25.89px */
+  --fs-h2: 2.058rem;          /* ~32.93px */
+  --fs-h1: 2.618rem;          /* ~41.89px */
+  --fs-display: 4.236rem;     /* ~67.78px */
+
+  /* Responsive fluid typography */
+  --fs-display-fluid: clamp(2.618rem, 6vw, 4.236rem);
+  --fs-h1-fluid: clamp(2.058rem, 4vw, 2.618rem);
+  --fs-h2-fluid: clamp(1.618rem, 3vw, 2.058rem);
+  --fs-h3-fluid: clamp(1.272rem, 2.5vw, 1.618rem);
+
+  /* Line Heights - Golden Ratio Based */
+  --lh-tight: 1.272;          /* φ⁻¹ + 0.654 */
+  --lh-normal: 1.618;         /* φ */
+  --lh-loose: 2.058;          /* φ + 0.44 */
+
+  /* Golden Ratio Spacing System */
+  --space-nano: 0.118rem;     /* ~1.89px */
+  --space-micro: 0.191rem;    /* ~3.06px */
+  --space-xs: 0.309rem;       /* ~4.94px */
+  --space-sm: 0.5rem;         /* 8px - base */
+  --space-md: 0.809rem;       /* ~12.94px */
+  --space-lg: 1.309rem;       /* ~20.94px */
+  --space-xl: 2.118rem;       /* ~33.89px */
+  --space-2xl: 3.427rem;      /* ~54.83px */
+  --space-3xl: 5.545rem;      /* ~88.72px */
+  --space-4xl: 8.972rem;      /* ~143.55px */
+  --space-5xl: 14.517rem;     /* ~232.27px */
+
+  /* Color Palette - Golden Ratio Harmonies */
+  --brand-navy: hsl(194, 100%, 15%);      /* #003d4c */
+  --brand-blue: hsl(194, 92%, 27%);       /* #006c83 */
+  --brand-cyan: hsl(194, 75%, 44%);       /* #19a7c4 */
+  --accent-turquoise: hsl(174, 72%, 56%); /* #40e0d0 */
+  --accent-coral: hsl(0, 85%, 70%);       /* #ff6b6b */
+  --sand-light: hsl(45, 20%, 97%);        /* #faf9f7 */
+  --sand-medium: hsl(45, 15%, 83%);       /* #d6d3ce */
+  --sand-dark: hsl(45, 8%, 55%);          /* #8c8a85 */
+  --success: hsl(140, 61%, 36%);          /* #24a148 */
+  --warning: hsl(38, 92%, 50%);           /* #f5a623 */
+  --error: hsl(4, 76%, 50%);              /* #d0342c */
+  --text-primary: hsl(0, 0%, 10%);        /* #1a1a1a */
+  --text-secondary: hsl(0, 0%, 33%);      /* #545454 */
+  --text-muted: hsl(0, 0%, 53%);          /* #878787 */
+
+  /* Layout Ratios */
+  --ratio-golden: 1.618;
+  --ratio-golden-inverse: 0.618;
+  --ratio-golden-squared: 2.618;
+  --sidebar-ratio: 0.382;
+  --content-ratio: 0.618;
+  --hero-aspect: 2.618;
+  --card-aspect: 1.618;
+
+  /* Border Radius - Golden Ratio Progression */
+  --radius-sm: var(--space-xs);    /* ~4.94px */
+  --radius-md: var(--space-sm);    /* 8px */
+  --radius-lg: var(--space-md);    /* ~12.94px */
+  --radius-xl: var(--space-lg);    /* ~20.94px */
+
+  /* Shadows - Golden Ratio Blur and Spread */
+  --shadow-sm: 0 var(--space-nano) var(--space-xs) rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 var(--space-xs) var(--space-sm) rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 var(--space-sm) var(--space-md) rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 var(--space-md) var(--space-lg) rgba(0, 0, 0, 0.25);
+
+  /* Animation Timing - Golden Ratio Based */
+  --timing-fast: 0.191s;      /* φ⁻² × 0.5s */
+  --timing-normal: 0.309s;    /* φ⁻¹ × 0.5s */
+  --timing-slow: 0.5s;        /* Base timing */
+  --timing-slower: 0.809s;    /* φ⁻¹ × 1.309s */
+
+  /* Breakpoints - Golden Ratio Progression */
+  --bp-xs: 20rem;             /* 320px */
+  --bp-sm: 32.36rem;          /* ~518px */
+  --bp-md: 52.36rem;          /* ~838px */
+  --bp-lg: 84.72rem;          /* ~1356px */
+  --bp-xl: 137.08rem;         /* ~2193px */
+
+  /* Container and Layout */
+  --container-max-width: 1200px;
+  --container-padding-mobile: var(--space-lg);
+  --container-padding-desktop: var(--space-2xl);
+  --grid-gutter-mobile: var(--space-lg);
+  --grid-gutter-desktop: var(--space-xl);
+}
+
+/* Responsive Golden Ratio Adjustments */
+@media (max-width: 52.36rem) {
+  :root {
+    /* Scale down spacing for mobile using φ⁻¹ */
+    --space-2xl: calc(var(--space-2xl) * var(--phi-inverse));
+    --space-3xl: calc(var(--space-3xl) * var(--phi-inverse));
+    --space-4xl: calc(var(--space-4xl) * var(--phi-inverse));
+    --space-5xl: calc(var(--space-5xl) * var(--phi-inverse));
+  }
+}
+
+/* Typography System */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+               'Helvetica Neue', Arial, sans-serif;
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  color: var(--text-primary);
+}
+
+/* Heading Hierarchy */
+h1, .text-display {
+  font: 700 var(--fs-display-fluid)/var(--lh-tight) 'Inter', sans-serif;
+  margin-bottom: var(--space-2xl);
+  color: var(--text-primary);
+}
+
+h2, .text-h1 {
+  font: 700 var(--fs-h1-fluid)/var(--lh-tight) 'Inter', sans-serif;
+  margin-bottom: var(--space-xl);
+  color: var(--text-primary);
+}
+
+h3, .text-h2 {
+  font: 600 var(--fs-h2-fluid)/var(--lh-tight) 'Inter', sans-serif;
+  margin-bottom: var(--space-lg);
+  color: var(--text-primary);
+}
+
+h4, .text-h3 {
+  font: 600 var(--fs-h3-fluid)/var(--lh-normal) 'Inter', sans-serif;
+  margin-bottom: var(--space-md);
+  color: var(--text-primary);
+}
+
+/* Body Text */
+p, .text-body {
+  font: 400 var(--fs-body)/var(--lh-normal) 'Inter', sans-serif;
+  margin-bottom: var(--space-lg);
+  color: var(--text-primary);
+}
+
+.text-lead {
+  font: 400 var(--fs-body-lg)/var(--lh-normal) 'Inter', sans-serif;
+  margin-bottom: var(--space-xl);
+  color: var(--text-primary);
+}
+
+.text-small {
+  font: 400 var(--fs-body-sm)/var(--lh-normal) 'Inter', sans-serif;
+  color: var(--text-secondary);
+}
+
+.text-caption {
+  font: 400 var(--fs-caption)/var(--lh-loose) 'Inter', sans-serif;
+  color: var(--text-muted);
+}
+
+/* Layout Components */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding-mobile);
+}
+
+@media (min-width: 52.36rem) {
+  .container {
+    padding: 0 var(--container-padding-desktop);
+  }
+}
+
+/* Button Components */
+.btn-primary {
+  background: var(--brand-blue);
+  color: white;
+  padding: var(--space-md) var(--space-2xl);
+  border: none;
+  border-radius: var(--radius-sm);
+  font: 600 var(--fs-body)/var(--lh-tight) 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all var(--timing-normal) ease;
+  box-shadow: var(--shadow-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  text-decoration: none;
+  min-height: calc(var(--fs-body) * var(--lh-normal) + 2 * var(--space-md));
+}
+
+.btn-primary:hover {
+  background: var(--brand-navy);
+  transform: translateY(calc(-1 * var(--space-nano)));
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--brand-blue);
+  border: 2px solid var(--brand-blue);
+  padding: calc(var(--space-md) - 2px) calc(var(--space-2xl) - 2px);
+  border-radius: var(--radius-sm);
+  font: 600 var(--fs-body)/var(--lh-tight) 'Inter', sans-serif;
+  cursor: pointer;
+  transition: all var(--timing-normal) ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  text-decoration: none;
+  min-height: calc(var(--fs-body) * var(--lh-normal) + 2 * var(--space-md));
+}
+
+.btn-secondary:hover {
+  background: var(--brand-blue);
+  color: white;
+  transform: translateY(calc(-1 * var(--space-nano)));
+}
+
+/* Card Components */
+.card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-md);
+  transition: all var(--timing-normal) ease;
+}
+
+.card:hover {
+  transform: translateY(calc(-2 * var(--space-nano)));
+  box-shadow: var(--shadow-xl);
+}
+
+.card-header {
+  margin-bottom: var(--space-xl);
+}
+
+.card-content {
+  margin-bottom: var(--space-lg);
+}
+
+.card-footer {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--sand-medium);
+}
+
+/* Form Components */
+.form-group {
+  margin-bottom: var(--space-2xl);
+}
+
+.form-label {
+  display: block;
+  margin-bottom: var(--space-sm);
+  font: 600 var(--fs-body-sm)/var(--lh-normal) 'Inter', sans-serif;
+  color: var(--text-primary);
+}
+
+.form-input {
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  border: 2px solid var(--sand-medium);
+  border-radius: var(--radius-sm);
+  font: 400 var(--fs-body)/var(--lh-normal) 'Inter', sans-serif;
+  transition: all var(--timing-normal) ease;
+  min-height: calc(var(--fs-body) * var(--lh-normal) + 2 * var(--space-md));
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 0 var(--space-xs) rgba(25, 167, 196, 0.2);
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mb-xs { margin-bottom: var(--space-xs); }
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mb-xl { margin-bottom: var(--space-xl); }
+.mb-2xl { margin-bottom: var(--space-2xl); }
+
+.mt-xs { margin-top: var(--space-xs); }
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
+.mt-2xl { margin-top: var(--space-2xl); }
+
+.p-xs { padding: var(--space-xs); }
+.p-sm { padding: var(--space-sm); }
+.p-md { padding: var(--space-md); }
+.p-lg { padding: var(--space-lg); }
+.p-xl { padding: var(--space-xl); }
+.p-2xl { padding: var(--space-2xl); }
+
+/* Color Utilities */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+.text-brand { color: var(--brand-blue); }
+.text-accent { color: var(--accent-turquoise); }
+
+.bg-light { background-color: var(--sand-light); }
+.bg-white { background-color: white; }
+.bg-brand { background-color: var(--brand-blue); }
+.bg-accent { background-color: var(--accent-turquoise); }
