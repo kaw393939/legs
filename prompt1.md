@@ -1,8 +1,8 @@
-📌  MASTER PROMPT — "Legs on the Ground" Static-Site Build
+📌 MASTER PROMPT — "Legs on the Ground" Static-Site Build
 (Optimised for GitHub Pages & GitHub-native project management — plain HTML / CSS / JS only)
 
-**Role**: You are a one-stop product team (brand, UX, a11y, front-end). 
-**Mission**: Ship all docs, design foundations, and later the static code for Legs on the Ground, a concierge that helps off-islanders buy, renovate, and manage Puerto Rico real estate. 
+**Role**: You are a one-stop product team (brand, UX, a11y, front-end).
+**Mission**: Ship all docs, design foundations, and later the static code for Legs on the Ground, a concierge that helps off-islanders buy, renovate, and manage Puerto Rico real estate.
 **Tech constraints**: No frameworks. Use modern CSS (custom-properties, container queries, native nesting) and vanilla JS / Web Components. Site must build & deploy via GitHub Pages without extra tooling; any checks run in GitHub Actions.
 
 ## 0️⃣ Repository Scaffold (create in Phase 0)
@@ -10,7 +10,7 @@
 ```
 /docs/                         ← markdown deliverables (phases 0-2)
   business-analysis.md
-  customer-personas.md  
+  customer-personas.md
   development_plan.md
   assets.md
 /src/                          ← static site (locked until Phase 3)
@@ -41,6 +41,7 @@ LICENSE
 ```
 
 ### GitHub Pages Configuration
+
 - **Pages Source**: GitHub Actions (not "Deploy from a branch")
 - **Repository Settings**: Pages → Source → GitHub Actions
 - **Site URL**: https://username.github.io/repository-name/
@@ -48,14 +49,14 @@ LICENSE
 
 ## 1️⃣ GitHub-Native Productivity Features
 
-| Feature | How we'll use it |
-|---------|------------------|
-| Issue templates | bug_report.md, feature_request.md, content_copy.md (for wording / micro-copy requests) |
-| Pull-request template | Checklist: linked issue, a11y self-test link, screenshot of visual change |
-| Projects → "Phases" board | Column per phase (0-10). Automation: PR merged → "Done" |
-| Labels | phase:X, type:doc, type:ux, type:code, priority:high, compliance, good first issue |
-| CODEOWNERS | * @maintainer-handle so every PR gets review |
-| Dependabot | Weekly "version-updates" for GH-Actions only (no runtime deps) |
+| Feature                   | How we'll use it                                                                       |
+| ------------------------- | -------------------------------------------------------------------------------------- |
+| Issue templates           | bug_report.md, feature_request.md, content_copy.md (for wording / micro-copy requests) |
+| Pull-request template     | Checklist: linked issue, a11y self-test link, screenshot of visual change              |
+| Projects → "Phases" board | Column per phase (0-10). Automation: PR merged → "Done"                                |
+| Labels                    | phase:X, type:doc, type:ux, type:code, priority:high, compliance, good first issue     |
+| CODEOWNERS                | \* @maintainer-handle so every PR gets review                                          |
+| Dependabot                | Weekly "version-updates" for GH-Actions only (no runtime deps)                         |
 
 ## 2️⃣ GitHub Actions CI (.github/workflows/ci.yml)
 
@@ -113,7 +114,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './src'
+          path: "./src"
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
@@ -121,6 +122,7 @@ jobs:
 ```
 
 **Key fixes from original prompt:**
+
 - Added proper GitHub Pages permissions (`contents: read`, `pages: write`, `id-token: write`)
 - Uses modern GitHub Actions for deployment (not peaceiris/actions-gh-pages)
 - Installs required dependencies in workflow (`stylelint`, `stylelint-config-standard`, `serve`)
@@ -131,6 +133,7 @@ jobs:
 ## 3️⃣ Required Configuration Files
 
 ### `.stylelintrc.json` (root directory)
+
 ```json
 {
   "extends": "stylelint-config-standard",
@@ -141,6 +144,7 @@ jobs:
 ```
 
 ### `package.json` (root directory)
+
 ```json
 {
   "devDependencies": {
@@ -151,25 +155,26 @@ jobs:
 ```
 
 ### `.nojekyll` (root directory)
+
 ```
 (empty file - just create it)
 ```
 
 ## 4️⃣ Phase Road-Map (docs/development_plan.md)
 
-| Phase | Unlocks | Review Gate |
-|--------|---------|-------------|
-| 0 | Repo Init | Maintainer |
-| 1 | Business Analysis | Product Owner |
-| 2 | Brand & Style Guides | Brand + A11y leads |
-| 3 | Design Spec & Wireframes | Stakeholders |
-| 4 | Tech Architecture | Tech lead |
-| 5 | Build Sprint 1 | CI + manual QA |
-| 6 | Content + SEO/AIO | Lighthouse CI ≥ 90 |
-| 7 | Compliance QA | Legal/DPO |
-| 8 | Staging Review | Product Owner |
-| 9 | Production Launch | GO/NO-GO mins |
-| 10 | Post-Launch | Retrospective |
+| Phase | Unlocks                  | Review Gate        |
+| ----- | ------------------------ | ------------------ |
+| 0     | Repo Init                | Maintainer         |
+| 1     | Business Analysis        | Product Owner      |
+| 2     | Brand & Style Guides     | Brand + A11y leads |
+| 3     | Design Spec & Wireframes | Stakeholders       |
+| 4     | Tech Architecture        | Tech lead          |
+| 5     | Build Sprint 1           | CI + manual QA     |
+| 6     | Content + SEO/AIO        | Lighthouse CI ≥ 90 |
+| 7     | Compliance QA            | Legal/DPO          |
+| 8     | Staging Review           | Product Owner      |
+| 9     | Production Launch        | GO/NO-GO mins      |
+| 10    | Post-Launch              | Retrospective      |
 
 ## 5️⃣ README.md Structure (create in Phase 0)
 
@@ -179,9 +184,11 @@ jobs:
 [Project description]
 
 ## Project Snapshot
+
 - **Live URL**: [GitHub Pages URL]
 
 ## Phase Checklist
+
 - [ ] Phase 0: Repo Init
 - [ ] Phase 1: Business Analysis
 - [ ] Phase 2: Brand & Style Guides
@@ -195,79 +202,102 @@ jobs:
 - [ ] Phase 10: Post-Launch
 
 ## Directory Map
+
 [Include full directory structure]
 
 ## Quick Start
+
 - Clone the repository
 - Navigate to the `/src` folder
 - Use a local server to preview the site (e.g., `npx serve`)
 
 ## Development Plan & Checkpoints
+
 See [docs/development_plan.md](docs/development_plan.md)
 
 ## Legal & Compliance Summary
+
 - ADA, GDPR, Fair-Housing compliance
 
 ## Accessibility Commitment
+
 - WCAG 2.2 AA compliance
 
 ## Data-Privacy Commitment
+
 - Contact: privacy@legs-ground.com
 
 ## Contributing
+
 - Follow GitHub-flow and Conventional Commits
 
 ## Contact / Maintainers
+
 - Maintainer: @maintainer-handle
 ```
 
 ## 6️⃣ Initial HTML Structure
 
 ### `src/index.html`
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Legs on The Ground</title>
-    <meta name="description" content="Legs on The Ground - Real estate investor services in Puerto Rico for off-islanders.">
-    <meta name="keywords" content="real estate, Puerto Rico, property management, renovation, investment">
-    <meta property="og:title" content="Legs on The Ground">
-    <meta property="og:description" content="Helping off-islanders buy, renovate, and manage properties in Puerto Rico.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://username.github.io/repository-name/">
-    <meta property="og:image" content="images/og-image.jpg">
-</head>
-<body>
+    <meta
+      name="description"
+      content="Legs on The Ground - Real estate investor services in Puerto Rico for off-islanders."
+    />
+    <meta
+      name="keywords"
+      content="real estate, Puerto Rico, property management, renovation, investment"
+    />
+    <meta property="og:title" content="Legs on The Ground" />
+    <meta
+      property="og:description"
+      content="Helping off-islanders buy, renovate, and manage properties in Puerto Rico."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://username.github.io/repository-name/"
+    />
+    <meta property="og:image" content="images/og-image.jpg" />
+  </head>
+  <body>
     <h1>Coming soon</h1>
-</body>
+  </body>
 </html>
 ```
 
 ### `src/404.html`
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page Not Found</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>404 - Page Not Found</h1>
     <p>Sorry, the page you are looking for does not exist.</p>
     <a href="index.html">Return to Home</a>
-</body>
+  </body>
 </html>
 ```
 
 ### `src/styles/base.css`
+
 ```css
 /* Placeholder CSS file for Stylelint */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 ```
 
@@ -276,6 +306,7 @@ body {
 The project includes pre-built business analysis documents:
 
 ### `docs/business-analysis.md`
+
 - Brand Archetypes (The Caregiver, The Sage)
 - Robert Cialdini's Methods of Persuasion (6 principles)
 - Arbitrage opportunities
@@ -283,11 +314,13 @@ The project includes pre-built business analysis documents:
 - Value proposition
 
 ### `docs/customer-personas.md`
+
 - The Remote Investor (40-55 years old, high-income professionals)
 - The Retiree (60+ years old, vacation home seekers)
 - The Entrepreneur (30-45 years old, commercial property buyers)
 
 ### `docs/assets.md`
+
 - Organized asset documentation for context management
 
 ## 8️⃣ Design-Token & Style-Guide Specs (Phase 2)
@@ -296,29 +329,40 @@ The project includes pre-built business analysis documents:
 /* tokens.css */
 :root {
   /* palette */
-  --brand-900:#003d4c; --brand-700:#006c83; --brand-400:#19a7c4;
-  --sand-50:#f9f9f7; --sand-300:#d6d6d1;
-  --success:#2b884b; --error:#d92d20;
-  --text-primary:#1a1a1a; --text-muted:#555;
-  
+  --brand-900: #003d4c;
+  --brand-700: #006c83;
+  --brand-400: #19a7c4;
+  --sand-50: #f9f9f7;
+  --sand-300: #d6d6d1;
+  --success: #2b884b;
+  --error: #d92d20;
+  --text-primary: #1a1a1a;
+  --text-muted: #555;
+
   /* spacing */
-  --space-xs:4px; --space-s:8px; --space-m:16px; --space-l:24px;
-  
+  --space-xs: 4px;
+  --space-s: 8px;
+  --space-m: 16px;
+  --space-l: 24px;
+
   /* radius & shadow */
-  --radius:12px;
-  --shadow-card:0 2px 8px rgb(0 0 0 / .08);
-  
+  --radius: 12px;
+  --shadow-card: 0 2px 8px rgb(0 0 0 / 0.08);
+
   /* type scale (clamp for fluid) */
-  --fs-h1:clamp(2.5rem,1.1vw+2rem,4.2rem);
-  --fs-h2:clamp(1.75rem,.8vw+1.5rem,3rem);
-  --fs-body:1rem; --fs-small:.875rem;
+  --fs-h1: clamp(2.5rem, 1.1vw+2rem, 4.2rem);
+  --fs-h2: clamp(1.75rem, 0.8vw+1.5rem, 3rem);
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
 }
 ```
 
 ## 9️⃣ Compliance Stubs (Phase 7)
+
 Create in `/src/legal/`:
+
 - privacy-policy.md
-- terms-of-service.md  
+- terms-of-service.md
 - accessibility-statement.md
 - cookie-policy.md
 - disclaimer-real-estate.md
@@ -326,11 +370,13 @@ Create in `/src/legal/`:
 ## 🔟 Rules for Implementation
 
 ### Advance a phase only after:
+
 1. All artifacts for that phase committed
 2. README checklist box checked
 3. An issue opened & closed linking the PR
 
 ### File conventions:
+
 - Every Markdown begins with `<!-- summary: … -->`
 - Filenames use lowercase-kebab-case
 - Media lives in `src/images/`; use relative paths
@@ -341,6 +387,7 @@ Create in `/src/legal/`:
 ### Create the repo scaffold exactly as above:
 
 1. **Initialize Repository**:
+
    ```bash
    git init
    git remote add origin [your-repo-url]
@@ -356,6 +403,7 @@ Create in `/src/legal/`:
    - Placeholder /src/index.html with SEO meta tags
 
 3. **Initial Commit**:
+
    ```bash
    git add .
    git commit -m "Initial commit: Add project scaffold and documentation"
@@ -379,12 +427,14 @@ Create in `/src/legal/`:
 ## 📋 Troubleshooting Common Issues
 
 ### GitHub Actions Failures:
+
 - **Permission denied**: Check that Pages source is set to "GitHub Actions" in repository settings
 - **Stylelint errors**: Ensure .stylelintrc.json exists and has correct configuration
 - **serve command fails**: Dependencies are installed in CI workflow, not locally
 - **Background process issues**: Use `|| true` and `kill $(jobs -p)` for cleanup
 
 ### Missing Files:
+
 - Create placeholder CSS file in src/styles/base.css to prevent Stylelint errors
 - Ensure .nojekyll file exists to prevent Jekyll processing
 - Check that all required directories exist in src/ folder

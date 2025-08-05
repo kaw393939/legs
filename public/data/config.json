@@ -1,0 +1,30 @@
+{
+  "site": {
+    "title": "Premier Real Estate Investments",
+    "description": "Luxury real estate investment opportunities",
+    "url": "https://yoursite.com",
+    "contact": {
+      "phone": "(555) 123-4567",
+      "email": "info@yoursite.com",
+      "address": "123 Main Street, City, State 12345"
+    },
+    "social": {
+      "facebook": "https://facebook.com/yourpage",
+      "instagram": "https://instagram.com/yourpage",
+      "linkedin": "https://linkedin.com/company/yourcompany"
+    }
+  },
+  "business": {
+    "hours": {
+      "monday": "9:00 AM - 6:00 PM",
+      "tuesday": "9:00 AM - 6:00 PM",
+      "wednesday": "9:00 AM - 6:00 PM",
+      "thursday": "9:00 AM - 6:00 PM",
+      "friday": "9:00 AM - 6:00 PM",
+      "saturday": "10:00 AM - 4:00 PM",
+      "sunday": "Closed"
+    },
+    "license": "RE License #12345678",
+    "established": "2010"
+  }
+}

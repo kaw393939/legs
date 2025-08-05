@@ -1,18 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legs on The Ground</title>
-    <meta name="description" content="Legs on The Ground - Real estate investor services in Puerto Rico for off-islanders.">
-    <meta name="keywords" content="real estate, Puerto Rico, property management, renovation, investment">
-    <meta property="og:title" content="Legs on The Ground">
-    <meta property="og:description" content="Helping off-islanders buy, renovate, and manage properties in Puerto Rico.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://<user>.github.io/legs-on-the-ground/">
-    <meta property="og:image" content="assets/og-image.jpg">
-</head>
-<body>
-    <h1>Coming soon</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premier Real Estate Investments</title>
+    <meta
+      name="description"
+      content="Luxury real estate investment opportunities with expert guidance"
+    />
+
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <!-- Header -->
+    <site-header></site-header>
+
+    <!-- Main Content -->
+    <main>
+      <hero-section page="home"></hero-section>
+
+      <section class="featured-properties">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Featured Properties</h2>
+            <p class="section-subtitle">Handpicked investment opportunities</p>
+          </div>
+          <div class="property-grid">
+            <property-card property-id="property-001"></property-card>
+            <property-card property-id="property-002"></property-card>
+            <property-card property-id="property-003"></property-card>
+          </div>
+        </div>
+      </section>
+
+      <section class="services-overview">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive real estate solutions</p>
+          </div>
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-icon">🏠</div>
+              <h3 class="service-title">Property Management</h3>
+              <p class="service-description">
+                Full-service property management for maximum returns
+              </p>
+              <a href="/services/property-management" class="service-link"
+                >Learn More</a
+              >
+            </div>
+            <div class="service-card">
+              <div class="service-icon">📈</div>
+              <h3 class="service-title">Investment Analysis</h3>
+              <p class="service-description">
+                Detailed ROI analysis and market insights
+              </p>
+              <a href="/services/investment-analysis" class="service-link"
+                >Learn More</a
+              >
+            </div>
+            <div class="service-card">
+              <div class="service-icon">🔍</div>
+              <h3 class="service-title">Market Research</h3>
+              <p class="service-description">
+                Comprehensive market data and trends
+              </p>
+              <a href="/services/market-research" class="service-link"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <site-footer></site-footer>
+
+    <script type="module" src="/scripts/main.js"></script>
+  </body>
 </html>

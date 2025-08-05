@@ -7,11 +7,13 @@
 ### 1. Market Risks
 
 #### Hurricane & Natural Disaster Risk
+
 **Risk Level**: High
 **Probability**: High (annual hurricane season)
 **Impact**: Severe (property damage, service disruption, client losses)
 
 **Specific Risks**:
+
 - Property damage requiring extensive repairs
 - Extended power outages disrupting operations
 - Communication disruption with clients and contractors
@@ -19,6 +21,7 @@
 - Insurance claim processing delays
 
 **Mitigation Strategies**:
+
 - **Insurance Requirements**: Mandatory comprehensive hurricane insurance for all managed properties
 - **Emergency Response Plan**: Detailed protocols for pre-storm preparation and post-storm recovery
 - **Backup Operations**: Alternative communication methods and remote work capabilities
@@ -27,11 +30,13 @@
 - **Financial Reserves**: Maintain emergency fund for immediate post-storm operations
 
 #### Economic Downturn Risk
+
 **Risk Level**: Medium
 **Probability**: Medium (cyclical economic patterns)
 **Impact**: High (reduced investment, property value declines)
 
 **Specific Risks**:
+
 - Reduced mainland investment in Puerto Rico real estate
 - Property value declines affecting client portfolios
 - Increased vacancy rates and reduced rental income
@@ -39,6 +44,7 @@
 - Difficulty securing financing for property acquisitions
 
 **Mitigation Strategies**:
+
 - **Service Diversification**: Develop recession-resistant revenue streams (advisory services, distressed property management)
 - **Flexible Pricing**: Offer reduced-fee packages during economic downturns
 - **Market Education**: Help clients understand counter-cyclical investment opportunities
@@ -46,11 +52,13 @@
 - **Value Proposition**: Emphasize cost savings and risk reduction during uncertain times
 
 #### Regulatory & Political Risk
+
 **Risk Level**: Medium
 **Probability**: Medium (ongoing political changes)
 **Impact**: Medium to High (depending on specific changes)
 
 **Specific Risks**:
+
 - Changes to Puerto Rico tax incentive programs (Act 60, etc.)
 - New real estate regulations or licensing requirements
 - Changes in mainland US tax treatment of PR investments
@@ -58,6 +66,7 @@
 - Currency or economic policy changes
 
 **Mitigation Strategies**:
+
 - **Legal Counsel**: Maintain relationships with PR and US legal experts
 - **Regulatory Monitoring**: Stay informed on proposed legislation and regulatory changes
 - **Diversified Value Proposition**: Reduce dependence on tax incentives alone
@@ -67,11 +76,13 @@
 ### 2. Operational Risks
 
 #### Key Person Dependency Risk
+
 **Risk Level**: High
 **Probability**: Medium (founder-dependent early stage)
 **Impact**: High (business continuity threat)
 
 **Specific Risks**:
+
 - Business relies too heavily on founder's knowledge and relationships
 - Client relationships tied to specific individuals
 - Operational knowledge not documented or transferable
@@ -79,6 +90,7 @@
 - Team members lack cross-training
 
 **Mitigation Strategies**:
+
 - **Process Documentation**: Comprehensive standard operating procedures
 - **Team Development**: Cross-train team members on multiple functions
 - **Relationship Diversification**: Distribute client relationships across team
@@ -87,11 +99,13 @@
 - **Insurance**: Key person life and disability insurance
 
 #### Local Contractor & Vendor Risk
+
 **Risk Level**: Medium
 **Probability**: Medium (quality control challenges)
 **Impact**: Medium (service quality, client satisfaction)
 
 **Specific Risks**:
+
 - Inconsistent quality of work from local contractors
 - Communication barriers with non-English speaking vendors
 - Reliability issues with scheduling and completion
@@ -99,6 +113,7 @@
 - Limited vendor options in some specialties
 
 **Mitigation Strategies**:
+
 - **Vendor Vetting**: Comprehensive screening process for all contractors
 - **Quality Standards**: Written standards and regular performance reviews
 - **Backup Vendors**: Multiple vendors for each service category
@@ -107,11 +122,13 @@
 - **Training Programs**: Provide training to vendors on service standards
 
 #### Technology & Communication Risk
+
 **Risk Level**: Medium
 **Probability**: Low to Medium (infrastructure challenges)
 **Impact**: Medium (service delivery disruption)
 
 **Specific Risks**:
+
 - Internet and communication infrastructure failures
 - Technology system failures disrupting operations
 - Data security breaches affecting client information
@@ -119,6 +136,7 @@
 - Software or platform dependencies
 
 **Mitigation Strategies**:
+
 - **Redundant Systems**: Multiple internet providers and communication methods
 - **Cloud Infrastructure**: Reliable, scalable cloud-based systems
 - **Data Security**: Comprehensive cybersecurity measures and protocols
@@ -128,11 +146,13 @@
 ### 3. Financial Risks
 
 #### Cash Flow & Seasonality Risk
+
 **Risk Level**: Medium
 **Probability**: Medium (seasonal business patterns)
 **Impact**: Medium (working capital challenges)
 
 **Specific Risks**:
+
 - Seasonal demand patterns affecting revenue consistency
 - Client payment delays impacting cash flow
 - Large expenses (hurricane repairs) occurring irregularly
@@ -140,6 +160,7 @@
 - Economic cycles affecting client spending
 
 **Mitigation Strategies**:
+
 - **Retainer Model**: Move toward retainer-based pricing for predictable revenue
 - **Diversified Client Base**: Mix of different client types and investment patterns
 - **Credit Facilities**: Establish business credit lines for cash flow management
@@ -147,11 +168,13 @@
 - **Financial Planning**: Regular cash flow forecasting and management
 
 #### Currency & Economic Instability Risk
+
 **Risk Level**: Low to Medium
 **Probability**: Low (PR uses USD)
 **Impact**: Medium (operational cost fluctuations)
 
 **Specific Risks**:
+
 - Puerto Rico economic challenges affecting local costs
 - Inflation affecting operational expenses
 - Banking system disruptions affecting payments
@@ -159,6 +182,7 @@
 - Utility and infrastructure cost fluctuations
 
 **Mitigation Strategies**:
+
 - **USD-Based Pricing**: All client contracts in US dollars
 - **Mainland Banking**: Primary banking relationships with mainland institutions
 - **Cost Monitoring**: Regular monitoring of operational cost trends
@@ -168,11 +192,13 @@
 ### 4. Legal & Compliance Risks
 
 #### Real Estate Licensing & Regulation Risk
+
 **Risk Level**: Medium
 **Probability**: Low to Medium (regulatory changes)
 **Impact**: High (business operation threats)
 
 **Specific Risks**:
+
 - Changes in real estate licensing requirements
 - New regulations affecting property management services
 - Compliance violations resulting in penalties or license suspension
@@ -180,6 +206,7 @@
 - Evolving requirements for mainland/PR cross-jurisdiction services
 
 **Mitigation Strategies**:
+
 - **Legal Compliance**: Maintain all required licenses and certifications
 - **Legal Counsel**: Regular consultation with real estate attorneys
 - **Professional Education**: Stay current on regulatory requirements and changes
@@ -187,11 +214,13 @@
 - **Industry Participation**: Active membership in professional associations
 
 #### Data Privacy & Security Risk
+
 **Risk Level**: Medium
 **Probability**: Low to Medium (cybersecurity threats)
 **Impact**: High (legal liability, client trust)
 
 **Specific Risks**:
+
 - Client personal and financial information breaches
 - GDPR or other privacy regulation compliance
 - Cyber attacks on business systems
@@ -199,6 +228,7 @@
 - Client communication privacy concerns
 
 **Mitigation Strategies**:
+
 - **Cybersecurity Measures**: Comprehensive security protocols and systems
 - **Privacy Policies**: Clear privacy policies and data handling procedures
 - **Staff Training**: Regular cybersecurity training for all team members
@@ -208,17 +238,20 @@
 ### 5. Competitive & Market Position Risks
 
 #### Market Saturation Risk
+
 **Risk Level**: Low to Medium
 **Probability**: Medium (over 3-5 years)
 **Impact**: Medium (pricing pressure, market share)
 
 **Specific Risks**:
+
 - New competitors entering Puerto Rico real estate services
 - Existing competitors expanding mainland investor services
 - Technology platforms reducing barriers to entry
 - Client expectations for lower fees over time
 
 **Mitigation Strategies**:
+
 - **Service Differentiation**: Continuously enhance unique value proposition
 - **Barrier Creation**: Build switching costs through integrated services
 - **Brand Building**: Establish strong brand recognition and loyalty
@@ -226,11 +259,13 @@
 - **Client Relationships**: Deepen client relationships beyond transactional
 
 #### Reputation Risk
+
 **Risk Level**: High
 **Probability**: Low (with proper management)
 **Impact**: Very High (business viability threat)
 
 **Specific Risks**:
+
 - Negative client experiences affecting reputation
 - Social media or online review reputation damage
 - Association with problematic contractors or vendors
@@ -238,6 +273,7 @@
 - Economic losses by clients affecting reputation
 
 **Mitigation Strategies**:
+
 - **Quality Control**: Rigorous quality control and client satisfaction monitoring
 - **Proactive Communication**: Regular client communication and expectation management
 - **Crisis Management**: Prepared crisis communication and response procedures
@@ -247,6 +283,7 @@
 ## Risk Monitoring & Management Framework
 
 ### Risk Assessment Process
+
 1. **Quarterly Risk Review**: Assess probability and impact of all identified risks
 2. **Risk Register**: Maintain updated register of all business risks
 3. **Mitigation Tracking**: Monitor effectiveness of mitigation strategies
@@ -254,6 +291,7 @@
 5. **Emergency Procedures**: Maintain updated emergency response procedures
 
 ### Key Risk Indicators (KRIs)
+
 - **Client Satisfaction Scores**: Early warning of service quality issues
 - **Contractor Performance Metrics**: Quality and reliability tracking
 - **Financial Ratios**: Cash flow, debt-to-equity, and liquidity monitoring
@@ -261,6 +299,7 @@
 - **Market Intelligence**: Competitor activity and market change monitoring
 
 ### Risk Mitigation Investment Budget
+
 - **Insurance Premiums**: 2-3% of revenue for comprehensive coverage
 - **Legal & Compliance**: 1-2% of revenue for ongoing legal counsel
 - **Technology Security**: 1-2% of revenue for cybersecurity measures
@@ -270,12 +309,14 @@
 ### Crisis Response Procedures
 
 #### Natural Disaster Response
+
 1. **Pre-Event**: Property securing, client communication, staff safety
 2. **During Event**: Safety protocols, communication maintenance
 3. **Post-Event**: Property assessment, damage reporting, recovery coordination
 4. **Recovery**: Insurance claims, repair coordination, client support
 
 #### Operational Crisis Response
+
 1. **Immediate Assessment**: Determine scope and impact of crisis
 2. **Stakeholder Communication**: Inform clients, staff, and partners
 3. **Containment**: Take immediate action to limit further damage
@@ -285,6 +326,7 @@
 ### Insurance Coverage Requirements
 
 #### Essential Coverage
+
 - **General Liability**: $2-5 million coverage
 - **Professional Liability**: $1-2 million coverage
 - **Cyber Liability**: $1 million coverage
@@ -292,6 +334,7 @@
 - **Property**: Coverage for business property and equipment
 
 #### Additional Coverage
+
 - **Business Interruption**: Coverage for operational disruption
 - **Employment Practices**: Protection against employment-related claims
 - **Directors & Officers**: If incorporating with outside investors

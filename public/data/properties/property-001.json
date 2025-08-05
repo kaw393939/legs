@@ -1,0 +1,59 @@
+{
+  "id": "property-001",
+  "title": "Luxury Waterfront Estate",
+  "description": "Stunning waterfront estate with panoramic ocean views, private beach access, and world-class amenities.",
+  "price": "$2,950,000",
+  "location": {
+    "address": "123 Ocean Drive",
+    "city": "Miami Beach",
+    "state": "FL",
+    "zip": "33139",
+    "coordinates": {
+      "lat": 25.7617,
+      "lng": -80.1918
+    }
+  },
+  "details": {
+    "bedrooms": 5,
+    "bathrooms": 4.5,
+    "sqft": 4200,
+    "lot_size": "0.75 acres",
+    "year_built": 2018,
+    "property_type": "Single Family Home",
+    "architectural_style": "Modern Contemporary"
+  },
+  "features": [
+    "Private beach access",
+    "Infinity pool with spa",
+    "Gourmet chef's kitchen",
+    "Master suite with ocean views",
+    "Home theater",
+    "Wine cellar",
+    "3-car garage",
+    "Smart home automation"
+  ],
+  "images": [
+    "/images/properties/property-001/exterior-1.jpg",
+    "/images/properties/property-001/living-room.jpg",
+    "/images/properties/property-001/kitchen.jpg",
+    "/images/properties/property-001/master-bedroom.jpg",
+    "/images/properties/property-001/pool.jpg",
+    "/images/properties/property-001/beach-view.jpg"
+  ],
+  "investment_data": {
+    "cap_rate": "4.2%",
+    "rental_income": "$15,000/month",
+    "roi_projection": "8.5% annually",
+    "appreciation_rate": "4.1% annually",
+    "property_taxes": "$24,500/year",
+    "maintenance_costs": "$8,000/year"
+  },
+  "status": "available",
+  "listing_date": "2024-01-15",
+  "agent": {
+    "name": "Sarah Mitchell",
+    "phone": "(305) 555-0123",
+    "email": "sarah@yoursite.com",
+    "photo": "/images/team/sarah-mitchell.jpg"
+  }
+}

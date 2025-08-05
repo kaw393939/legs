@@ -3,9 +3,11 @@
 Legs on The Ground is a business dedicated to providing real estate investor services for individuals outside of Puerto Rico who wish to purchase, manage, and renovate properties on the island. This project aims to establish a professional web presence to communicate our value proposition and attract potential clients.
 
 ## Project Snapshot
+
 - **Live URL**: Coming soon
 
 ## Phase Checklist
+
 - [x] Phase 0: Repo Init
 - [x] Phase 1: Business Analysis
 - [x] Phase 2: Brand & Style Guides
@@ -19,6 +21,7 @@ Legs on The Ground is a business dedicated to providing real estate investor ser
 - [ ] Phase 10: Post-Launch
 
 ## Directory Map
+
 ```
 /docs/                         ← markdown deliverables (phases 0-2)
 /src/                          ← static site (locked until Phase 3)
@@ -46,24 +49,31 @@ LICENSE
 ```
 
 ## Quick Start
+
 - Clone the repository.
 - Navigate to the `/src` folder.
 - Use a local server to preview the site (e.g., `npx serve`).
 
 ## Development Plan & Checkpoints
+
 See [docs/development_plan.md](docs/development_plan.md).
 
 ## Legal & Compliance Summary
+
 - ADA, GDPR, Fair-Housing compliance.
 
 ## Accessibility Commitment
+
 - WCAG 2.2 AA compliance.
 
 ## Data-Privacy Commitment
+
 - Contact: privacy@legs-ground.com
 
 ## Contributing
+
 - Follow GitHub-flow and Conventional Commits.
 
 ## Contact / Maintainers
+
 - Maintainer: @maintainer-handle

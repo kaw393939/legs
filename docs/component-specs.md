@@ -5,6 +5,7 @@
 ## Header Component
 
 ### Desktop Header (1024px+)
+
 ```
 Specifications:
 - Height: 80px (φ² × 30px base)
@@ -28,6 +29,7 @@ Interaction States:
 ```
 
 ### Mobile Header (320px-1023px)
+
 ```
 Specifications:
 - Height: 64px (φ × 40px base)
@@ -54,6 +56,7 @@ Mobile Menu:
 ```
 
 ### Header CSS Implementation
+
 ```css
 .header {
   height: calc(var(--golden-ratio-2) * var(--base-unit));
@@ -106,7 +109,7 @@ Mobile Menu:
 }
 
 .header__nav-item--active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -1px;
   left: 0;
@@ -120,11 +123,11 @@ Mobile Menu:
   .header {
     height: calc(var(--golden-ratio) * 40px);
   }
-  
+
   .header__nav {
     display: none;
   }
-  
+
   .header__mobile-toggle {
     display: block;
     width: 24px;
@@ -139,6 +142,7 @@ Mobile Menu:
 ## Hero Section Component
 
 ### Homepage Hero
+
 ```
 Specifications:
 - Min-height: 600px (adjusts with content)
@@ -168,6 +172,7 @@ Visual Elements:
 ```
 
 ### Hero CSS Implementation
+
 ```css
 .hero {
   min-height: 600px;
@@ -245,11 +250,11 @@ Visual Elements:
     gap: var(--space-xl);
     text-align: center;
   }
-  
+
   .hero__image {
     order: -1;
   }
-  
+
   .hero__actions {
     justify-content: center;
     flex-direction: column;
@@ -258,6 +263,7 @@ Visual Elements:
 ```
 
 ### Service Page Hero
+
 ```
 Specifications:
 - Min-height: 400px
@@ -275,6 +281,7 @@ Layout variation:
 ## Card Components
 
 ### Service Card
+
 ```
 Specifications:
 - Aspect ratio: Golden Rectangle (φ:1)
@@ -305,6 +312,7 @@ Interaction:
 ```
 
 ### Service Card CSS Implementation
+
 ```css
 .service-card {
   aspect-ratio: var(--golden-ratio) / 1;
@@ -366,7 +374,7 @@ Interaction:
 }
 
 .service-card__benefit::before {
-  content: '✓';
+  content: "✓";
   position: absolute;
   left: 0;
   color: var(--color-brand-blue);
@@ -379,6 +387,7 @@ Interaction:
 ```
 
 ### Testimonial Card
+
 ```
 Specifications:
 - Aspect ratio: Flexible height, fixed width
@@ -404,6 +413,7 @@ Content Layout:
 ```
 
 ### Testimonial Card CSS Implementation
+
 ```css
 .testimonial-card {
   max-width: 400px;
@@ -475,6 +485,7 @@ Content Layout:
 ```
 
 ### Case Study Card
+
 ```
 Specifications:
 - Aspect ratio: 4:3 (close to φ for visual harmony)
@@ -496,6 +507,7 @@ Structure:
 ```
 
 ### Case Study Card CSS Implementation
+
 ```css
 .case-study-card {
   aspect-ratio: 4 / 3;
@@ -573,6 +585,7 @@ Structure:
 ## Form Components
 
 ### Contact Form
+
 ```
 Specifications:
 - Max-width: 600px
@@ -601,6 +614,7 @@ Validation:
 ```
 
 ### Contact Form CSS Implementation
+
 ```css
 .contact-form {
   max-width: 600px;
@@ -620,7 +634,7 @@ Validation:
 }
 
 .form-label--required::after {
-  content: ' *';
+  content: " *";
   color: var(--color-error);
 }
 
@@ -687,6 +701,7 @@ Validation:
 ```
 
 ### Newsletter Signup
+
 ```
 Specifications:
 - Compact horizontal layout
@@ -702,6 +717,7 @@ Layout:
 ```
 
 ### Newsletter CSS Implementation
+
 ```css
 .newsletter-signup {
   display: flex;
@@ -729,6 +745,7 @@ Layout:
 ## Button Components
 
 ### Primary Button
+
 ```
 Specifications:
 - Height: φ² × base (42px)
@@ -753,6 +770,7 @@ Sizes:
 ```
 
 ### Button CSS Implementation
+
 ```css
 .btn {
   display: inline-flex;
@@ -841,7 +859,7 @@ Sizes:
 }
 
 .btn--loading::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 16px;
   height: 16px;
@@ -861,6 +879,7 @@ Sizes:
 ## Navigation Components
 
 ### Mega Menu (Desktop)
+
 ```
 Specifications:
 - Trigger: Hover on "Services" nav item
@@ -886,6 +905,7 @@ Layout:
 ```
 
 ### Mega Menu CSS Implementation
+
 ```css
 .mega-menu {
   position: absolute;
@@ -962,6 +982,7 @@ Layout:
 ```
 
 ### Breadcrumb Navigation
+
 ```
 Specifications:
 - Height: 32px
@@ -976,6 +997,7 @@ Home > Services > Property Management
 ```
 
 ### Breadcrumb CSS Implementation
+
 ```css
 .breadcrumb {
   display: flex;
@@ -1000,7 +1022,7 @@ Home > Services > Property Management
 }
 
 .breadcrumb__item:not(:last-child)::after {
-  content: '>';
+  content: ">";
   margin: 0 var(--space-sm);
   color: var(--color-text-muted);
 }
@@ -1045,11 +1067,13 @@ Bottom Section:
 ```
 
 ### Footer CSS Implementation
+
 ```css
 .footer {
   background: var(--color-sand-light);
   border-top: 1px solid var(--color-sand-medium);
-  padding: calc(var(--golden-ratio-cubed) * var(--base-unit)) 0 var(--space-xl) 0;
+  padding: calc(var(--golden-ratio-cubed) * var(--base-unit)) 0 var(--space-xl)
+    0;
 }
 
 .footer__container {
@@ -1145,7 +1169,7 @@ Bottom Section:
     grid-template-columns: 1fr;
     gap: var(--space-lg);
   }
-  
+
   .footer__bottom {
     flex-direction: column;
     gap: var(--space-md);
@@ -1157,6 +1181,7 @@ Bottom Section:
 ## Responsive Component Behavior
 
 ### Breakpoint Adaptations
+
 ```
 Mobile (320px-767px):
 - Single column layouts
@@ -1182,17 +1207,20 @@ Desktop (1024px+):
 ## Accessibility Specifications
 
 ### Focus States
+
 - All interactive elements have visible focus rings
 - Focus ring: 2px solid brand-blue, φ offset
 - Skip links for keyboard navigation
 - Proper heading hierarchy (h1 → h6)
 
 ### Color Contrast
+
 - All text meets WCAG AA standards (4.5:1 minimum)
 - Interactive elements meet 3:1 contrast for UI components
 - Focus indicators meet enhanced contrast requirements
 
 ### Motion Preferences
+
 - Respect prefers-reduced-motion
 - Provide alternative static states
 - Essential animations only when motion disabled
@@ -1200,15 +1228,18 @@ Desktop (1024px+):
 ## Component Implementation Notes
 
 ### CSS Custom Properties Integration
+
 All components use CSS custom properties defined in the Golden Ratio design tokens system, ensuring mathematical consistency across the entire design system.
 
 ### Performance Optimization
+
 - Components use efficient CSS Grid and Flexbox layouts
 - Transitions are optimized for 60fps performance
 - Images use responsive srcset attributes
 - Critical CSS includes above-the-fold components
 
 ### Browser Support
+
 - Modern browsers (last 2 versions)
 - Progressive enhancement for older browsers
 - Fallbacks for CSS Grid using Flexbox

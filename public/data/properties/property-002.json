@@ -1,0 +1,58 @@
+{
+  "id": "property-002",
+  "title": "Downtown Investment Condo",
+  "description": "Prime downtown location with high rental demand and excellent appreciation potential.",
+  "price": "$485,000",
+  "location": {
+    "address": "456 Urban Avenue",
+    "city": "Austin",
+    "state": "TX",
+    "zip": "78701",
+    "coordinates": {
+      "lat": 30.2672,
+      "lng": -97.7431
+    }
+  },
+  "details": {
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "sqft": 1200,
+    "lot_size": "N/A",
+    "year_built": 2020,
+    "property_type": "Condominium",
+    "architectural_style": "Modern"
+  },
+  "features": [
+    "City skyline views",
+    "Stainless steel appliances",
+    "Hardwood floors",
+    "In-unit laundry",
+    "Balcony",
+    "Fitness center access",
+    "Rooftop pool",
+    "Concierge service"
+  ],
+  "images": [
+    "/images/properties/property-002/exterior-1.jpg",
+    "/images/properties/property-002/living-room.jpg",
+    "/images/properties/property-002/kitchen.jpg",
+    "/images/properties/property-002/bedroom.jpg",
+    "/images/properties/property-002/balcony.jpg"
+  ],
+  "investment_data": {
+    "cap_rate": "6.8%",
+    "rental_income": "$2,800/month",
+    "roi_projection": "12.2% annually",
+    "appreciation_rate": "5.4% annually",
+    "property_taxes": "$4,200/year",
+    "maintenance_costs": "$2,400/year"
+  },
+  "status": "under-contract",
+  "listing_date": "2024-02-01",
+  "agent": {
+    "name": "Michael Rodriguez",
+    "phone": "(512) 555-0456",
+    "email": "michael@yoursite.com",
+    "photo": "/images/team/michael-rodriguez.jpg"
+  }
+}

@@ -5,37 +5,48 @@
 ## Breakpoint System (Golden Ratio Based)
 
 ### Mathematical Foundation
+
 ```
 Base: 320px (minimum mobile width)
 Each breakpoint: Previous × φ (1.618)
 
 320px × 1.618 = 518px
-518px × 1.618 = 838px  
+518px × 1.618 = 838px
 838px × 1.618 = 1356px
 1356px × 1.618 = 2193px
 ```
 
 ### Breakpoint Definitions
+
 ```css
 /* Mobile First Approach */
 :root {
-  --bp-xs: 20rem;      /* 320px - Mobile portrait */
-  --bp-sm: 32.36rem;   /* 518px - Mobile landscape */
-  --bp-md: 52.36rem;   /* 838px - Tablet portrait */
-  --bp-lg: 84.72rem;   /* 1356px - Desktop */
-  --bp-xl: 137.08rem;  /* 2193px - Large desktop */
+  --bp-xs: 20rem; /* 320px - Mobile portrait */
+  --bp-sm: 32.36rem; /* 518px - Mobile landscape */
+  --bp-md: 52.36rem; /* 838px - Tablet portrait */
+  --bp-lg: 84.72rem; /* 1356px - Desktop */
+  --bp-xl: 137.08rem; /* 2193px - Large desktop */
 }
 
 /* Usage in media queries */
-@media (min-width: 32.36rem) { /* Mobile landscape and up */ }
-@media (min-width: 52.36rem) { /* Tablet and up */ }
-@media (min-width: 84.72rem) { /* Desktop and up */ }
-@media (min-width: 137.08rem) { /* Large desktop */ }
+@media (min-width: 32.36rem) {
+  /* Mobile landscape and up */
+}
+@media (min-width: 52.36rem) {
+  /* Tablet and up */
+}
+@media (min-width: 84.72rem) {
+  /* Desktop and up */
+}
+@media (min-width: 137.08rem) {
+  /* Large desktop */
+}
 ```
 
 ## Device-Specific Adaptations
 
 ### Mobile Portrait (320px - 517px)
+
 ```
 Layout Characteristics:
 - Single column everything
@@ -64,6 +75,7 @@ Typography Scale (Reduced):
 ```
 
 ### Mobile Landscape (518px - 837px)
+
 ```
 Layout Characteristics:
 - Still primarily single column
@@ -84,6 +96,7 @@ Grid System:
 ```
 
 ### Tablet Portrait (838px - 1355px)
+
 ```
 Layout Characteristics:
 - Two-column layouts become standard
@@ -110,6 +123,7 @@ Sidebar Usage:
 ```
 
 ### Desktop (1356px - 2192px)
+
 ```
 Layout Characteristics:
 - Full multi-column layouts
@@ -139,6 +153,7 @@ Advanced Features:
 ```
 
 ### Large Desktop (2193px+)
+
 ```
 Layout Characteristics:
 - Enhanced spacing and typography
@@ -157,6 +172,7 @@ Content Enhancements:
 ## Component Responsive Behavior
 
 ### Header Component
+
 ```
 Mobile (320px+):
 ┌─────────────────────────────┐
@@ -184,6 +200,7 @@ Desktop (1356px+):
 ```
 
 ### Header Responsive CSS
+
 ```css
 .header {
   height: calc(var(--golden-ratio) * 40px);
@@ -214,7 +231,7 @@ Desktop (1356px+):
   .header__nav {
     display: flex;
   }
-  
+
   .header__mobile-toggle {
     display: none;
   }
@@ -222,6 +239,7 @@ Desktop (1356px+):
 ```
 
 ### Hero Section
+
 ```
 Mobile (320px+):
 ┌─────────────────────────────┐
@@ -255,6 +273,7 @@ Desktop (1356px+):
 ```
 
 ### Hero Responsive CSS
+
 ```css
 .hero__container {
   display: grid;
@@ -311,6 +330,7 @@ Desktop (1356px+):
 ```
 
 ### Service Cards Grid
+
 ```
 Mobile (320px+):
 ┌─────────────────────────────┐
@@ -340,6 +360,7 @@ Desktop (1356px+):
 ```
 
 ### Service Cards Responsive CSS
+
 ```css
 .services-grid {
   display: grid;
@@ -364,51 +385,45 @@ Desktop (1356px+):
 ## Typography Responsive Scaling
 
 ### Font Size Adaptations
+
 ```css
 /* Base mobile-first typography */
 :root {
-  --fs-display: 2.618rem;    /* 42px on mobile */
-  --fs-h1: 2.058rem;         /* 33px on mobile */
-  --fs-h2: 1.618rem;         /* 26px on mobile */
-  --fs-body: 1rem;           /* 16px baseline */
+  --fs-display: 2.618rem; /* 42px on mobile */
+  --fs-h1: 2.058rem; /* 33px on mobile */
+  --fs-h2: 1.618rem; /* 26px on mobile */
+  --fs-body: 1rem; /* 16px baseline */
 }
 
 /* Tablet scaling */
 @media (min-width: 52.36rem) {
   :root {
-    --fs-display: 3.236rem;   /* Scaled up for tablet */
-    --fs-h1: 2.618rem;        /* Approaches desktop size */
-    --fs-h2: 2.058rem;        /* More generous sizing */
+    --fs-display: 3.236rem; /* Scaled up for tablet */
+    --fs-h1: 2.618rem; /* Approaches desktop size */
+    --fs-h2: 2.058rem; /* More generous sizing */
   }
 }
 
 /* Desktop full scale */
 @media (min-width: 84.72rem) {
   :root {
-    --fs-display: 4.236rem;   /* Full φ³ scale */
-    --fs-h1: 2.618rem;        /* Full φ² scale */
-    --fs-h2: 2.058rem;        /* Standard hierarchy */
+    --fs-display: 4.236rem; /* Full φ³ scale */
+    --fs-h1: 2.618rem; /* Full φ² scale */
+    --fs-h2: 2.058rem; /* Standard hierarchy */
   }
 }
 ```
 
 ### Responsive Typography Implementation
+
 ```css
 /* Fluid typography using clamp() */
 .hero__headline {
-  font-size: clamp(
-    var(--fs-h1),
-    calc(2rem + 4vw),
-    var(--fs-display)
-  );
+  font-size: clamp(var(--fs-h1), calc(2rem + 4vw), var(--fs-display));
 }
 
 .section__title {
-  font-size: clamp(
-    var(--fs-h2),
-    calc(1.5rem + 2vw),
-    var(--fs-h1)
-  );
+  font-size: clamp(var(--fs-h2), calc(1.5rem + 2vw), var(--fs-h1));
 }
 
 /* Container queries for component-level responsive typography */
@@ -426,6 +441,7 @@ Desktop (1356px+):
 ```
 
 ### Line Height Adaptations
+
 ```css
 /* Tighter line heights on mobile for space efficiency */
 @media (max-width: 52.35rem) {
@@ -439,9 +455,9 @@ Desktop (1356px+):
 /* Standard line heights on larger screens */
 @media (min-width: 52.36rem) {
   :root {
-    --lh-tight: 1.272;        /* φ⁻¹ + 0.654 */
-    --lh-normal: 1.618;       /* φ */
-    --lh-loose: 2.058;        /* φ + 0.44 */
+    --lh-tight: 1.272; /* φ⁻¹ + 0.654 */
+    --lh-normal: 1.618; /* φ */
+    --lh-loose: 2.058; /* φ + 0.44 */
   }
 }
 ```
@@ -449,35 +465,37 @@ Desktop (1356px+):
 ## Spacing Responsive System
 
 ### Mobile Spacing Reduction
+
 ```css
 /* Mobile: Reduce spacing by φ⁻¹ factor */
 @media (max-width: 52.35rem) {
   :root {
-    --space-xs: 0.191rem;     /* ~3px */
-    --space-sm: 0.309rem;     /* ~5px */
-    --space-md: 0.5rem;       /* 8px */
-    --space-lg: 0.809rem;     /* ~13px */
-    --space-xl: 1.309rem;     /* ~21px */
-    --space-2xl: 2.118rem;    /* ~34px */
-    --space-3xl: 3.427rem;    /* ~55px */
+    --space-xs: 0.191rem; /* ~3px */
+    --space-sm: 0.309rem; /* ~5px */
+    --space-md: 0.5rem; /* 8px */
+    --space-lg: 0.809rem; /* ~13px */
+    --space-xl: 1.309rem; /* ~21px */
+    --space-2xl: 2.118rem; /* ~34px */
+    --space-3xl: 3.427rem; /* ~55px */
   }
 }
 
 /* Tablet and up: Standard spacing */
 @media (min-width: 52.36rem) {
   :root {
-    --space-xs: 0.309rem;     /* ~5px */
-    --space-sm: 0.5rem;       /* 8px */
-    --space-md: 0.809rem;     /* ~13px */
-    --space-lg: 1.309rem;     /* ~21px */
-    --space-xl: 2.118rem;     /* ~34px */       
-    --space-2xl: 3.427rem;    /* ~55px */
-    --space-3xl: 5.545rem;    /* ~89px */
+    --space-xs: 0.309rem; /* ~5px */
+    --space-sm: 0.5rem; /* 8px */
+    --space-md: 0.809rem; /* ~13px */
+    --space-lg: 1.309rem; /* ~21px */
+    --space-xl: 2.118rem; /* ~34px */
+    --space-2xl: 3.427rem; /* ~55px */
+    --space-3xl: 5.545rem; /* ~89px */
   }
 }
 ```
 
 ### Dynamic Spacing Implementation
+
 ```css
 /* Fluid spacing using clamp() */
 .section {
@@ -510,6 +528,7 @@ Desktop (1356px+):
 ## Images and Media Responsive Strategy
 
 ### Image Responsive Behavior
+
 ```css
 /* Base responsive images */
 img {
@@ -543,6 +562,7 @@ img {
 ```
 
 ### Responsive Image Implementation
+
 ```css
 /* Picture element with art direction */
 .hero__image {
@@ -565,25 +585,26 @@ img {
 
 /* Responsive background images */
 .hero-section {
-  background-image: url('hero-mobile.jpg');
+  background-image: url("hero-mobile.jpg");
   background-size: cover;
   background-position: center;
 }
 
 @media (min-width: 52.36rem) {
   .hero-section {
-    background-image: url('hero-tablet.jpg');
+    background-image: url("hero-tablet.jpg");
   }
 }
 
 @media (min-width: 84.72rem) {
   .hero-section {
-    background-image: url('hero-desktop.jpg');
+    background-image: url("hero-desktop.jpg");
   }
 }
 ```
 
 ### Video Responsive Containers
+
 ```css
 .video-container {
   position: relative;
@@ -612,22 +633,23 @@ img {
 ## Form Responsive Adaptations
 
 ### Mobile Form Layout
+
 ```css
 /* Mobile: Stack all form elements */
 @media (max-width: 52.35rem) {
   .form-row {
     display: block;
   }
-  
+
   .form-group {
     margin-bottom: var(--space-lg);
   }
-  
+
   .btn {
     width: 100%;
     margin-bottom: var(--space-md);
   }
-  
+
   .form-input,
   .form-select,
   .form-textarea {
@@ -637,6 +659,7 @@ img {
 ```
 
 ### Desktop Form Layout
+
 ```css
 /* Desktop: Use Golden Ratio proportions */
 @media (min-width: 52.36rem) {
@@ -644,11 +667,11 @@ img {
     display: flex;
     gap: var(--space-lg);
   }
-  
+
   .form-group-primary {
     flex: var(--golden-ratio); /* φ proportion */
   }
-  
+
   .form-group-secondary {
     flex: 1; /* 1 proportion */
   }
@@ -661,11 +684,11 @@ img {
     grid-template-columns: 61.8fr 38.2fr;
     gap: var(--space-2xl);
   }
-  
+
   .form-main {
     /* Main form fields */
   }
-  
+
   .form-aside {
     /* Contact information, additional options */
   }
@@ -675,6 +698,7 @@ img {
 ## Performance Considerations
 
 ### Progressive Enhancement
+
 ```css
 /* Base mobile styles (no media queries) */
 .component {
@@ -707,22 +731,37 @@ img {
 ```
 
 ### Critical CSS Strategy
+
 ```css
 /* Critical CSS (inlined) */
 /* Base layout styles */
-body { margin: 0; font-family: var(--font-inter); }
-.header { position: sticky; top: 0; z-index: 1000; }
-.hero { min-height: 50vh; }
+body {
+  margin: 0;
+  font-family: var(--font-inter);
+}
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.hero {
+  min-height: 50vh;
+}
 
 /* Non-critical CSS (deferred) */
 /* Complex animations, decorative elements */
 @media (min-width: 84.72rem) {
-  .advanced-layout { /* Complex desktop layouts */ }
-  .animations { /* Motion effects */ }
+  .advanced-layout {
+    /* Complex desktop layouts */
+  }
+  .animations {
+    /* Motion effects */
+  }
 }
 ```
 
 ### Container Queries Implementation
+
 ```css
 /* Container-based responsive design */
 .card-container {
@@ -740,7 +779,7 @@ body { margin: 0; font-family: var(--font-inter); }
   .card {
     padding: var(--space-xl);
   }
-  
+
   .card__image {
     aspect-ratio: var(--golden-ratio) / 1;
   }
@@ -750,6 +789,7 @@ body { margin: 0; font-family: var(--font-inter); }
 ## Testing Strategy
 
 ### Responsive Testing Checklist
+
 ```
 □ Test on actual devices, not just browser resizing
 □ Verify touch targets are minimum 44px
@@ -764,6 +804,7 @@ body { margin: 0; font-family: var(--font-inter); }
 ```
 
 ### Device Testing Priority
+
 ```
 Priority 1 (Must test):
 - iPhone 12/13/14 (375px width)
@@ -772,7 +813,7 @@ Priority 1 (Must test):
 - Common Android phones (360px width)
 
 Priority 2 (Should test):
-- iPhone SE (320px width) 
+- iPhone SE (320px width)
 - iPad Pro (1024px width)
 - Large desktop (1920px width)
 - Android tablets (800px width)
@@ -784,30 +825,41 @@ Priority 3 (Nice to test):
 ```
 
 ### Automated Testing Tools
+
 ```javascript
 // Responsive testing with Playwright
-const { test, expect } = require('@playwright/test');
+const { test, expect } = require("@playwright/test");
 
-test('responsive layout adapts correctly', async ({ page }) => {
-  await page.goto('/');
-  
+test("responsive layout adapts correctly", async ({ page }) => {
+  await page.goto("/");
+
   // Mobile
   await page.setViewportSize({ width: 320, height: 568 });
-  await expect(page.locator('.hero__container')).toHaveCSS('grid-template-columns', '1fr');
-  
+  await expect(page.locator(".hero__container")).toHaveCSS(
+    "grid-template-columns",
+    "1fr",
+  );
+
   // Tablet
   await page.setViewportSize({ width: 838, height: 1112 });
-  await expect(page.locator('.hero__container')).toHaveCSS('grid-template-columns', '45fr 55fr');
-  
+  await expect(page.locator(".hero__container")).toHaveCSS(
+    "grid-template-columns",
+    "45fr 55fr",
+  );
+
   // Desktop
   await page.setViewportSize({ width: 1356, height: 768 });
-  await expect(page.locator('.hero__container')).toHaveCSS('grid-template-columns', '38.2fr 61.8fr');
+  await expect(page.locator(".hero__container")).toHaveCSS(
+    "grid-template-columns",
+    "38.2fr 61.8fr",
+  );
 });
 ```
 
 ## Browser Support Strategy
 
 ### Progressive Enhancement Approach
+
 ```css
 /* Base styles for all browsers */
 .layout {
@@ -834,30 +886,44 @@ test('responsive layout adapts correctly', async ({ page }) => {
 ```
 
 ### Polyfill Strategy
+
 ```javascript
 // Load polyfills only when needed
-if (!CSS.supports('aspect-ratio', '16/9')) {
-  import('./polyfills/aspect-ratio-polyfill.js');
+if (!CSS.supports("aspect-ratio", "16/9")) {
+  import("./polyfills/aspect-ratio-polyfill.js");
 }
 
-if (!CSS.supports('container-type', 'inline-size')) {
-  import('./polyfills/container-queries-polyfill.js');
+if (!CSS.supports("container-type", "inline-size")) {
+  import("./polyfills/container-queries-polyfill.js");
 }
 ```
 
 ## Performance Optimization
 
 ### Image Optimization
+
 ```html
 <!-- Responsive images with art direction -->
 <picture>
-  <source media="(min-width: 84.72rem)" srcset="hero-desktop.webp 1200w, hero-desktop@2x.webp 2400w">
-  <source media="(min-width: 52.36rem)" srcset="hero-tablet.webp 800w, hero-tablet@2x.webp 1600w">
-  <img src="hero-mobile.webp" srcset="hero-mobile@2x.webp 2x" alt="Hero image" loading="lazy">
+  <source
+    media="(min-width: 84.72rem)"
+    srcset="hero-desktop.webp 1200w, hero-desktop@2x.webp 2400w"
+  />
+  <source
+    media="(min-width: 52.36rem)"
+    srcset="hero-tablet.webp 800w, hero-tablet@2x.webp 1600w"
+  />
+  <img
+    src="hero-mobile.webp"
+    srcset="hero-mobile@2x.webp 2x"
+    alt="Hero image"
+    loading="lazy"
+  />
 </picture>
 ```
 
 ### CSS Loading Strategy
+
 ```css
 /* Critical CSS */
 @media screen {
@@ -871,8 +937,13 @@ if (!CSS.supports('container-type', 'inline-size')) {
 
 @media print {
   /* Print styles */
-  .header, .footer { display: none; }
-  .hero { page-break-after: always; }
+  .header,
+  .footer {
+    display: none;
+  }
+  .hero {
+    page-break-after: always;
+  }
 }
 ```
 

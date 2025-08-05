@@ -5,6 +5,7 @@
 ## Homepage Wireframe
 
 ### Desktop Layout (1200px max-width)
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ HEADER [Height: φ² × base unit = ~67px]                    │
@@ -74,6 +75,7 @@
 ```
 
 ### Mobile Layout (320px+)
+
 ```
 ┌─────────────────────────────┐
 │ HEADER [Compressed]         │
@@ -117,6 +119,7 @@
 ## Service Pages Wireframe
 
 ### Property Acquisition Service Page
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ BREADCRUMB: Home > Services > Property Acquisition         │
@@ -165,6 +168,7 @@
 ```
 
 ### Service Page Mobile Layout
+
 ```
 ┌─────────────────────────────┐
 │ BREADCRUMB [Compressed]     │
@@ -206,6 +210,7 @@
 ## About Pages Wireframe
 
 ### Our Story Page
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ HERO SECTION [Brand story introduction]                     │
@@ -245,6 +250,7 @@
 ```
 
 ### Team Page Wireframe
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ TEAM HERO                                                   │
@@ -293,6 +299,7 @@
 ## Case Study Page Wireframe
 
 ### Individual Case Study Layout
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ CASE STUDY HEADER                                           │
@@ -348,6 +355,7 @@
 ```
 
 ### Case Studies Overview Page
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ CASE STUDIES HERO                                           │
@@ -386,6 +394,7 @@
 ## Contact Page Wireframe
 
 ### Multi-Touch Contact Experience
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ CONTACT HERO                                                │
@@ -436,6 +445,7 @@
 ## Market Insights Page Wireframes
 
 ### Market Reports Landing Page
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │ MARKET INSIGHTS HERO                                        │
@@ -486,24 +496,28 @@
 ## Design System Application Notes
 
 ### Golden Ratio Measurements
+
 - **Base unit**: 16px (1rem)
 - **φ ratio**: 1.618
-- **φ² ratio**: 2.618  
+- **φ² ratio**: 2.618
 - **φ³ ratio**: 4.236
 
 ### Spacing Applications
+
 - **Section padding**: φ² × base = ~42px
 - **Card spacing**: φ × base = ~26px
 - **Element margins**: φ × base or φ² × base
 - **Grid gutters**: φ × base = ~26px
 
 ### Typography Scale in Wireframes
+
 - **Hero headings**: φ³ × base = ~68px
 - **Section headings**: φ² × base = ~42px
 - **Card titles**: φ × base = ~26px
 - **Body text**: 1 × base = 16px
 
 ### Component Proportions
+
 - **Buttons**: Height follows φ⁻¹ ratio to width
 - **Cards**: φ aspect ratio (1.618:1) where possible
 - **Images**: Golden rectangle proportions
@@ -511,14 +525,16 @@
 - **Main content**: 61.8% width (φ⁻¹)
 
 ### Responsive Breakpoints
+
 - **Mobile**: 320px+ (single column, stacked)
-- **Tablet**: 768px+ (two-column where appropriate)  
+- **Tablet**: 768px+ (two-column where appropriate)
 - **Desktop**: 1024px+ (full layout with sidebars)
 - **Large**: 1440px+ (enhanced spacing and typography)
 
 ## Wireframe Implementation Notes
 
 ### Development Guidelines
+
 1. **All measurements** should be implemented using CSS custom properties
 2. **Golden Ratio calculations** should be consistent across breakpoints
 3. **Component spacing** should maintain φ relationships in all contexts
@@ -526,6 +542,7 @@
 5. **Image aspect ratios** should default to Golden Rectangle (φ:1)
 
 ### Accessibility Requirements
+
 - **Focus states** clearly visible on all interactive elements
 - **Skip navigation** links for keyboard users
 - **Semantic HTML** structure for screen readers
@@ -533,6 +550,7 @@
 - **Touch targets** minimum 44px × 44px on mobile
 
 ### Performance Considerations
+
 - **Critical path CSS** for above-the-fold content
 - **Lazy loading** for images below the fold
 - **Progressive enhancement** for interactive features

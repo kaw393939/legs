@@ -5,11 +5,12 @@
 ## Site Structure Hierarchy
 
 ### Primary Navigation (Header)
+
 ```
 Home
 ├── Services
 │   ├── Property Acquisition
-│   ├── Property Management  
+│   ├── Property Management
 │   ├── Renovation Management
 │   └── Advisory Services
 ├── About
@@ -35,6 +36,7 @@ Home
 ```
 
 ### Secondary Navigation (Footer)
+
 ```
 Services
 ├── Property Search
@@ -73,13 +75,15 @@ Legal
 ## User Journey Mapping
 
 ### Remote Investor Journey
+
 1. **Discovery** → Homepage → Market Insights → Services Overview
 2. **Research** → Case Studies → Process Documentation → FAQ
 3. **Consideration** → Consultation Request → Initial Meeting → Proposal
 4. **Decision** → Contract → Onboarding → Service Delivery
 5. **Advocacy** → Testimonial → Referrals → Additional Properties
 
-### Retiree/Relocating Journey  
+### Retiree/Relocating Journey
+
 1. **Discovery** → Homepage → About → Our Story
 2. **Education** → Market Insights → Neighborhood Guides → Advisory Services
 3. **Trust Building** → Team → Quality Standards → Client Testimonials
@@ -87,6 +91,7 @@ Legal
 5. **Commitment** → Service Agreement → Ongoing Relationship
 
 ### Entrepreneur Journey
+
 1. **Discovery** → Market Reports → Investment Analysis → Revenue Model
 2. **Evaluation** → Competitive Analysis → Success Stories → Performance Data
 3. **Strategy** → Advisory Services → Custom Solutions → Scalability Planning
@@ -96,6 +101,7 @@ Legal
 ## Content Priority Matrix
 
 ### Homepage Content Hierarchy
+
 1. **Hero Section** (Above fold)
    - Value proposition
    - Trust indicators
@@ -114,6 +120,7 @@ Legal
    - Getting started
 
 ### Page-Level Content Strategy
+
 - **Services Pages**: Feature → Benefit → Process → Pricing → CTA
 - **About Pages**: Story → Team → Values → Credentials → Contact
 - **Market Pages**: Data → Analysis → Insights → Implications → CTA
@@ -122,6 +129,7 @@ Legal
 ## Navigation Design Principles
 
 ### Header Navigation
+
 - **Sticky navigation** for easy access during scroll
 - **Mega menu** for services (detailed service breakdown)
 - **Mobile hamburger** menu for responsive design
@@ -129,12 +137,14 @@ Legal
 - **Logo** with Golden Ratio proportions
 
 ### Breadcrumb Navigation
+
 - **All interior pages** include breadcrumbs
 - **Schema markup** for SEO benefits
 - **Golden Ratio spacing** for visual hierarchy
 - **Click-through** to all parent levels
 
 ### Footer Navigation
+
 - **Comprehensive sitemap** for discovery
 - **Contact information** clearly displayed
 - **Social media links** for community building
@@ -144,12 +154,14 @@ Legal
 ## Search Strategy
 
 ### Site Search (Phase 4+)
+
 - **Global search** in header for all content
 - **Filtered search** by content type (services, insights, case studies)
 - **Auto-complete** suggestions based on popular queries
 - **Search analytics** to understand user intent
 
 ### SEO Architecture
+
 - **URL structure**: /category/subcategory/page-title
 - **Canonical URLs** to prevent duplicate content
 - **XML sitemaps** for search engine discovery
@@ -158,12 +170,14 @@ Legal
 ## Responsive Breakpoint Strategy
 
 ### Mobile-First Approach
+
 - **320px+**: Core content and functionality
 - **768px+**: Enhanced layout with sidebar content
 - **1024px+**: Full desktop experience with advanced features
 - **1440px+**: Large screen optimizations
 
 ### Content Adaptation
+
 - **Navigation**: Hamburger → Horizontal → Mega menu
 - **Hero**: Stacked → Side-by-side → Enhanced layout
 - **Services**: Single column → Grid → Enhanced grid
@@ -172,6 +186,7 @@ Legal
 ## URL Structure & Taxonomy
 
 ### Primary Page URLs
+
 ```
 / (Homepage)
 /services/
@@ -206,6 +221,7 @@ Legal
 ```
 
 ### SEO-Friendly URL Patterns
+
 - **Service pages**: `/services/{service-name}/`
 - **Case studies**: `/success-stories/case-studies/{property-location}-{date}/`
 - **Market reports**: `/market-insights/market-reports/{region}-{quarter}-{year}/`
@@ -215,17 +231,20 @@ Legal
 ## Content Taxonomy & Tagging
 
 ### Service Categories
+
 - **Property Acquisition**: Search, Analysis, Closing, Due Diligence
 - **Property Management**: Tenant Relations, Maintenance, Financial Reporting
 - **Renovation Management**: Planning, Execution, Quality Control, Budget Management
 - **Advisory Services**: Tax Strategy, Market Analysis, Investment Planning, Exit Strategy
 
 ### Geographic Tags
+
 - **Regions**: San Juan Metro, Bayamón, Carolina, Caguas, Ponce, Arecibo
 - **Property Types**: Residential, Commercial, Mixed-Use, Vacation Rental
 - **Investment Types**: Buy-and-Hold, Fix-and-Flip, Development, Portfolio
 
 ### Content Types
+
 - **Educational**: Guides, How-tos, Market Analysis, Investment Strategies
 - **Social Proof**: Case Studies, Testimonials, Success Stories, Reviews
 - **Process**: Step-by-step guides, Checklists, Documentation, Templates
@@ -234,17 +253,20 @@ Legal
 ## Internal Linking Strategy
 
 ### Hub and Spoke Architecture
+
 - **Homepage** as primary hub linking to all major sections
 - **Service pages** as secondary hubs for related content
 - **Case studies** linking to relevant services and market insights
 - **Market insights** supporting service pages with data and analysis
 
 ### Golden Ratio Link Distribution
+
 - **Primary links** (61.8% of internal links): Core services and high-value content
 - **Secondary links** (38.2% of internal links): Supporting content and resources
 - **Link density**: Follow φ ratio for optimal crawlability and user experience
 
 ### Cross-Linking Patterns
+
 ```
 Service Pages → Related Case Studies (φ² ratio - ~2.6 links per service)
 Case Studies → Related Services (φ ratio - ~1.6 links per case study)
@@ -256,6 +278,7 @@ Contact Pages → All Services (Equal distribution across 4 services)
 ## Search Engine Optimization Architecture
 
 ### Page Hierarchy (SEO Value Distribution)
+
 1. **Homepage** (Highest authority - distributes link equity)
 2. **Service Landing Pages** (High authority - primary conversion pages)
 3. **About/Process Pages** (Medium authority - trust and credibility)
@@ -264,6 +287,7 @@ Contact Pages → All Services (Equal distribution across 4 services)
 6. **Contact/FAQ** (Lower authority - but essential for conversions)
 
 ### Keyword Architecture
+
 - **Homepage**: Primary brand terms, "Puerto Rico real estate investment"
 - **Services**: Service-specific terms + location modifiers
 - **Case Studies**: Long-tail investment scenarios + location-specific terms
@@ -271,6 +295,7 @@ Contact Pages → All Services (Equal distribution across 4 services)
 - **About**: Trust and credibility terms, founder/company searches
 
 ### Schema Markup Implementation
+
 ```json
 Organization Schema (Homepage):
 {
@@ -309,6 +334,7 @@ LocalBusiness Schema (Contact Pages):
 ## Accessibility Navigation Requirements
 
 ### WCAG 2.2 AA Compliance
+
 - **Skip navigation** links for keyboard users
 - **Landmark roles** for all major sections (main, nav, aside, footer)
 - **Aria labels** for complex navigation structures
@@ -316,6 +342,7 @@ LocalBusiness Schema (Contact Pages):
 - **Screen reader** friendly menu descriptions
 
 ### Keyboard Navigation
+
 - **Tab order** follows logical reading sequence
 - **Arrow key navigation** within mega menus
 - **Escape key** closes modal menus
@@ -323,6 +350,7 @@ LocalBusiness Schema (Contact Pages):
 - **Focus indicators** clearly visible on all interactive elements
 
 ### Mobile Accessibility
+
 - **Touch targets** minimum 44px × 44px
 - **Gesture alternatives** for all swipe/drag interactions
 - **Voice navigation** compatible menu structure
@@ -331,6 +359,7 @@ LocalBusiness Schema (Contact Pages):
 ## Performance Optimization Architecture
 
 ### Critical Path Prioritization
+
 1. **Above-the-fold content** loads first (Hero, Navigation)
 2. **Primary CTAs** load before secondary content
 3. **Service overview** prioritized over detailed descriptions
@@ -338,6 +367,7 @@ LocalBusiness Schema (Contact Pages):
 5. **Footer content** loads last (non-critical)
 
 ### Progressive Enhancement Strategy
+
 - **Core functionality** works without JavaScript
 - **Enhanced interactions** layer on top of basic functionality
 - **Visual enhancements** apply after core content loads
@@ -345,6 +375,7 @@ LocalBusiness Schema (Contact Pages):
 - **Third-party widgets** load after primary content
 
 ### Content Delivery Optimization
+
 - **Images**: WebP format with fallbacks, responsive sizing
 - **Fonts**: Preload critical fonts, subset non-critical fonts
 - **CSS**: Critical CSS inline, non-critical CSS deferred

@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "title": "Premier Real Estate Investments | Luxury Properties",
+    "description": "Discover exceptional real estate investment opportunities with our expert team. Luxury homes, commercial properties, and investment analysis.",
+    "keywords": [
+      "real estate",
+      "luxury homes",
+      "investment properties",
+      "property management"
+    ]
+  },
+  "hero": {
+    "headline": "Exceptional Real Estate Investments",
+    "subheadline": "Discover luxury properties and investment opportunities with expert guidance and personalized service.",
+    "background_image": "/images/hero/luxury-home-exterior.jpg",
+    "cta_primary": {
+      "text": "View Properties",
+      "url": "/properties"
+    },
+    "cta_secondary": {
+      "text": "Investment Analysis",
+      "url": "/services/investment-analysis"
+    }
+  },
+  "sections": {
+    "featured_properties": {
+      "title": "Featured Properties",
+      "subtitle": "Handpicked investment opportunities",
+      "properties": ["property-001", "property-002", "property-003"]
+    },
+    "services_overview": {
+      "title": "Our Services",
+      "subtitle": "Comprehensive real estate solutions",
+      "services": [
+        {
+          "title": "Property Management",
+          "description": "Full-service property management for maximum returns",
+          "icon": "/images/icons/property-management.svg",
+          "url": "/services/property-management"
+        },
+        {
+          "title": "Investment Analysis",
+          "description": "Detailed ROI analysis and market insights",
+          "icon": "/images/icons/investment-analysis.svg",
+          "url": "/services/investment-analysis"
+        },
+        {
+          "title": "Market Research",
+          "description": "Comprehensive market data and trends",
+          "icon": "/images/icons/market-research.svg",
+          "url": "/services/market-research"
+        }
+      ]
+    }
+  }
+}

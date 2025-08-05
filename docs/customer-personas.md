@@ -1,6 +1,7 @@
 # Customer Personas
 
 ## Persona 1: The Remote Investor
+
 - **Demographics**: 40-55 years old, high-income professionals, primarily from the mainland US.
 - **Goals**: Generate passive income through real estate investments.
 - **Pain Points**: Lack of local knowledge, difficulty managing properties remotely.
@@ -12,6 +13,7 @@
   5. Use property management services for ongoing support.
 
 ## Persona 2: The Retiree
+
 - **Demographics**: 60+ years old, retirees looking for a vacation home or investment property.
 - **Goals**: Find a reliable partner to manage their property while they are away.
 - **Pain Points**: Concerns about trust and reliability.
@@ -23,6 +25,7 @@
   5. Enjoy peace of mind with ongoing management.
 
 ## Persona 3: The Entrepreneur
+
 - **Demographics**: 30-45 years old, business owners looking to expand into Puerto Rico.
 - **Goals**: Acquire and renovate properties for commercial use.
 - **Pain Points**: Navigating local regulations and finding trustworthy contractors.
