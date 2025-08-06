@@ -6,6 +6,11 @@
       "active": true
     },
     {
+      "label": "Curriculum",
+      "url": "/curriculum",
+      "highlight": true
+    },
+    {
       "label": "Properties",
       "url": "/properties",
       "dropdown": [
