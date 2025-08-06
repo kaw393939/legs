@@ -45,13 +45,8 @@ export class Header extends BaseComponent {
     const logoImage = this.shadowRoot.querySelector('.logo-image');
     const ctaButton = this.shadowRoot.querySelector('.cta-button');
 
-    console.log('Header updatePaths() called');
-    console.log('PathUtils available:', !!window.PathUtils);
-
     if (logoLink) {
-      const resolvedPath = window.PathUtils.resolvePath('');
-      console.log('Setting logo link from empty string to:', resolvedPath);
-      logoLink.href = resolvedPath;
+      logoLink.href = window.PathUtils.resolvePath('');
     }
 
     if (logoImage) {
@@ -62,7 +57,6 @@ export class Header extends BaseComponent {
       ctaButton.href = window.PathUtils.resolvePath('contact.html');
     }
   }
-
   renderNavigation(navItems) {
     const nav = this.shadowRoot.querySelector('.nav-links');
     if (!nav) return;
