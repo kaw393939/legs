@@ -11,8 +11,15 @@
 export function resolvePath(path) {
   const baseUrl = import.meta.env.BASE_URL || '/';
 
+  console.log('PathUtils.resolvePath called:', {
+    path,
+    baseUrl,
+    type: typeof path,
+  });
+
   // If no path or empty string, return just the base URL
   if (!path || path === '' || path === '.' || path === './') {
+    console.log('Returning baseUrl for empty/dot path:', baseUrl);
     return baseUrl;
   }
 
