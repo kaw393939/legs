@@ -1,20 +1,21 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-echo "Running pre-commit checks..."
+echo "🔍 Running pre-commit checks..."
 
-# Format check
-echo "Checking code formatting..."
-npm run format:check
+# Use lint-staged for efficient staged file processing
+echo "🔧 Processing staged files with lint-staged..."
+npx lint-staged || { echo "❌ lint-staged failed"; exit 1; }
 
-# Linting
-echo "Running JavaScript linting..."
-npm run lint
+# Run additional validations on all files
+echo "🔍 Running HTML validation..."
+npm run lint:html || { echo "❌ HTML validation failed"; exit 1; }
 
-echo "Running HTML validation..."
-npm run lint:html
+echo "🎨 Running CSS linting..."
+npm run lint:css || { echo "❌ CSS linting failed"; exit 1; }
 
-echo "Running CSS linting..."
-npm run lint:css
+# Final comprehensive check
+echo "📋 Final linting check..."
+npm run lint || { echo "❌ Final lint check failed"; exit 1; }
 
-echo "All pre-commit checks passed!"
+echo "✅ All pre-commit checks passed!"

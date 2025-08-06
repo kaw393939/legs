@@ -418,13 +418,13 @@ export class CurriculumComponent extends BaseComponent {
 
         <div class="week-selector">
           ${Array.from({ length: 16 }, (_, i) => i + 1)
-            .map(
-              (week) =>
-                `<button class="week-nav-btn ${
-                  week === 1 ? 'active' : ''
-                }" data-week="${week}">${week}</button>`,
-            )
-            .join('')}
+    .map(
+      (week) =>
+        `<button class="week-nav-btn ${
+          week === 1 ? 'active' : ''
+        }" data-week="${week}">${week}</button>`,
+    )
+    .join('')}
         </div>
 
         <main class="curriculum-main">
