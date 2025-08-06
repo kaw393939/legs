@@ -38,7 +38,10 @@ describe('CurriculumComponent Integration', () => {
 
   it('should generate week selector buttons', () => {
     const weekButtons = Array.from({ length: 16 }, (_, i) => i + 1)
-      .map(week => `<button class="week-nav-btn" data-week="${week}">${week}</button>`)
+      .map(
+        (week) =>
+          `<button class="week-nav-btn" data-week="${week}">${week}</button>`,
+      )
       .join('');
 
     const container = document.createElement('div');
@@ -58,11 +61,11 @@ describe('CurriculumComponent Integration', () => {
       'week-selector',
       'curriculum-main',
       'magic-word-link',
-      'ai-prompt-block'
+      'ai-prompt-block',
     ];
 
     // Verify all expected CSS classes are referenced in our component
-    cssClasses.forEach(className => {
+    cssClasses.forEach((className) => {
       expect(className).toMatch(/^[a-z][a-z0-9-]*$/); // Valid CSS class naming
     });
   });
@@ -75,10 +78,10 @@ describe('Content Management Integration', () => {
         week: 1,
         title: 'Foundation Week',
         magic_words: ['atomic commits', 'conventional commits'],
-        ai_prompts: 5
+        ai_prompts: 5,
       },
       html: '<h1>Week 1</h1><p>Content here</p>',
-      rawMarkdown: '# Week 1\n\nContent here'
+      rawMarkdown: '# Week 1\n\nContent here',
     };
 
     // Verify content structure matches our expected format
@@ -96,13 +99,15 @@ describe('Content Management Integration', () => {
       estimatedTime: '5-10 minutes',
       tags: ['analysis', 'strategy'],
       prompt: 'Sample prompt text...',
-      expectedOutcomes: ['Clear analysis', 'Actionable insights']
+      expectedOutcomes: ['Clear analysis', 'Actionable insights'],
     };
 
     // Verify prompt structure matches our JSON schema
     expect(samplePrompt.title).toBeTruthy();
     expect(samplePrompt.category).toBeTruthy();
-    expect(samplePrompt.difficulty).toMatch(/^(beginner|intermediate|advanced)$/);
+    expect(samplePrompt.difficulty).toMatch(
+      /^(beginner|intermediate|advanced)$/,
+    );
     expect(samplePrompt.tags).toBeInstanceOf(Array);
     expect(samplePrompt.expectedOutcomes).toBeInstanceOf(Array);
   });
@@ -112,7 +117,7 @@ describe('Content Management Integration', () => {
       definition: 'Clear explanation of the term',
       businessContext: 'How it applies in business scenarios',
       examples: ['Example 1', 'Example 2'],
-      relatedConcepts: ['concept1', 'concept2']
+      relatedConcepts: ['concept1', 'concept2'],
     };
 
     expect(magicWordDefinition.definition).toBeTruthy();
