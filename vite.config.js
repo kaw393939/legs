@@ -11,6 +11,12 @@ export default defineConfig(({ mode }) => {
     root: 'src',
     publicDir: '../public',
 
+    // Define global variables available to the app
+    define: {
+      __APP_BASE_PATH__: JSON.stringify(base),
+      __IS_PRODUCTION__: JSON.stringify(isProduction),
+    },
+
     build: {
       outDir: '../dist',
       emptyOutDir: true,

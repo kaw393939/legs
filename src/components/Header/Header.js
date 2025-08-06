@@ -3,10 +3,27 @@ import { BaseComponent } from '../BaseComponent.js';
 export class Header extends BaseComponent {
   constructor() {
     super('Header');
+    this.config = null;
   }
 
   static get observedAttributes() {
     return ['variant', 'transparent'];
+  }
+
+  async connectedCallback() {
+    await super.connectedCallback();
+
+    // Import config module
+    try {
+      const configModule = await import('../../js/config.js');
+      this.config = configModule.default;
+    } catch (error) {
+      console.error('Failed to load config:', error);
+      // Fallback to basic path detection
+      this.config = {
+        resolvePath: (path) => (path.startsWith('/') ? path : `/${path}`),
+      };
+    }
   }
 
   async updateContent() {
@@ -27,7 +44,8 @@ export class Header extends BaseComponent {
     nav.innerHTML = '';
     navItems.forEach((item) => {
       const link = document.createElement('a');
-      link.href = item.url;
+      // Use config to resolve paths dynamically
+      link.href = this.config ? this.config.resolvePath(item.url) : item.url;
       link.textContent = item.label;
       link.className = 'nav-link';
 
@@ -51,7 +69,8 @@ export class Header extends BaseComponent {
 
     items.forEach((item) => {
       const link = document.createElement('a');
-      link.href = item.url;
+      // Use config to resolve paths dynamically
+      link.href = this.config ? this.config.resolvePath(item.url) : item.url;
       link.textContent = item.label;
       link.className = 'dropdown-link';
       dropdown.appendChild(link);
