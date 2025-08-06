@@ -2,7 +2,7 @@
   "main": [
     {
       "label": "Home",
-      "url": "./",
+      "url": "",
       "active": true
     },
     {
