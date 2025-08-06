@@ -44,8 +44,13 @@ export class Header extends BaseComponent {
     const logoLink = this.shadowRoot.querySelector('.logo-link');
     const ctaButton = this.shadowRoot.querySelector('.cta-button');
 
+    console.log('Header updateLogoPaths - config:', this.config);
+    console.log('Header updateLogoPaths - base path:', this.config?.basePath);
+
     if (logoImage && this.config) {
-      logoImage.src = this.config.resolvePath('/images/logo.svg');
+      const resolvedLogoPath = this.config.resolvePath('/images/logo.svg');
+      console.log('Resolved logo path:', resolvedLogoPath);
+      logoImage.src = resolvedLogoPath;
     }
 
     if (logoLink && this.config) {

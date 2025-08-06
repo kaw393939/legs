@@ -5,7 +5,9 @@
 
 class Config {
   constructor() {
+    console.log('Config constructor - detecting base path...');
     this._basePath = this._detectBasePath();
+    console.log('Config constructor - final base path:', this._basePath);
   }
 
   /**
@@ -14,18 +16,39 @@ class Config {
    */
   _detectBasePath() {
     // Use Vite-injected global if available (most reliable)
-    if (typeof __APP_BASE_PATH__ !== 'undefined') {
-      return __APP_BASE_PATH__;
+    try {
+      if (typeof __APP_BASE_PATH__ !== 'undefined') {
+        console.log('Using Vite-injected base path:', __APP_BASE_PATH__);
+        return __APP_BASE_PATH__;
+      }
+    } catch (e) {
+      console.log('Vite globals not available:', e.message);
+    }
+
+    // Immediate check for GitHub Pages
+    if (window.location.hostname === 'kaw393939.github.io') {
+      console.log('GitHub Pages detected, using /legs/ base path');
+      return '/legs/';
     }
 
     // Fallback: Try to get base path from HTML base tag
     const baseElement = document.querySelector('base[href]');
     if (baseElement) {
-      return baseElement.getAttribute('href');
+      const basePath = baseElement.getAttribute('href');
+      console.log('Using HTML base tag path:', basePath);
+      return basePath;
     }
 
-    // Fallback: detect from current pathname
+    // Fallback: detect from current pathname and hostname
     const pathname = window.location.pathname;
+    const hostname = window.location.hostname;
+
+    console.log(
+      'Detecting from URL - hostname:',
+      hostname,
+      'pathname:',
+      pathname,
+    );
 
     // If we're in a subdirectory (like /legs/), extract it
     if (pathname !== '/' && pathname.includes('/')) {
@@ -33,16 +56,20 @@ class Config {
 
       // Check if we're in a known repository path
       if (segments.length > 0 && segments[0] === 'legs') {
+        console.log('Using known legs path');
         return '/legs/';
       }
 
       // For other subdirectories, use the first segment
       if (segments.length > 0 && !segments[0].includes('.html')) {
-        return `/${segments[0]}/`;
+        const detectedPath = `/${segments[0]}/`;
+        console.log('Using first segment path:', detectedPath);
+        return detectedPath;
       }
     }
 
     // Default to root
+    console.log('Falling back to root path');
     return '/';
   }
 
