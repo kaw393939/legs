@@ -174,22 +174,22 @@ public/
 
 ```javascript
 // vite.config.js
-import { defineConfig } from "vite";
-import { resolve } from "path";
+import { defineConfig } from 'vite';
+import { resolve } from 'path';
 
 export default defineConfig({
-  root: "src",
-  publicDir: "../public",
+  root: 'src',
+  publicDir: '../public',
   build: {
-    outDir: "../dist",
+    outDir: '../dist',
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "src/index.html"),
-        properties: resolve(__dirname, "src/pages/properties.html"),
-        services: resolve(__dirname, "src/pages/services.html"),
-        about: resolve(__dirname, "src/pages/about.html"),
-        contact: resolve(__dirname, "src/pages/contact.html"),
+        main: resolve(__dirname, 'src/index.html'),
+        properties: resolve(__dirname, 'src/pages/properties.html'),
+        services: resolve(__dirname, 'src/pages/services.html'),
+        about: resolve(__dirname, 'src/pages/about.html'),
+        contact: resolve(__dirname, 'src/pages/contact.html'),
       },
     },
   },

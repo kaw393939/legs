@@ -13,32 +13,32 @@ Vite provides fast development and optimized production builds with:
 ## Main Configuration (`vite.config.js`)
 
 ```javascript
-import { defineConfig } from "vite";
-import { resolve } from "path";
+import { defineConfig } from 'vite';
+import { resolve } from 'path';
 
 export default defineConfig({
-  root: "src",
-  publicDir: "../public",
+  root: 'src',
+  publicDir: '../public',
 
   build: {
-    outDir: "../dist",
+    outDir: '../dist',
     emptyOutDir: true,
 
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "src/index.html"),
-        properties: resolve(__dirname, "src/pages/properties.html"),
-        "property-detail": resolve(__dirname, "src/pages/property-detail.html"),
-        services: resolve(__dirname, "src/pages/services.html"),
-        about: resolve(__dirname, "src/pages/about.html"),
-        contact: resolve(__dirname, "src/pages/contact.html"),
+        main: resolve(__dirname, 'src/index.html'),
+        properties: resolve(__dirname, 'src/pages/properties.html'),
+        'property-detail': resolve(__dirname, 'src/pages/property-detail.html'),
+        services: resolve(__dirname, 'src/pages/services.html'),
+        about: resolve(__dirname, 'src/pages/about.html'),
+        contact: resolve(__dirname, 'src/pages/contact.html'),
       },
 
       output: {
-        chunkFileNames: "assets/[name]-[hash].js",
-        entryFileNames: "assets/[name]-[hash].js",
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
         assetFileNames: (assetInfo) => {
-          const info = assetInfo.name.split(".");
+          const info = assetInfo.name.split('.');
           const ext = info[info.length - 1];
           if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico)$/i.test(assetInfo.name)) {
             return `assets/images/[name]-[hash].${ext}`;
@@ -52,17 +52,17 @@ export default defineConfig({
     },
 
     // Optimize build
-    target: "es2020",
-    minify: "terser",
+    target: 'es2020',
+    minify: 'terser',
     sourcemap: false,
 
     // Asset handling
     assetsInclude: [
-      "**/*.svg",
-      "**/*.png",
-      "**/*.jpg",
-      "**/*.jpeg",
-      "**/*.gif",
+      '**/*.svg',
+      '**/*.png',
+      '**/*.jpg',
+      '**/*.jpeg',
+      '**/*.gif',
     ],
   },
 
@@ -73,10 +73,10 @@ export default defineConfig({
 
     // Proxy API calls in development
     proxy: {
-      "/api": {
-        target: "http://localhost:8000",
+      '/api': {
+        target: 'http://localhost:8000',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
+        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },
@@ -107,8 +107,8 @@ export default defineConfig({
 
   // Optimization
   optimizeDeps: {
-    include: ["some-large-dependency"],
-    exclude: ["some-dev-dependency"],
+    include: ['some-large-dependency'],
+    exclude: ['some-dev-dependency'],
   },
 });
 ```
@@ -217,16 +217,16 @@ export default defineConfig({
       output: {
         manualChunks: {
           // Vendor chunk for third-party libraries
-          vendor: ["some-library"],
+          vendor: ['some-library'],
 
           // Component chunks
           components: [
-            "src/components/Header/Header.js",
-            "src/components/Footer/Footer.js",
+            'src/components/Header/Header.js',
+            'src/components/Footer/Footer.js',
           ],
 
           // Utility chunks
-          utils: ["src/scripts/utils/dom.js", "src/scripts/utils/fetch.js"],
+          utils: ['src/scripts/utils/dom.js', 'src/scripts/utils/fetch.js'],
         },
       },
     },
@@ -238,13 +238,13 @@ export default defineConfig({
 
 ```javascript
 // scripts/optimize-images.js
-import sharp from "sharp";
-import fs from "fs";
-import path from "path";
+import sharp from 'sharp';
+import fs from 'fs';
+import path from 'path';
 
 const optimizeImages = async () => {
-  const inputDir = "src/assets/images";
-  const outputDir = "public/images";
+  const inputDir = 'src/assets/images';
+  const outputDir = 'public/images';
 
   const processImage = async (inputPath, outputPath) => {
     const image = sharp(inputPath);
@@ -252,9 +252,9 @@ const optimizeImages = async () => {
 
     // Generate multiple sizes
     const sizes = [
-      { suffix: "-small", width: 400 },
-      { suffix: "-medium", width: 800 },
-      { suffix: "-large", width: 1200 },
+      { suffix: '-small', width: 400 },
+      { suffix: '-medium', width: 800 },
+      { suffix: '-large', width: 1200 },
     ];
 
     for (const size of sizes) {
@@ -298,7 +298,7 @@ const optimizeImages = async () => {
   };
 
   await processDirectory(inputDir);
-  console.log("Image optimization complete!");
+  console.log('Image optimization complete!');
 };
 
 optimizeImages().catch(console.error);
@@ -311,17 +311,17 @@ optimizeImages().catch(console.error);
 ```javascript
 export default {
   plugins: {
-    "postcss-import": {},
-    "postcss-custom-properties": {
+    'postcss-import': {},
+    'postcss-custom-properties': {
       preserve: false,
     },
-    "postcss-nesting": {},
+    'postcss-nesting': {},
     autoprefixer: {
-      browsers: ["> 1%", "last 2 versions"],
+      browsers: ['> 1%', 'last 2 versions'],
     },
     cssnano: {
       preset: [
-        "default",
+        'default',
         {
           discardComments: { removeAll: true },
           normalizeWhitespace: true,
@@ -336,25 +336,25 @@ export default {
 
 ```css
 /* src/styles/main.css */
-@import "tokens/colors.css";
-@import "tokens/typography.css";
-@import "tokens/spacing.css";
-@import "tokens/breakpoints.css";
+@import 'tokens/colors.css';
+@import 'tokens/typography.css';
+@import 'tokens/spacing.css';
+@import 'tokens/breakpoints.css';
 
-@import "base/reset.css";
-@import "base/typography.css";
-@import "base/layout.css";
-@import "base/utilities.css";
+@import 'base/reset.css';
+@import 'base/typography.css';
+@import 'base/layout.css';
+@import 'base/utilities.css';
 
-@import "layout/grid.css";
-@import "layout/containers.css";
-@import "layout/sections.css";
+@import 'layout/grid.css';
+@import 'layout/containers.css';
+@import 'layout/sections.css';
 
 /* Page-specific styles */
-@import "pages/home.css";
-@import "pages/properties.css";
-@import "pages/services.css";
-@import "pages/contact.css";
+@import 'pages/home.css';
+@import 'pages/properties.css';
+@import 'pages/services.css';
+@import 'pages/contact.css';
 ```
 
 ## Development Scripts
@@ -363,27 +363,27 @@ export default {
 
 ```javascript
 // scripts/validate-content.js
-import Ajv from "ajv";
-import fs from "fs";
-import path from "path";
-import { glob } from "glob";
+import Ajv from 'ajv';
+import fs from 'fs';
+import path from 'path';
+import { glob } from 'glob';
 
 const ajv = new Ajv({ allErrors: true });
 
 // Define schemas
 const propertySchema = {
-  type: "object",
-  required: ["id", "title", "price", "location"],
+  type: 'object',
+  required: ['id', 'title', 'price', 'location'],
   properties: {
-    id: { type: "string" },
-    title: { type: "string", minLength: 1 },
-    price: { type: "string" },
+    id: { type: 'string' },
+    title: { type: 'string', minLength: 1 },
+    price: { type: 'string' },
     location: {
-      type: "object",
-      required: ["city", "state"],
+      type: 'object',
+      required: ['city', 'state'],
       properties: {
-        city: { type: "string" },
-        state: { type: "string" },
+        city: { type: 'string' },
+        state: { type: 'string' },
       },
     },
   },
@@ -393,11 +393,11 @@ const validateContent = async () => {
   let hasErrors = false;
 
   // Validate all property files
-  const propertyFiles = await glob("public/data/properties/property-*.json");
+  const propertyFiles = await glob('public/data/properties/property-*.json');
 
   for (const file of propertyFiles) {
     try {
-      const content = JSON.parse(fs.readFileSync(file, "utf8"));
+      const content = JSON.parse(fs.readFileSync(file, 'utf8'));
       const valid = ajv.validate(propertySchema, content);
 
       if (!valid) {
@@ -418,7 +418,7 @@ const validateContent = async () => {
   if (hasErrors) {
     process.exit(1);
   } else {
-    console.log("🎉 All content files are valid!");
+    console.log('🎉 All content files are valid!');
   }
 };
 
@@ -429,34 +429,34 @@ validateContent().catch(console.error);
 
 ```javascript
 // scripts/generate-sitemap.js
-import fs from "fs";
-import { glob } from "glob";
+import fs from 'fs';
+import { glob } from 'glob';
 
 const generateSitemap = async () => {
-  const baseUrl = process.env.VITE_SITE_URL || "https://yoursite.com";
+  const baseUrl = process.env.VITE_SITE_URL || 'https://yoursite.com';
   const pages = [];
 
   // Static pages
   const staticPages = [
-    { url: "/", priority: "1.0", changefreq: "weekly" },
-    { url: "/properties", priority: "0.9", changefreq: "daily" },
-    { url: "/services", priority: "0.8", changefreq: "weekly" },
-    { url: "/about", priority: "0.7", changefreq: "monthly" },
-    { url: "/contact", priority: "0.6", changefreq: "monthly" },
+    { url: '/', priority: '1.0', changefreq: 'weekly' },
+    { url: '/properties', priority: '0.9', changefreq: 'daily' },
+    { url: '/services', priority: '0.8', changefreq: 'weekly' },
+    { url: '/about', priority: '0.7', changefreq: 'monthly' },
+    { url: '/contact', priority: '0.6', changefreq: 'monthly' },
   ];
 
   pages.push(...staticPages);
 
   // Dynamic property pages
-  const propertyFiles = await glob("public/data/properties/property-*.json");
+  const propertyFiles = await glob('public/data/properties/property-*.json');
 
   for (const file of propertyFiles) {
-    const property = JSON.parse(fs.readFileSync(file, "utf8"));
+    const property = JSON.parse(fs.readFileSync(file, 'utf8'));
     pages.push({
       url: `/properties/${property.id}`,
-      priority: "0.8",
-      changefreq: "weekly",
-      lastmod: property.updated_date || new Date().toISOString().split("T")[0],
+      priority: '0.8',
+      changefreq: 'weekly',
+      lastmod: property.updated_date || new Date().toISOString().split('T')[0],
     });
   }
 
@@ -469,13 +469,13 @@ ${pages
     <loc>${baseUrl}${page.url}</loc>
     <priority>${page.priority}</priority>
     <changefreq>${page.changefreq}</changefreq>
-    ${page.lastmod ? `<lastmod>${page.lastmod}</lastmod>` : ""}
+    ${page.lastmod ? `<lastmod>${page.lastmod}</lastmod>` : ''}
   </url>`,
   )
-  .join("\n")}
+  .join('\n')}
 </urlset>`;
 
-  fs.writeFileSync("public/sitemap.xml", xml);
+  fs.writeFileSync('public/sitemap.xml', xml);
   console.log(`Generated sitemap with ${pages.length} pages`);
 };
 
@@ -487,15 +487,15 @@ generateSitemap().catch(console.error);
 ### Vitest Configuration (`vitest.config.js`)
 
 ```javascript
-import { defineConfig } from "vitest/config";
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
-    environment: "jsdom",
-    setupFiles: ["./tests/setup.js"],
+    environment: 'jsdom',
+    setupFiles: ['./tests/setup.js'],
     coverage: {
-      reporter: ["text", "html", "lcov"],
-      exclude: ["node_modules/", "dist/", "tests/", "**/*.test.js"],
+      reporter: ['text', 'html', 'lcov'],
+      exclude: ['node_modules/', 'dist/', 'tests/', '**/*.test.js'],
     },
   },
 });
@@ -504,42 +504,42 @@ export default defineConfig({
 ### Playwright Configuration (`playwright.config.js`)
 
 ```javascript
-import { defineConfig, devices } from "@playwright/test";
+import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  testDir: "./tests/e2e",
+  testDir: './tests/e2e',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-  reporter: "html",
+  reporter: 'html',
 
   use: {
-    baseURL: "http://localhost:4173",
-    trace: "on-first-retry",
+    baseURL: 'http://localhost:4173',
+    trace: 'on-first-retry',
   },
 
   projects: [
     {
-      name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
     },
     {
-      name: "firefox",
-      use: { ...devices["Desktop Firefox"] },
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
     },
     {
-      name: "webkit",
-      use: { ...devices["Desktop Safari"] },
+      name: 'webkit',
+      use: { ...devices['Desktop Safari'] },
     },
     {
-      name: "Mobile Chrome",
-      use: { ...devices["Pixel 5"] },
+      name: 'Mobile Chrome',
+      use: { ...devices['Pixel 5'] },
     },
   ],
 
   webServer: {
-    command: "npm run preview",
+    command: 'npm run preview',
     port: 4173,
     reuseExistingServer: !process.env.CI,
   },
@@ -569,8 +569,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
-          cache: "npm"
+          node-version: '18'
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci

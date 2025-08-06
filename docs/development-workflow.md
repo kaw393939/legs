@@ -378,13 +378,13 @@ npm run dead-code
 
 ```javascript
 // Enable debug mode in browser console
-localStorage.setItem("debug", "true");
+localStorage.setItem('debug', 'true');
 
 // Debug specific component
-window.debugComponent = "PropertyCard";
+window.debugComponent = 'PropertyCard';
 
 // View component data
-console.log(document.querySelector("property-card").data);
+console.log(document.querySelector('property-card').data);
 ```
 
 ## Monitoring and Maintenance

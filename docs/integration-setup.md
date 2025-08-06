@@ -57,23 +57,23 @@ touch vite.config.js .gitignore README.md
 ### 1. Vite Configuration (`vite.config.js`)
 
 ```javascript
-import { defineConfig } from "vite";
-import { resolve } from "path";
+import { defineConfig } from 'vite';
+import { resolve } from 'path';
 
 export default defineConfig({
-  root: "src",
-  publicDir: "../public",
+  root: 'src',
+  publicDir: '../public',
 
   build: {
-    outDir: "../dist",
+    outDir: '../dist',
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "src/index.html"),
-        properties: resolve(__dirname, "src/pages/properties.html"),
-        services: resolve(__dirname, "src/pages/services.html"),
-        about: resolve(__dirname, "src/pages/about.html"),
-        contact: resolve(__dirname, "src/pages/contact.html"),
+        main: resolve(__dirname, 'src/index.html'),
+        properties: resolve(__dirname, 'src/pages/properties.html'),
+        services: resolve(__dirname, 'src/pages/services.html'),
+        about: resolve(__dirname, 'src/pages/about.html'),
+        contact: resolve(__dirname, 'src/pages/contact.html'),
       },
     },
   },
@@ -120,16 +120,16 @@ export default {
     es2022: true,
     node: true,
   },
-  extends: ["eslint:recommended"],
+  extends: ['eslint:recommended'],
   parserOptions: {
     ecmaVersion: 2022,
-    sourceType: "module",
+    sourceType: 'module',
   },
   rules: {
-    "no-unused-vars": "warn",
-    "no-console": "warn",
-    "prefer-const": "error",
-    "no-var": "error",
+    'no-unused-vars': 'warn',
+    'no-console': 'warn',
+    'prefer-const': 'error',
+    'no-var': 'error',
   },
 };
 ```
@@ -209,7 +209,7 @@ mkdir -p tests/{unit,e2e}
 export class BaseComponent extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({ mode: 'open' });
     this.data = {};
   }
 
@@ -231,15 +231,15 @@ export class BaseComponent extends HTMLElement {
         this.shadowRoot.innerHTML = template;
       }
     } catch (error) {
-      console.error("Failed to load template:", error);
-      this.shadowRoot.innerHTML = "<div>Component failed to load</div>";
+      console.error('Failed to load template:', error);
+      this.shadowRoot.innerHTML = '<div>Component failed to load</div>';
     }
   }
 
   loadStyles() {
     const componentName = this.constructor.name;
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
     link.href = `/components/${componentName}/${componentName}.css`;
     this.shadowRoot.appendChild(link);
   }
@@ -305,14 +305,14 @@ export class BaseComponent extends HTMLElement {
 
 ```javascript
 // Import components
-import "./components.js";
+import './components.js';
 
 // Import utilities
-import { initializeApp } from "./utils/app.js";
-import { setupAnalytics } from "./utils/analytics.js";
+import { initializeApp } from './utils/app.js';
+import { setupAnalytics } from './utils/analytics.js';
 
 // Initialize application
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   initializeApp();
   setupAnalytics();
 });
@@ -322,27 +322,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
 ```css
 /* Design Tokens */
-@import "tokens/colors.css";
-@import "tokens/typography.css";
-@import "tokens/spacing.css";
-@import "tokens/breakpoints.css";
+@import 'tokens/colors.css';
+@import 'tokens/typography.css';
+@import 'tokens/spacing.css';
+@import 'tokens/breakpoints.css';
 
 /* Base Styles */
-@import "base/reset.css";
-@import "base/typography.css";
-@import "base/layout.css";
-@import "base/utilities.css";
+@import 'base/reset.css';
+@import 'base/typography.css';
+@import 'base/layout.css';
+@import 'base/utilities.css';
 
 /* Layout */
-@import "layout/grid.css";
-@import "layout/containers.css";
-@import "layout/sections.css";
+@import 'layout/grid.css';
+@import 'layout/containers.css';
+@import 'layout/sections.css';
 
 /* Pages */
-@import "pages/home.css";
-@import "pages/properties.css";
-@import "pages/services.css";
-@import "pages/contact.css";
+@import 'pages/home.css';
+@import 'pages/properties.css';
+@import 'pages/services.css';
+@import 'pages/contact.css';
 ```
 
 ## Component Registration System
@@ -351,19 +351,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 ```javascript
 // Import all components
-import "../components/Header/Header.js";
-import "../components/Hero/Hero.js";
-import "../components/PropertyCard/PropertyCard.js";
-import "../components/ContactForm/ContactForm.js";
-import "../components/Footer/Footer.js";
+import '../components/Header/Header.js';
+import '../components/Hero/Hero.js';
+import '../components/PropertyCard/PropertyCard.js';
+import '../components/ContactForm/ContactForm.js';
+import '../components/Footer/Footer.js';
 
 // Component registry for dynamic loading
 export const componentRegistry = {
-  "site-header": () => import("../components/Header/Header.js"),
-  "hero-section": () => import("../components/Hero/Hero.js"),
-  "property-card": () => import("../components/PropertyCard/PropertyCard.js"),
-  "contact-form": () => import("../components/ContactForm/ContactForm.js"),
-  "site-footer": () => import("../components/Footer/Footer.js"),
+  'site-header': () => import('../components/Header/Header.js'),
+  'hero-section': () => import('../components/Hero/Hero.js'),
+  'property-card': () => import('../components/PropertyCard/PropertyCard.js'),
+  'contact-form': () => import('../components/ContactForm/ContactForm.js'),
+  'site-footer': () => import('../components/Footer/Footer.js'),
 };
 
 // Auto-register components when they appear in DOM
@@ -372,7 +372,7 @@ const observer = new MutationObserver((mutations) => {
     mutation.addedNodes.forEach((node) => {
       if (node.nodeType === Node.ELEMENT_NODE) {
         // Check if node or its children contain unregistered components
-        const components = node.querySelectorAll?.("*") || [];
+        const components = node.querySelectorAll?.('*') || [];
         components.forEach((element) => {
           const tagName = element.tagName.toLowerCase();
           if (componentRegistry[tagName] && !customElements.get(tagName)) {
@@ -449,12 +449,12 @@ observer.observe(document.body, {
 ### Content Validation Script (`scripts/validate-content.js`)
 
 ```javascript
-import fs from "fs";
-import path from "path";
+import fs from 'fs';
+import path from 'path';
 
 const validateJSON = (filePath) => {
   try {
-    const content = fs.readFileSync(filePath, "utf8");
+    const content = fs.readFileSync(filePath, 'utf8');
     JSON.parse(content);
     return true;
   } catch (error) {
@@ -464,7 +464,7 @@ const validateJSON = (filePath) => {
 };
 
 const validateContent = async () => {
-  const contentDir = "public/data";
+  const contentDir = 'public/data';
   let isValid = true;
 
   const validateDirectory = (dir) => {
@@ -476,7 +476,7 @@ const validateContent = async () => {
 
       if (stat.isDirectory()) {
         validateDirectory(filePath);
-      } else if (file.endsWith(".json")) {
+      } else if (file.endsWith('.json')) {
         if (!validateJSON(filePath)) {
           isValid = false;
         }
@@ -487,7 +487,7 @@ const validateContent = async () => {
   validateDirectory(contentDir);
 
   if (isValid) {
-    console.log("✅ All content files are valid!");
+    console.log('✅ All content files are valid!');
   } else {
     process.exit(1);
   }
@@ -499,18 +499,18 @@ validateContent().catch(console.error);
 ### Image Optimization Script (`scripts/optimize-images.js`)
 
 ```javascript
-import fs from "fs";
-import path from "path";
+import fs from 'fs';
+import path from 'path';
 
 const optimizeImages = async () => {
-  console.log("🖼️  Starting image optimization...");
+  console.log('🖼️  Starting image optimization...');
 
   // For now, just copy images from src to public
-  const srcDir = "src/assets/images";
-  const destDir = "public/images";
+  const srcDir = 'src/assets/images';
+  const destDir = 'public/images';
 
   if (!fs.existsSync(srcDir)) {
-    console.log("No source images directory found");
+    console.log('No source images directory found');
     return;
   }
 
@@ -536,7 +536,7 @@ const optimizeImages = async () => {
   };
 
   copyDirectory(srcDir, destDir);
-  console.log("✅ Image optimization complete!");
+  console.log('✅ Image optimization complete!');
 };
 
 optimizeImages().catch(console.error);
@@ -547,36 +547,36 @@ optimizeImages().catch(console.error);
 ### Basic Test Setup (`tests/setup.js`)
 
 ```javascript
-import { beforeEach, afterEach } from "vitest";
+import { beforeEach, afterEach } from 'vitest';
 
 // Setup DOM environment
 beforeEach(() => {
-  document.body.innerHTML = "";
+  document.body.innerHTML = '';
 });
 
 afterEach(() => {
-  document.body.innerHTML = "";
+  document.body.innerHTML = '';
 });
 ```
 
 ### Sample Component Test (`tests/unit/Header.test.js`)
 
 ```javascript
-import { describe, it, expect, beforeEach } from "vitest";
-import "../../src/components/Header/Header.js";
+import { describe, it, expect, beforeEach } from 'vitest';
+import '../../src/components/Header/Header.js';
 
-describe("Header Component", () => {
+describe('Header Component', () => {
   beforeEach(() => {
-    document.body.innerHTML = "<site-header></site-header>";
+    document.body.innerHTML = '<site-header></site-header>';
   });
 
-  it("should render header element", () => {
-    const header = document.querySelector("site-header");
+  it('should render header element', () => {
+    const header = document.querySelector('site-header');
     expect(header).toBeTruthy();
   });
 
-  it("should have shadow DOM", () => {
-    const header = document.querySelector("site-header");
+  it('should have shadow DOM', () => {
+    const header = document.querySelector('site-header');
     expect(header.shadowRoot).toBeTruthy();
   });
 });
@@ -606,8 +606,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "18"
-          cache: "npm"
+          node-version: '18'
+          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci

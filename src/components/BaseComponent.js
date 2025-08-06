@@ -1,7 +1,7 @@
 export class BaseComponent extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({ mode: 'open' });
     this.data = {};
   }
 
@@ -22,15 +22,15 @@ export class BaseComponent extends HTMLElement {
       const template = await response.text();
       this.shadowRoot.innerHTML = template;
     } catch (error) {
-      console.error("Failed to load template:", error);
-      this.shadowRoot.innerHTML = "<div>Component failed to load</div>";
+      console.error('Failed to load template:', error);
+      this.shadowRoot.innerHTML = '<div>Component failed to load</div>';
     }
   }
 
   loadStyles() {
     const componentName = this.constructor.name;
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
     link.href = `/components/${componentName}/${componentName}.css`;
     this.shadowRoot.appendChild(link);
   }
@@ -44,7 +44,7 @@ export class BaseComponent extends HTMLElement {
   }
 
   // Utility method for data binding
-  bindData(selector, data, property = "textContent") {
+  bindData(selector, data, property = 'textContent') {
     const element = this.shadowRoot.querySelector(selector);
     if (element && data) {
       element[property] = data;

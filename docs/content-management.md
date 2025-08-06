@@ -472,37 +472,37 @@ The site uses a **file-based content management system** with JSON files that ar
 
 ```javascript
 // scripts/validate-content.js
-import Ajv from "ajv";
-import fs from "fs";
-import path from "path";
+import Ajv from 'ajv';
+import fs from 'fs';
+import path from 'path';
 
 const ajv = new Ajv();
 
 // Property schema
 const propertySchema = {
-  type: "object",
-  required: ["id", "title", "price", "location", "details"],
+  type: 'object',
+  required: ['id', 'title', 'price', 'location', 'details'],
   properties: {
-    id: { type: "string" },
-    title: { type: "string" },
-    price: { type: "string" },
+    id: { type: 'string' },
+    title: { type: 'string' },
+    price: { type: 'string' },
     location: {
-      type: "object",
-      required: ["city", "state"],
+      type: 'object',
+      required: ['city', 'state'],
       properties: {
-        city: { type: "string" },
-        state: { type: "string" },
+        city: { type: 'string' },
+        state: { type: 'string' },
       },
     },
   },
 };
 
 const validateProperties = () => {
-  const propertiesDir = "public/data/properties";
+  const propertiesDir = 'public/data/properties';
   const files = fs.readdirSync(propertiesDir);
 
   files.forEach((file) => {
-    if (file.endsWith(".json") && file !== "properties-list.json") {
+    if (file.endsWith('.json') && file !== 'properties-list.json') {
       const data = JSON.parse(fs.readFileSync(path.join(propertiesDir, file)));
       const valid = ajv.validate(propertySchema, data);
 

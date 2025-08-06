@@ -585,20 +585,20 @@ img {
 
 /* Responsive background images */
 .hero-section {
-  background-image: url("hero-mobile.jpg");
+  background-image: url('hero-mobile.jpg');
   background-size: cover;
   background-position: center;
 }
 
 @media (min-width: 52.36rem) {
   .hero-section {
-    background-image: url("hero-tablet.jpg");
+    background-image: url('hero-tablet.jpg');
   }
 }
 
 @media (min-width: 84.72rem) {
   .hero-section {
-    background-image: url("hero-desktop.jpg");
+    background-image: url('hero-desktop.jpg');
   }
 }
 ```
@@ -828,30 +828,30 @@ Priority 3 (Nice to test):
 
 ```javascript
 // Responsive testing with Playwright
-const { test, expect } = require("@playwright/test");
+const { test, expect } = require('@playwright/test');
 
-test("responsive layout adapts correctly", async ({ page }) => {
-  await page.goto("/");
+test('responsive layout adapts correctly', async ({ page }) => {
+  await page.goto('/');
 
   // Mobile
   await page.setViewportSize({ width: 320, height: 568 });
-  await expect(page.locator(".hero__container")).toHaveCSS(
-    "grid-template-columns",
-    "1fr",
+  await expect(page.locator('.hero__container')).toHaveCSS(
+    'grid-template-columns',
+    '1fr',
   );
 
   // Tablet
   await page.setViewportSize({ width: 838, height: 1112 });
-  await expect(page.locator(".hero__container")).toHaveCSS(
-    "grid-template-columns",
-    "45fr 55fr",
+  await expect(page.locator('.hero__container')).toHaveCSS(
+    'grid-template-columns',
+    '45fr 55fr',
   );
 
   // Desktop
   await page.setViewportSize({ width: 1356, height: 768 });
-  await expect(page.locator(".hero__container")).toHaveCSS(
-    "grid-template-columns",
-    "38.2fr 61.8fr",
+  await expect(page.locator('.hero__container')).toHaveCSS(
+    'grid-template-columns',
+    '38.2fr 61.8fr',
   );
 });
 ```
@@ -889,12 +889,12 @@ test("responsive layout adapts correctly", async ({ page }) => {
 
 ```javascript
 // Load polyfills only when needed
-if (!CSS.supports("aspect-ratio", "16/9")) {
-  import("./polyfills/aspect-ratio-polyfill.js");
+if (!CSS.supports('aspect-ratio', '16/9')) {
+  import('./polyfills/aspect-ratio-polyfill.js');
 }
 
-if (!CSS.supports("container-type", "inline-size")) {
-  import("./polyfills/container-queries-polyfill.js");
+if (!CSS.supports('container-type', 'inline-size')) {
+  import('./polyfills/container-queries-polyfill.js');
 }
 ```
 

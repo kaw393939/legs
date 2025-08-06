@@ -1,24 +1,24 @@
 export const initializeApp = () => {
-  console.log("🚀 App initialized");
+  console.log('🚀 App initialized');
 
   // Set up global error handling
-  window.addEventListener("error", (event) => {
-    console.error("Global error:", event.error);
+  window.addEventListener('error', (event) => {
+    console.error('Global error:', event.error);
   });
 
   // Set up unhandled promise rejection handling
-  window.addEventListener("unhandledrejection", (event) => {
-    console.error("Unhandled promise rejection:", event.reason);
+  window.addEventListener('unhandledrejection', (event) => {
+    console.error('Unhandled promise rejection:', event.reason);
   });
 
   // Initialize smooth scrolling for anchor links
-  document.addEventListener("click", (event) => {
+  document.addEventListener('click', (event) => {
     const target = event.target.closest('a[href^="#"]');
     if (target) {
       event.preventDefault();
-      const element = document.querySelector(target.getAttribute("href"));
+      const element = document.querySelector(target.getAttribute('href'));
       if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+        element.scrollIntoView({ behavior: 'smooth' });
       }
     }
   });

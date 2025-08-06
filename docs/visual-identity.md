@@ -259,16 +259,16 @@ Each step: previous size × φ or previous size ÷ φ
 
 ```css
 /* Google Fonts Implementation */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap');
 
 /* Font Face Declarations */
 body {
   font-family:
-    "Inter",
+    'Inter',
     -apple-system,
     BlinkMacSystemFont,
-    "Segoe UI",
-    "Helvetica Neue",
+    'Segoe UI',
+    'Helvetica Neue',
     Arial,
     sans-serif;
   font-weight: 400;
@@ -278,7 +278,7 @@ body {
 /* Fallback Stack */
 .font-fallback {
   font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
 }
 ```
 
@@ -289,7 +289,7 @@ body {
 h1,
 .text-display {
   font:
-    700 var(--fs-display-fluid) / var(--lh-tight) "Inter",
+    700 var(--fs-display-fluid) / var(--lh-tight) 'Inter',
     sans-serif;
   margin-bottom: var(--space-2xl);
 }
@@ -297,7 +297,7 @@ h1,
 h2,
 .text-h1 {
   font:
-    700 var(--fs-h1-fluid) / var(--lh-tight) "Inter",
+    700 var(--fs-h1-fluid) / var(--lh-tight) 'Inter',
     sans-serif;
   margin-bottom: var(--space-xl);
 }
@@ -305,7 +305,7 @@ h2,
 h3,
 .text-h2 {
   font:
-    600 var(--fs-h2-fluid) / var(--lh-tight) "Inter",
+    600 var(--fs-h2-fluid) / var(--lh-tight) 'Inter',
     sans-serif;
   margin-bottom: var(--space-lg);
 }
@@ -313,7 +313,7 @@ h3,
 h4,
 .text-h3 {
   font:
-    600 var(--fs-h3-fluid) / var(--lh-normal) "Inter",
+    600 var(--fs-h3-fluid) / var(--lh-normal) 'Inter',
     sans-serif;
   margin-bottom: var(--space-md);
 }
@@ -322,40 +322,40 @@ h4,
 p,
 .text-body {
   font:
-    400 var(--fs-body) / var(--lh-normal) "Inter",
+    400 var(--fs-body) / var(--lh-normal) 'Inter',
     sans-serif;
   margin-bottom: var(--space-lg);
 }
 
 .text-lead {
   font:
-    400 var(--fs-body-lg) / var(--lh-normal) "Inter",
+    400 var(--fs-body-lg) / var(--lh-normal) 'Inter',
     sans-serif;
   margin-bottom: var(--space-xl);
 }
 
 .text-small {
   font:
-    400 var(--fs-body-sm) / var(--lh-normal) "Inter",
+    400 var(--fs-body-sm) / var(--lh-normal) 'Inter',
     sans-serif;
 }
 
 .text-caption {
   font:
-    400 var(--fs-caption) / var(--lh-loose) "Inter",
+    400 var(--fs-caption) / var(--lh-loose) 'Inter',
     sans-serif;
 }
 
 /* Elegant Typography (Playfair) */
 .text-elegant {
   font:
-    400 var(--fs-h2) / var(--lh-tight) "Playfair Display",
+    400 var(--fs-h2) / var(--lh-tight) 'Playfair Display',
     serif;
 }
 
 .text-elegant-bold {
   font:
-    700 var(--fs-h1) / var(--lh-tight) "Playfair Display",
+    700 var(--fs-h1) / var(--lh-tight) 'Playfair Display',
     serif;
 }
 ```
@@ -497,7 +497,7 @@ Golden Ratio Inverse: φ⁻¹ = 0.618033988749895
   border: none;
   border-radius: var(--space-sm);
   font:
-    600 var(--fs-body) / var(--lh-tight) "Inter",
+    600 var(--fs-body) / var(--lh-tight) 'Inter',
     sans-serif;
   cursor: pointer;
 
@@ -593,7 +593,7 @@ Golden Ratio Inverse: φ⁻¹ = 0.618033988749895
   display: block;
   margin-bottom: var(--space-sm);
   font:
-    600 var(--fs-body-sm) / var(--lh-normal) "Inter",
+    600 var(--fs-body-sm) / var(--lh-normal) 'Inter',
     sans-serif;
   color: var(--text-primary);
 }
@@ -604,7 +604,7 @@ Golden Ratio Inverse: φ⁻¹ = 0.618033988749895
   border: 2px solid var(--sand-medium);
   border-radius: var(--space-sm);
   font:
-    400 var(--fs-body) / var(--lh-normal) "Inter",
+    400 var(--fs-body) / var(--lh-normal) 'Inter',
     sans-serif;
   transition: all var(--timing-normal) ease;
 
@@ -641,7 +641,7 @@ Golden Ratio Inverse: φ⁻¹ = 0.618033988749895
   margin: 0 var(--space-xs);
   border-radius: var(--space-xs);
   font:
-    500 var(--fs-body) / var(--lh-normal) "Inter",
+    500 var(--fs-body) / var(--lh-normal) 'Inter',
     sans-serif;
   color: var(--text-primary);
   text-decoration: none;

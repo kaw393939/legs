@@ -1,7 +1,7 @@
 // Test setup file
-import { beforeEach } from "vitest";
+import { beforeEach } from 'vitest';
 
 beforeEach(() => {
   // Clear DOM between tests
-  document.body.innerHTML = "";
+  document.body.innerHTML = '';
 });

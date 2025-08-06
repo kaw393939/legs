@@ -102,7 +102,7 @@
 }
 
 .property-location::before {
-  content: "📍";
+  content: '📍';
   margin-right: 0.5rem;
 }
 
@@ -156,7 +156,7 @@
 }
 
 .property-features li::before {
-  content: "✓";
+  content: '✓';
   color: #48bb78;
   font-weight: bold;
   margin-right: 0.75rem;

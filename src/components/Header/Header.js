@@ -1,36 +1,36 @@
-import { BaseComponent } from "../BaseComponent.js";
+import { BaseComponent } from '../BaseComponent.js';
 
 export class Header extends BaseComponent {
   static get observedAttributes() {
-    return ["variant", "transparent"];
+    return ['variant', 'transparent'];
   }
 
   async updateContent() {
     try {
-      const response = await fetch("/data/navigation.json");
+      const response = await fetch('/data/navigation.json');
       const navigationData = await response.json();
       this.renderNavigation(navigationData.main);
     } catch (error) {
-      console.error("Failed to load navigation data:", error);
+      console.error('Failed to load navigation data:', error);
     }
   }
 
   renderNavigation(navItems) {
-    const nav = this.shadowRoot.querySelector(".nav-links");
+    const nav = this.shadowRoot.querySelector('.nav-links');
     if (!nav) return;
 
-    nav.innerHTML = "";
+    nav.innerHTML = '';
     navItems.forEach((item) => {
-      const link = document.createElement("a");
+      const link = document.createElement('a');
       link.href = item.url;
       link.textContent = item.label;
-      link.className = "nav-link";
+      link.className = 'nav-link';
 
       if (item.dropdown) {
-        link.classList.add("has-dropdown");
+        link.classList.add('has-dropdown');
         const dropdown = this.createDropdown(item.dropdown);
-        const wrapper = document.createElement("div");
-        wrapper.className = "nav-item-wrapper";
+        const wrapper = document.createElement('div');
+        wrapper.className = 'nav-item-wrapper';
         wrapper.appendChild(link);
         wrapper.appendChild(dropdown);
         nav.appendChild(wrapper);
@@ -41,14 +41,14 @@ export class Header extends BaseComponent {
   }
 
   createDropdown(items) {
-    const dropdown = document.createElement("div");
-    dropdown.className = "dropdown-menu";
+    const dropdown = document.createElement('div');
+    dropdown.className = 'dropdown-menu';
 
     items.forEach((item) => {
-      const link = document.createElement("a");
+      const link = document.createElement('a');
       link.href = item.url;
       link.textContent = item.label;
-      link.className = "dropdown-link";
+      link.className = 'dropdown-link';
       dropdown.appendChild(link);
     });
 
@@ -56,22 +56,22 @@ export class Header extends BaseComponent {
   }
 
   bindEvents() {
-    const mobileToggle = this.shadowRoot.querySelector(".mobile-toggle");
-    const mobileMenu = this.shadowRoot.querySelector(".mobile-menu");
+    const mobileToggle = this.shadowRoot.querySelector('.mobile-toggle');
+    const mobileMenu = this.shadowRoot.querySelector('.mobile-menu');
 
     if (mobileToggle && mobileMenu) {
-      mobileToggle.addEventListener("click", () => {
-        mobileMenu.classList.toggle("active");
+      mobileToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
       });
     }
 
     // Close mobile menu when clicking outside
-    document.addEventListener("click", (event) => {
+    document.addEventListener('click', (event) => {
       if (!this.contains(event.target)) {
-        mobileMenu?.classList.remove("active");
+        mobileMenu?.classList.remove('active');
       }
     });
   }
 }
 
-customElements.define("site-header", Header);
+customElements.define('site-header', Header);

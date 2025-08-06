@@ -24,7 +24,7 @@ Each component follows a consistent pattern:
 export class BaseComponent extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
+    this.attachShadow({ mode: 'open' });
     this.data = {};
   }
 
@@ -45,15 +45,15 @@ export class BaseComponent extends HTMLElement {
       const template = await response.text();
       this.shadowRoot.innerHTML = template;
     } catch (error) {
-      console.error("Failed to load template:", error);
-      this.shadowRoot.innerHTML = "<div>Component failed to load</div>";
+      console.error('Failed to load template:', error);
+      this.shadowRoot.innerHTML = '<div>Component failed to load</div>';
     }
   }
 
   loadStyles() {
     const componentName = this.constructor.name;
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
     link.href = `/components/${componentName}/${componentName}.css`;
     this.shadowRoot.appendChild(link);
   }
@@ -67,7 +67,7 @@ export class BaseComponent extends HTMLElement {
   }
 
   // Utility method for data binding
-  bindData(selector, data, property = "textContent") {
+  bindData(selector, data, property = 'textContent') {
     const element = this.shadowRoot.querySelector(selector);
     if (element && data) {
       element[property] = data;
@@ -92,39 +92,39 @@ export class BaseComponent extends HTMLElement {
 
 ```javascript
 // /src/components/Header/Header.js
-import { BaseComponent } from "../BaseComponent.js";
+import { BaseComponent } from '../BaseComponent.js';
 
 export class Header extends BaseComponent {
   static get observedAttributes() {
-    return ["variant", "transparent"];
+    return ['variant', 'transparent'];
   }
 
   async updateContent() {
     try {
-      const response = await fetch("/data/navigation.json");
+      const response = await fetch('/data/navigation.json');
       const navigationData = await response.json();
       this.renderNavigation(navigationData.main);
     } catch (error) {
-      console.error("Failed to load navigation data:", error);
+      console.error('Failed to load navigation data:', error);
     }
   }
 
   renderNavigation(navItems) {
-    const nav = this.shadowRoot.querySelector(".nav-links");
+    const nav = this.shadowRoot.querySelector('.nav-links');
     if (!nav) return;
 
-    nav.innerHTML = "";
+    nav.innerHTML = '';
     navItems.forEach((item) => {
-      const link = document.createElement("a");
+      const link = document.createElement('a');
       link.href = item.url;
       link.textContent = item.label;
-      link.className = "nav-link";
+      link.className = 'nav-link';
 
       if (item.dropdown) {
-        link.classList.add("has-dropdown");
+        link.classList.add('has-dropdown');
         const dropdown = this.createDropdown(item.dropdown);
-        const wrapper = document.createElement("div");
-        wrapper.className = "nav-item-wrapper";
+        const wrapper = document.createElement('div');
+        wrapper.className = 'nav-item-wrapper';
         wrapper.appendChild(link);
         wrapper.appendChild(dropdown);
         nav.appendChild(wrapper);
@@ -135,14 +135,14 @@ export class Header extends BaseComponent {
   }
 
   createDropdown(items) {
-    const dropdown = document.createElement("div");
-    dropdown.className = "dropdown-menu";
+    const dropdown = document.createElement('div');
+    dropdown.className = 'dropdown-menu';
 
     items.forEach((item) => {
-      const link = document.createElement("a");
+      const link = document.createElement('a');
       link.href = item.url;
       link.textContent = item.label;
-      link.className = "dropdown-link";
+      link.className = 'dropdown-link';
       dropdown.appendChild(link);
     });
 
@@ -150,40 +150,40 @@ export class Header extends BaseComponent {
   }
 
   bindEvents() {
-    const mobileToggle = this.shadowRoot.querySelector(".mobile-toggle");
-    const mobileMenu = this.shadowRoot.querySelector(".mobile-menu");
+    const mobileToggle = this.shadowRoot.querySelector('.mobile-toggle');
+    const mobileMenu = this.shadowRoot.querySelector('.mobile-menu');
 
     if (mobileToggle && mobileMenu) {
-      mobileToggle.addEventListener("click", () => {
-        mobileMenu.classList.toggle("active");
+      mobileToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
       });
     }
 
     // Close mobile menu when clicking outside
-    document.addEventListener("click", (event) => {
+    document.addEventListener('click', (event) => {
       if (!this.contains(event.target)) {
-        mobileMenu?.classList.remove("active");
+        mobileMenu?.classList.remove('active');
       }
     });
   }
 }
 
-customElements.define("site-header", Header);
+customElements.define('site-header', Header);
 ```
 
 ### Hero Component
 
 ```javascript
 // /src/components/Hero/Hero.js
-import { BaseComponent } from "../BaseComponent.js";
+import { BaseComponent } from '../BaseComponent.js';
 
 export class Hero extends BaseComponent {
   static get observedAttributes() {
-    return ["page", "variant"];
+    return ['page', 'variant'];
   }
 
   get page() {
-    return this.getAttribute("page") || "home";
+    return this.getAttribute('page') || 'home';
   }
 
   async updateContent() {
@@ -195,49 +195,49 @@ export class Hero extends BaseComponent {
         this.renderHero(pageData.hero);
       }
     } catch (error) {
-      console.error("Failed to load hero data:", error);
+      console.error('Failed to load hero data:', error);
     }
   }
 
   renderHero(heroData) {
-    this.bindData(".hero-headline", heroData.headline);
-    this.bindData(".hero-subheadline", heroData.subheadline);
+    this.bindData('.hero-headline', heroData.headline);
+    this.bindData('.hero-subheadline', heroData.subheadline);
 
-    const primaryCTA = this.shadowRoot.querySelector(".cta-primary");
+    const primaryCTA = this.shadowRoot.querySelector('.cta-primary');
     if (primaryCTA && heroData.cta_primary) {
       primaryCTA.textContent = heroData.cta_primary.text;
       primaryCTA.href = heroData.cta_primary.url;
     }
 
-    const secondaryCTA = this.shadowRoot.querySelector(".cta-secondary");
+    const secondaryCTA = this.shadowRoot.querySelector('.cta-secondary');
     if (secondaryCTA && heroData.cta_secondary) {
       secondaryCTA.textContent = heroData.cta_secondary.text;
       secondaryCTA.href = heroData.cta_secondary.url;
     }
 
-    const bgImage = this.shadowRoot.querySelector(".hero-background");
+    const bgImage = this.shadowRoot.querySelector('.hero-background');
     if (bgImage && heroData.background_image) {
       bgImage.style.backgroundImage = `url(${heroData.background_image})`;
     }
   }
 }
 
-customElements.define("hero-section", Hero);
+customElements.define('hero-section', Hero);
 ```
 
 ### Property Card Component
 
 ```javascript
 // /src/components/PropertyCard/PropertyCard.js
-import { BaseComponent } from "../BaseComponent.js";
+import { BaseComponent } from '../BaseComponent.js';
 
 export class PropertyCard extends BaseComponent {
   static get observedAttributes() {
-    return ["property-id", "variant"];
+    return ['property-id', 'variant'];
   }
 
   get propertyId() {
-    return this.getAttribute("property-id");
+    return this.getAttribute('property-id');
   }
 
   async updateContent() {
@@ -247,7 +247,7 @@ export class PropertyCard extends BaseComponent {
       const propertyData = await this.fetchPropertyData(this.propertyId);
       this.populateTemplate(propertyData);
     } catch (error) {
-      console.error("Failed to load property data:", error);
+      console.error('Failed to load property data:', error);
       this.showError();
     }
   }
@@ -261,21 +261,21 @@ export class PropertyCard extends BaseComponent {
   }
 
   populateTemplate(data) {
-    this.bindData(".property-title", data.title);
-    this.bindData(".property-price", data.price);
-    this.bindData(".property-location", data.location);
-    this.bindData(".property-description", data.description);
-    this.bindData(".property-bedrooms", data.bedrooms);
-    this.bindData(".property-bathrooms", data.bathrooms);
-    this.bindData(".property-sqft", data.sqft);
+    this.bindData('.property-title', data.title);
+    this.bindData('.property-price', data.price);
+    this.bindData('.property-location', data.location);
+    this.bindData('.property-description', data.description);
+    this.bindData('.property-bedrooms', data.bedrooms);
+    this.bindData('.property-bathrooms', data.bathrooms);
+    this.bindData('.property-sqft', data.sqft);
 
-    const image = this.shadowRoot.querySelector(".property-image");
+    const image = this.shadowRoot.querySelector('.property-image');
     if (image && data.images && data.images.length > 0) {
       image.src = data.images[0];
       image.alt = data.title;
     }
 
-    const statusBadge = this.shadowRoot.querySelector(".property-status");
+    const statusBadge = this.shadowRoot.querySelector('.property-status');
     if (statusBadge) {
       statusBadge.textContent = data.status;
       statusBadge.className = `property-status status-${data.status}`;
@@ -286,12 +286,12 @@ export class PropertyCard extends BaseComponent {
   }
 
   renderFeatures(features) {
-    const featuresList = this.shadowRoot.querySelector(".property-features");
+    const featuresList = this.shadowRoot.querySelector('.property-features');
     if (!featuresList || !features) return;
 
-    featuresList.innerHTML = "";
+    featuresList.innerHTML = '';
     features.forEach((feature) => {
-      const li = document.createElement("li");
+      const li = document.createElement('li');
       li.textContent = feature;
       featuresList.appendChild(li);
     });
@@ -300,9 +300,9 @@ export class PropertyCard extends BaseComponent {
   renderInvestmentData(investmentData) {
     if (!investmentData) return;
 
-    this.bindData(".cap-rate", investmentData.cap_rate);
-    this.bindData(".rental-income", investmentData.rental_income);
-    this.bindData(".roi-projection", investmentData.roi_projection);
+    this.bindData('.cap-rate', investmentData.cap_rate);
+    this.bindData('.rental-income', investmentData.rental_income);
+    this.bindData('.roi-projection', investmentData.roi_projection);
   }
 
   showError() {
@@ -314,9 +314,9 @@ export class PropertyCard extends BaseComponent {
   }
 
   bindEvents() {
-    const card = this.shadowRoot.querySelector(".property-card");
+    const card = this.shadowRoot.querySelector('.property-card');
     if (card) {
-      card.addEventListener("click", () => {
+      card.addEventListener('click', () => {
         if (this.propertyId) {
           window.location.href = `/properties/${this.propertyId}`;
         }
@@ -325,24 +325,24 @@ export class PropertyCard extends BaseComponent {
   }
 }
 
-customElements.define("property-card", PropertyCard);
+customElements.define('property-card', PropertyCard);
 ```
 
 ### Contact Form Component
 
 ```javascript
 // /src/components/ContactForm/ContactForm.js
-import { BaseComponent } from "../BaseComponent.js";
+import { BaseComponent } from '../BaseComponent.js';
 
 export class ContactForm extends BaseComponent {
   static get observedAttributes() {
-    return ["form-type", "property-id"];
+    return ['form-type', 'property-id'];
   }
 
   bindEvents() {
-    const form = this.shadowRoot.querySelector(".contact-form");
+    const form = this.shadowRoot.querySelector('.contact-form');
     if (form) {
-      form.addEventListener("submit", this.handleSubmit.bind(this));
+      form.addEventListener('submit', this.handleSubmit.bind(this));
     }
   }
 
@@ -354,8 +354,8 @@ export class ContactForm extends BaseComponent {
     const data = Object.fromEntries(formData.entries());
 
     // Add property ID if this is a property inquiry
-    if (this.getAttribute("property-id")) {
-      data.propertyId = this.getAttribute("property-id");
+    if (this.getAttribute('property-id')) {
+      data.propertyId = this.getAttribute('property-id');
     }
 
     try {
@@ -363,67 +363,67 @@ export class ContactForm extends BaseComponent {
       await this.submitForm(data);
       this.showSuccess();
     } catch (error) {
-      console.error("Form submission failed:", error);
+      console.error('Form submission failed:', error);
       this.showError(error.message);
     }
   }
 
   async submitForm(data) {
     // This would connect to your backend API
-    const response = await fetch("/api/contact", {
-      method: "POST",
+    const response = await fetch('/api/contact', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     });
 
     if (!response.ok) {
-      throw new Error("Failed to submit form");
+      throw new Error('Failed to submit form');
     }
 
     return response.json();
   }
 
   showLoading() {
-    const submitBtn = this.shadowRoot.querySelector(".submit-btn");
+    const submitBtn = this.shadowRoot.querySelector('.submit-btn');
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.textContent = "Sending...";
+      submitBtn.textContent = 'Sending...';
     }
   }
 
   showSuccess() {
-    const form = this.shadowRoot.querySelector(".contact-form");
-    const message = this.shadowRoot.querySelector(".form-message");
+    const form = this.shadowRoot.querySelector('.contact-form');
+    const message = this.shadowRoot.querySelector('.form-message');
 
-    if (form) form.style.display = "none";
+    if (form) form.style.display = 'none';
     if (message) {
       message.textContent =
-        "Thank you! Your message has been sent successfully.";
-      message.className = "form-message success";
-      message.style.display = "block";
+        'Thank you! Your message has been sent successfully.';
+      message.className = 'form-message success';
+      message.style.display = 'block';
     }
   }
 
   showError(errorMessage) {
-    const submitBtn = this.shadowRoot.querySelector(".submit-btn");
-    const message = this.shadowRoot.querySelector(".form-message");
+    const submitBtn = this.shadowRoot.querySelector('.submit-btn');
+    const message = this.shadowRoot.querySelector('.form-message');
 
     if (submitBtn) {
       submitBtn.disabled = false;
-      submitBtn.textContent = "Send Message";
+      submitBtn.textContent = 'Send Message';
     }
 
     if (message) {
       message.textContent = `Error: ${errorMessage}`;
-      message.className = "form-message error";
-      message.style.display = "block";
+      message.className = 'form-message error';
+      message.style.display = 'block';
     }
   }
 }
 
-customElements.define("contact-form", ContactForm);
+customElements.define('contact-form', ContactForm);
 ```
 
 ## Content Management Integration
@@ -441,11 +441,11 @@ All components are automatically registered when their modules are imported:
 
 ```javascript
 // /src/scripts/components.js
-import "./components/Header/Header.js";
-import "./components/Hero/Hero.js";
-import "./components/PropertyCard/PropertyCard.js";
-import "./components/ContactForm/ContactForm.js";
-import "./components/Footer/Footer.js";
+import './components/Header/Header.js';
+import './components/Hero/Hero.js';
+import './components/PropertyCard/PropertyCard.js';
+import './components/ContactForm/ContactForm.js';
+import './components/Footer/Footer.js';
 ```
 
 ## Testing Strategy

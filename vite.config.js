@@ -1,29 +1,43 @@
-import { defineConfig } from "vite";
-import { resolve } from "path";
+import { defineConfig } from 'vite';
+import { resolve } from 'path';
 
 export default defineConfig(({ mode }) => {
-  const isProduction = mode === "production";
-  const base = isProduction ? "/legs/" : "/";
+  const isProduction = mode === 'production';
+  const base = isProduction ? '/legs/' : '/';
 
   return {
     base,
-    root: "src",
-    publicDir: "../public",
+    root: 'src',
+    publicDir: '../public',
 
     build: {
-      outDir: "../dist",
+      outDir: '../dist',
       emptyOutDir: true,
 
       rollupOptions: {
         input: {
-          main: resolve(__dirname, "src/index.html"),
+          main: resolve(__dirname, 'src/index.html'),
+          properties: resolve(__dirname, 'src/properties.html'),
+          contact: resolve(__dirname, 'src/contact.html'),
+          propertyManagement: resolve(
+            __dirname,
+            'src/services/property-management.html',
+          ),
+          investmentAnalysis: resolve(
+            __dirname,
+            'src/services/investment-analysis.html',
+          ),
+          marketResearch: resolve(
+            __dirname,
+            'src/services/market-research.html',
+          ),
         },
 
         output: {
-          chunkFileNames: "assets/[name]-[hash].js",
-          entryFileNames: "assets/[name]-[hash].js",
+          chunkFileNames: 'assets/[name]-[hash].js',
+          entryFileNames: 'assets/[name]-[hash].js',
           assetFileNames: (assetInfo) => {
-            const info = assetInfo.name.split(".");
+            const info = assetInfo.name.split('.');
             const ext = info[info.length - 1];
             if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico)$/i.test(assetInfo.name)) {
               return `assets/images/[name]-[hash].${ext}`;
@@ -37,17 +51,17 @@ export default defineConfig(({ mode }) => {
       },
 
       // Optimize build
-      target: "es2020",
-      minify: "terser",
+      target: 'es2020',
+      minify: 'terser',
       sourcemap: false,
 
       // Asset handling
       assetsInclude: [
-        "**/*.svg",
-        "**/*.png",
-        "**/*.jpg",
-        "**/*.jpeg",
-        "**/*.gif",
+        '**/*.svg',
+        '**/*.png',
+        '**/*.jpg',
+        '**/*.jpeg',
+        '**/*.gif',
       ],
     },
 
@@ -58,10 +72,10 @@ export default defineConfig(({ mode }) => {
 
       // Proxy API calls in development
       proxy: {
-        "/api": {
-          target: "http://localhost:8000",
+        '/api': {
+          target: 'http://localhost:8000',
           changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, ""),
+          rewrite: (path) => path.replace(/^\/api/, ''),
         },
       },
     },

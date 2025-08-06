@@ -1,12 +1,12 @@
-import { BaseComponent } from "../BaseComponent.js";
+import { BaseComponent } from '../BaseComponent.js';
 
 export class PropertyCard extends BaseComponent {
   static get observedAttributes() {
-    return ["property-id", "variant"];
+    return ['property-id', 'variant'];
   }
 
   get propertyId() {
-    return this.getAttribute("property-id");
+    return this.getAttribute('property-id');
   }
 
   async updateContent() {
@@ -16,7 +16,7 @@ export class PropertyCard extends BaseComponent {
       const propertyData = await this.fetchPropertyData(this.propertyId);
       this.populateTemplate(propertyData);
     } catch (error) {
-      console.error("Failed to load property data:", error);
+      console.error('Failed to load property data:', error);
       this.showError();
     }
   }
@@ -30,24 +30,24 @@ export class PropertyCard extends BaseComponent {
   }
 
   populateTemplate(data) {
-    this.bindData(".property-title", data.title);
-    this.bindData(".property-price", data.price);
+    this.bindData('.property-title', data.title);
+    this.bindData('.property-price', data.price);
     this.bindData(
-      ".property-location",
-      data.location.city + ", " + data.location.state,
+      '.property-location',
+      data.location.city + ', ' + data.location.state,
     );
-    this.bindData(".property-description", data.description);
-    this.bindData(".property-bedrooms", data.details.bedrooms);
-    this.bindData(".property-bathrooms", data.details.bathrooms);
-    this.bindData(".property-sqft", data.details.sqft.toLocaleString());
+    this.bindData('.property-description', data.description);
+    this.bindData('.property-bedrooms', data.details.bedrooms);
+    this.bindData('.property-bathrooms', data.details.bathrooms);
+    this.bindData('.property-sqft', data.details.sqft.toLocaleString());
 
-    const image = this.shadowRoot.querySelector(".property-image");
+    const image = this.shadowRoot.querySelector('.property-image');
     if (image && data.images && data.images.length > 0) {
       image.src = data.images[0];
       image.alt = data.title;
     }
 
-    const statusBadge = this.shadowRoot.querySelector(".property-status");
+    const statusBadge = this.shadowRoot.querySelector('.property-status');
     if (statusBadge) {
       statusBadge.textContent = data.status;
       statusBadge.className = `property-status status-${data.status}`;
@@ -58,12 +58,12 @@ export class PropertyCard extends BaseComponent {
   }
 
   renderFeatures(features) {
-    const featuresList = this.shadowRoot.querySelector(".property-features");
+    const featuresList = this.shadowRoot.querySelector('.property-features');
     if (!featuresList || !features) return;
 
-    featuresList.innerHTML = "";
+    featuresList.innerHTML = '';
     features.slice(0, 3).forEach((feature) => {
-      const li = document.createElement("li");
+      const li = document.createElement('li');
       li.textContent = feature;
       featuresList.appendChild(li);
     });
@@ -72,9 +72,9 @@ export class PropertyCard extends BaseComponent {
   renderInvestmentData(investmentData) {
     if (!investmentData) return;
 
-    this.bindData(".cap-rate", investmentData.cap_rate);
-    this.bindData(".rental-income", investmentData.rental_income);
-    this.bindData(".roi-projection", investmentData.roi_projection);
+    this.bindData('.cap-rate', investmentData.cap_rate);
+    this.bindData('.rental-income', investmentData.rental_income);
+    this.bindData('.roi-projection', investmentData.roi_projection);
   }
 
   showError() {
@@ -86,9 +86,9 @@ export class PropertyCard extends BaseComponent {
   }
 
   bindEvents() {
-    const card = this.shadowRoot.querySelector(".property-card");
+    const card = this.shadowRoot.querySelector('.property-card');
     if (card) {
-      card.addEventListener("click", () => {
+      card.addEventListener('click', () => {
         if (this.propertyId) {
           window.location.href = `/properties/${this.propertyId}`;
         }
@@ -97,4 +97,4 @@ export class PropertyCard extends BaseComponent {
   }
 }
 
-customElements.define("property-card", PropertyCard);
+customElements.define('property-card', PropertyCard);

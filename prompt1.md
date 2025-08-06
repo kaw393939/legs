@@ -68,7 +68,7 @@ name: CI
 on:
   push:
     branches:
-      - "main"
+      - 'main'
   pull_request:
 
 permissions:
@@ -77,7 +77,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
 
 jobs:
@@ -114,7 +114,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "./src"
+          path: './src'
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'

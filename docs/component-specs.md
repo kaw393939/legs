@@ -109,7 +109,7 @@ Mobile Menu:
 }
 
 .header__nav-item--active::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -1px;
   left: 0;
@@ -374,7 +374,7 @@ Interaction:
 }
 
 .service-card__benefit::before {
-  content: "✓";
+  content: '✓';
   position: absolute;
   left: 0;
   color: var(--color-brand-blue);
@@ -634,7 +634,7 @@ Validation:
 }
 
 .form-label--required::after {
-  content: " *";
+  content: ' *';
   color: var(--color-error);
 }
 
@@ -859,7 +859,7 @@ Sizes:
 }
 
 .btn--loading::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 16px;
   height: 16px;
@@ -1022,7 +1022,7 @@ Home > Services > Property Management
 }
 
 .breadcrumb__item:not(:last-child)::after {
-  content: ">";
+  content: '>';
   margin: 0 var(--space-sm);
   color: var(--color-text-muted);
 }

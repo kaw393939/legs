@@ -1,4 +1,4 @@
-import { BaseComponent } from "../BaseComponent.js";
+import { BaseComponent } from '../BaseComponent.js';
 
 export class Footer extends BaseComponent {
   async updateContent() {
@@ -26,4 +26,4 @@ export class Footer extends BaseComponent {
   }
 }
 
-customElements.define("site-footer", Footer);
+customElements.define('site-footer', Footer);

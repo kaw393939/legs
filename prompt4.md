@@ -135,51 +135,51 @@ export class BaseComponent extends HTMLElement {
 
 ```javascript
 // /src/components/Header/Header.js
-import { BaseComponent } from "../BaseComponent.js";
-import { NavigationData } from "../../data/navigation.js";
+import { BaseComponent } from '../BaseComponent.js';
+import { NavigationData } from '../../data/navigation.js';
 
 export class Header extends BaseComponent {
   static get observedAttributes() {
-    return ["variant", "transparent"];
+    return ['variant', 'transparent'];
   }
 
   updateContent() {
-    const nav = this.shadowRoot.querySelector(".nav-links");
+    const nav = this.shadowRoot.querySelector('.nav-links');
     NavigationData.main.forEach((item) => {
-      const link = document.createElement("a");
+      const link = document.createElement('a');
       link.href = item.url;
       link.textContent = item.label;
-      link.className = "nav-link";
+      link.className = 'nav-link';
       nav.appendChild(link);
     });
   }
 
   bindEvents() {
-    const mobileToggle = this.shadowRoot.querySelector(".mobile-toggle");
-    const mobileMenu = this.shadowRoot.querySelector(".mobile-menu");
+    const mobileToggle = this.shadowRoot.querySelector('.mobile-toggle');
+    const mobileMenu = this.shadowRoot.querySelector('.mobile-menu');
 
-    mobileToggle.addEventListener("click", () => {
-      mobileMenu.classList.toggle("active");
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
     });
   }
 }
 
-customElements.define("site-header", Header);
+customElements.define('site-header', Header);
 ```
 
 ### Property Card Component
 
 ```javascript
 // /src/components/PropertyCard/PropertyCard.js
-import { BaseComponent } from "../BaseComponent.js";
+import { BaseComponent } from '../BaseComponent.js';
 
 export class PropertyCard extends BaseComponent {
   static get observedAttributes() {
-    return ["property-id", "variant"];
+    return ['property-id', 'variant'];
   }
 
   get propertyId() {
-    return this.getAttribute("property-id");
+    return this.getAttribute('property-id');
   }
 
   async updateContent() {
@@ -197,11 +197,11 @@ export class PropertyCard extends BaseComponent {
 
   populateTemplate(data) {
     const elements = {
-      title: this.shadowRoot.querySelector(".property-title"),
-      price: this.shadowRoot.querySelector(".property-price"),
-      location: this.shadowRoot.querySelector(".property-location"),
-      image: this.shadowRoot.querySelector(".property-image"),
-      description: this.shadowRoot.querySelector(".property-description"),
+      title: this.shadowRoot.querySelector('.property-title'),
+      price: this.shadowRoot.querySelector('.property-price'),
+      location: this.shadowRoot.querySelector('.property-location'),
+      image: this.shadowRoot.querySelector('.property-image'),
+      description: this.shadowRoot.querySelector('.property-description'),
     };
 
     elements.title.textContent = data.title;
@@ -212,7 +212,7 @@ export class PropertyCard extends BaseComponent {
   }
 }
 
-customElements.define("property-card", PropertyCard);
+customElements.define('property-card', PropertyCard);
 ```
 
 ## Content Management Integration
@@ -548,25 +548,25 @@ npm run dev
 ## Build Configuration (`vite.config.js`)
 
 ```javascript
-import { defineConfig } from "vite";
-import { resolve } from "path";
+import { defineConfig } from 'vite';
+import { resolve } from 'path';
 
 export default defineConfig({
-  root: "src",
-  base: "/",
+  root: 'src',
+  base: '/',
   build: {
-    outDir: "../dist",
+    outDir: '../dist',
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: resolve("src/index.html"),
-        about: resolve("src/pages/about.html"),
-        services: resolve("src/pages/services.html"),
-        properties: resolve("src/pages/properties.html"),
-        contact: resolve("src/pages/contact.html"),
+        main: resolve('src/index.html'),
+        about: resolve('src/pages/about.html'),
+        services: resolve('src/pages/services.html'),
+        properties: resolve('src/pages/properties.html'),
+        contact: resolve('src/pages/contact.html'),
       },
     },
-    assetsDir: "assets",
+    assetsDir: 'assets',
     sourcemap: true,
   },
   server: {
@@ -589,16 +589,16 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["eslint:recommended"],
+  extends: ['eslint:recommended'],
   parserOptions: {
     ecmaVersion: 2021,
-    sourceType: "module",
+    sourceType: 'module',
   },
   rules: {
-    "no-unused-vars": "warn",
-    "no-console": "warn",
-    "prefer-const": "error",
-    "no-var": "error",
+    'no-unused-vars': 'warn',
+    'no-console': 'warn',
+    'prefer-const': 'error',
+    'no-var': 'error',
   },
 };
 ```
@@ -735,28 +735,28 @@ export class SEOManager {
 
     // Update meta description
     const metaDesc = document.querySelector('meta[name="description"]');
-    metaDesc.setAttribute("content", pageData.meta.description);
+    metaDesc.setAttribute('content', pageData.meta.description);
 
     // Update Open Graph tags
     const ogTitle = document.querySelector('meta[property="og:title"]');
-    ogTitle.setAttribute("content", pageData.meta.title);
+    ogTitle.setAttribute('content', pageData.meta.title);
 
     const ogDesc = document.querySelector('meta[property="og:description"]');
-    ogDesc.setAttribute("content", pageData.meta.description);
+    ogDesc.setAttribute('content', pageData.meta.description);
 
     const ogImage = document.querySelector('meta[property="og:image"]');
-    ogImage.setAttribute("content", pageData.meta.og_image);
+    ogImage.setAttribute('content', pageData.meta.og_image);
   }
 
   static generateSchemaMarkup(type, data) {
     const schema = {
-      "@context": "https://schema.org",
-      "@type": type,
+      '@context': 'https://schema.org',
+      '@type': type,
       ...data,
     };
 
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
     script.textContent = JSON.stringify(schema);
     document.head.appendChild(script);
   }
