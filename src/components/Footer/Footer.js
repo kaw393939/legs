@@ -1,6 +1,10 @@
 import { BaseComponent } from '../BaseComponent.js';
 
 export class Footer extends BaseComponent {
+  constructor() {
+    super('Footer');
+  }
+
   async updateContent() {
     // Simple footer content
     this.shadowRoot.innerHTML = `

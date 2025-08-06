@@ -1,8 +1,10 @@
 export class BaseComponent extends HTMLElement {
-  constructor() {
+  constructor(componentName = null) {
     super();
     this.attachShadow({ mode: 'open' });
     this.data = {};
+    // Store the original component name to survive minification
+    this.componentName = componentName || this.constructor.name;
   }
 
   // Get the base path for the application
@@ -20,7 +22,7 @@ export class BaseComponent extends HTMLElement {
   }
 
   async loadTemplate() {
-    const componentName = this.constructor.name;
+    const componentName = this.componentName;
     try {
       const basePath = this.getBasePath();
       const response = await fetch(
@@ -36,7 +38,7 @@ export class BaseComponent extends HTMLElement {
   }
 
   loadStyles() {
-    const componentName = this.constructor.name;
+    const componentName = this.componentName;
     const basePath = this.getBasePath();
     const link = document.createElement('link');
     link.rel = 'stylesheet';

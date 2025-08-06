@@ -1,6 +1,10 @@
 import { BaseComponent } from '../BaseComponent.js';
 
 export class Header extends BaseComponent {
+  constructor() {
+    super('Header');
+  }
+
   static get observedAttributes() {
     return ['variant', 'transparent'];
   }

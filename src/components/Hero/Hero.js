@@ -1,6 +1,10 @@
 import { BaseComponent } from '../BaseComponent.js';
 
 export class Hero extends BaseComponent {
+  constructor() {
+    super('Hero');
+  }
+
   static get observedAttributes() {
     return ['page', 'variant'];
   }

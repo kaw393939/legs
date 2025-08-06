@@ -8,11 +8,23 @@ import MarkdownProcessor from '../utils/MarkdownProcessor.js';
 
 export class CurriculumComponent extends BaseComponent {
   constructor() {
-    super();
+    super('CurriculumComponent');
     this.currentWeek = 1;
     this.totalWeeks = 16;
     this.markdownProcessor = new MarkdownProcessor();
     this.loadedWeeks = new Set();
+  }
+
+  // Override template loading since CurriculumComponent uses inline templates
+  async loadTemplate() {
+    this.shadowRoot.innerHTML = this.getTemplate();
+  }
+
+  // Override style loading since CurriculumComponent uses inline styles
+  loadStyles() {
+    const style = document.createElement('style');
+    style.textContent = this.getStyles();
+    this.shadowRoot.appendChild(style);
   }
 
   async init() {

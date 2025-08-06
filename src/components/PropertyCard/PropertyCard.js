@@ -1,6 +1,10 @@
 import { BaseComponent } from '../BaseComponent.js';
 
 export class PropertyCard extends BaseComponent {
+  constructor() {
+    super('PropertyCard');
+  }
+
   static get observedAttributes() {
     return ['property-id', 'variant'];
   }
