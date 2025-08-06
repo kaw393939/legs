@@ -17,14 +17,27 @@ export function resolvePath(path) {
   // If path is data URI, return as-is
   if (path.startsWith('data:')) return path;
 
-  // Clean the path - remove leading slash if present
-  const cleanPath = path.startsWith('/') ? path.substring(1) : path;
+  // Handle relative current directory paths
+  if (path === './' || path === '.') return import.meta.env.BASE_URL;
+
+  // Clean the path - handle different path formats
+  let cleanPath = path;
+
+  // Remove leading "./" if present
+  if (cleanPath.startsWith('./')) {
+    cleanPath = cleanPath.substring(2);
+  }
+  // Remove leading "/" if present
+  else if (cleanPath.startsWith('/')) {
+    cleanPath = cleanPath.substring(1);
+  }
 
   // If empty after cleaning, return base URL
   if (!cleanPath) return import.meta.env.BASE_URL;
 
-  // Combine base URL with clean path
-  return import.meta.env.BASE_URL + cleanPath;
+  // Combine base URL with clean path, ensuring no double slashes
+  const baseUrl = import.meta.env.BASE_URL;
+  return baseUrl + (baseUrl.endsWith('/') ? '' : '/') + cleanPath;
 }
 
 /**
