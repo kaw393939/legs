@@ -4,6 +4,7 @@ import '../components/Hero/Hero.js';
 import '../components/PropertyCard/PropertyCard.js';
 import '../components/Footer/Footer.js';
 import '../components/CurriculumComponent.js';
+import '../components/ContentLoader/ContentLoader.js';
 
 // Component registry for dynamic loading
 export const componentRegistry = {
@@ -12,6 +13,8 @@ export const componentRegistry = {
   'property-card': () => import('../components/PropertyCard/PropertyCard.js'),
   'site-footer': () => import('../components/Footer/Footer.js'),
   'curriculum-component': () => import('../components/CurriculumComponent.js'),
+  'content-loader': () =>
+    import('../components/ContentLoader/ContentLoader.js'),
 };
 
 // Auto-register components when they appear in DOM

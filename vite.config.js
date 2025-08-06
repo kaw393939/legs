@@ -30,6 +30,10 @@ export default defineConfig(({ mode }) => {
             src: 'components/Footer/*',
             dest: 'components/Footer',
           },
+          {
+            src: 'curriculum/*',
+            dest: 'curriculum',
+          },
         ],
       }),
     ],
