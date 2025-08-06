@@ -40,16 +40,16 @@ export class Header extends BaseComponent {
   }
 
   updatePaths() {
-    // Update non-logo paths that still need dynamic resolution
+    // Let Vite handle all path resolution - no manual processing needed
     const logoLink = this.shadowRoot.querySelector('.logo-link');
     const ctaButton = this.shadowRoot.querySelector('.cta-button');
 
-    if (logoLink && this.config) {
-      logoLink.href = this.config.resolvePath('/');
+    if (logoLink) {
+      logoLink.href = './'; // Simple relative path to home
     }
 
-    if (ctaButton && this.config) {
-      ctaButton.href = this.config.resolvePath('/contact.html');
+    if (ctaButton) {
+      ctaButton.href = './contact.html'; // Simple relative path
     }
   }
 
@@ -60,8 +60,8 @@ export class Header extends BaseComponent {
     nav.innerHTML = '';
     navItems.forEach((item) => {
       const link = document.createElement('a');
-      // Use config to resolve paths dynamically
-      link.href = this.config ? this.config.resolvePath(item.url) : item.url;
+      // Let Vite handle path resolution automatically - no manual processing needed
+      link.href = item.url;
       link.textContent = item.label;
       link.className = 'nav-link';
 
@@ -85,8 +85,8 @@ export class Header extends BaseComponent {
 
     items.forEach((item) => {
       const link = document.createElement('a');
-      // Use config to resolve paths dynamically
-      link.href = this.config ? this.config.resolvePath(item.url) : item.url;
+      // Let Vite handle path resolution automatically - no manual processing needed
+      link.href = item.url;
       link.textContent = item.label;
       link.className = 'dropdown-link';
       dropdown.appendChild(link);

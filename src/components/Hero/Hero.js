@@ -53,25 +53,18 @@ export class Hero extends BaseComponent {
     const primaryCTA = this.shadowRoot.querySelector('.cta-primary');
     if (primaryCTA && heroData.cta_primary) {
       primaryCTA.textContent = heroData.cta_primary.text;
-      primaryCTA.href = this.config
-        ? this.config.resolvePath(heroData.cta_primary.url)
-        : heroData.cta_primary.url;
+      primaryCTA.href = heroData.cta_primary.url; // Let Vite handle path resolution
     }
 
     const secondaryCTA = this.shadowRoot.querySelector('.cta-secondary');
     if (secondaryCTA && heroData.cta_secondary) {
       secondaryCTA.textContent = heroData.cta_secondary.text;
-      secondaryCTA.href = this.config
-        ? this.config.resolvePath(heroData.cta_secondary.url)
-        : heroData.cta_secondary.url;
+      secondaryCTA.href = heroData.cta_secondary.url; // Let Vite handle path resolution
     }
 
     const bgImage = this.shadowRoot.querySelector('.hero-background');
     if (bgImage && heroData.background_image) {
-      const imagePath = this.config
-        ? this.config.resolvePath(heroData.background_image)
-        : heroData.background_image;
-      bgImage.style.backgroundImage = `url(${imagePath})`;
+      bgImage.style.backgroundImage = `url(${heroData.background_image})`; // Let Vite handle path resolution
     }
   }
 }

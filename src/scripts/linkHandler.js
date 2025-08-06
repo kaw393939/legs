@@ -83,41 +83,15 @@ class LinkHandler {
   }
 
   updateLink(link) {
-    const currentHref = link.getAttribute('href');
-
-    // Skip if already processed or if it's an absolute URL
-    if (
-      !currentHref ||
-      currentHref.includes('://') ||
-      link.hasAttribute('data-processed') ||
-      !currentHref.startsWith('/')
-    ) {
-      return;
-    }
-
-    // Resolve the path using our config
-    const resolvedPath = this.config.resolvePath(currentHref);
-    link.href = resolvedPath;
-    link.setAttribute('data-processed', 'true');
+    // Let Vite handle all path resolution automatically
+    // No manual processing needed - just return early
+    return;
   }
 
   updateImageSrc(img) {
-    const currentSrc = img.getAttribute('src');
-
-    // Skip if already processed or if it's an absolute URL
-    if (
-      !currentSrc ||
-      currentSrc.includes('://') ||
-      img.hasAttribute('data-src-processed') ||
-      !currentSrc.startsWith('/')
-    ) {
-      return;
-    }
-
-    // Resolve the path using our config
-    const resolvedPath = this.config.resolvePath(currentSrc);
-    img.src = resolvedPath;
-    img.setAttribute('data-src-processed', 'true');
+    // Let Vite handle all path resolution automatically
+    // No manual processing needed - just return early
+    return;
   }
 
   observeNewLinks() {
