@@ -11,7 +11,8 @@ export class Hero extends BaseComponent {
 
   async updateContent() {
     try {
-      const response = await fetch(`/data/content/${this.page}.json`);
+      const basePath = this.getBasePath();
+      const response = await fetch(`${basePath}/data/content/${this.page}.json`);
       const pageData = await response.json();
 
       if (pageData.hero) {

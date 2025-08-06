@@ -5,6 +5,13 @@ export class BaseComponent extends HTMLElement {
     this.data = {};
   }
 
+  // Get the base path for the application
+  getBasePath() {
+    // In development, no base path needed
+    // In production on GitHub Pages, use /legs/
+    return window.location.hostname === 'localhost' ? '' : '/legs';
+  }
+
   async connectedCallback() {
     await this.loadTemplate();
     this.loadStyles();
@@ -15,8 +22,9 @@ export class BaseComponent extends HTMLElement {
   async loadTemplate() {
     const componentName = this.constructor.name;
     try {
+      const basePath = this.getBasePath();
       const response = await fetch(
-        `/components/${componentName}/${componentName}.html`,
+        `${basePath}/components/${componentName}/${componentName}.html`,
       );
       if (!response.ok) throw new Error(`Template not found: ${componentName}`);
       const template = await response.text();
@@ -29,9 +37,10 @@ export class BaseComponent extends HTMLElement {
 
   loadStyles() {
     const componentName = this.constructor.name;
+    const basePath = this.getBasePath();
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = `/components/${componentName}/${componentName}.css`;
+    link.href = `${basePath}/components/${componentName}/${componentName}.css`;
     this.shadowRoot.appendChild(link);
   }
 

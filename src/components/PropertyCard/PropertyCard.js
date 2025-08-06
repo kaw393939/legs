@@ -22,7 +22,8 @@ export class PropertyCard extends BaseComponent {
   }
 
   async fetchPropertyData(id) {
-    const response = await fetch(`/data/properties/${id}.json`);
+    const basePath = this.getBasePath();
+    const response = await fetch(`${basePath}/data/properties/${id}.json`);
     if (!response.ok) {
       throw new Error(`Property not found: ${id}`);
     }

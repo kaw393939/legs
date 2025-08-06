@@ -7,7 +7,8 @@ export class Header extends BaseComponent {
 
   async updateContent() {
     try {
-      const response = await fetch('/data/navigation.json');
+      const basePath = this.getBasePath();
+      const response = await fetch(`${basePath}/data/navigation.json`);
       const navigationData = await response.json();
       this.renderNavigation(navigationData.main);
     } catch (error) {
