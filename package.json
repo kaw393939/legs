@@ -21,6 +21,7 @@
     "lint:css:fix": "stylelint \"src/**/*.css\" --fix",
     "lint:all": "npm run lint && npm run lint:css && npm run lint:html",
     "validate": "npm run format:check && npm run lint:all",
+    "setup:project": "node scripts/setup-project.js",
     "validate:full": "node scripts/validate.js",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
