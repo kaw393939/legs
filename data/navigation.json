@@ -2,57 +2,57 @@
   "main": [
     {
       "label": "Home",
-      "url": "/",
+      "url": "./",
       "active": true
     },
     {
       "label": "Curriculum",
-      "url": "/curriculum.html",
+      "url": "./curriculum.html",
       "highlight": true
     },
     {
       "label": "Properties",
-      "url": "/properties.html",
+      "url": "./properties.html",
       "dropdown": [
         {
           "label": "Luxury Homes",
-          "url": "/properties.html?category=luxury"
+          "url": "./properties.html?category=luxury"
         },
         {
           "label": "Investment Properties",
-          "url": "/properties.html?category=investment"
+          "url": "./properties.html?category=investment"
         },
         {
           "label": "Commercial",
-          "url": "/properties.html?category=commercial"
+          "url": "./properties.html?category=commercial"
         }
       ]
     },
     {
       "label": "Services",
-      "url": "/services",
+      "url": "./services",
       "dropdown": [
         {
           "label": "Property Management",
-          "url": "/services/property-management.html"
+          "url": "./services/property-management.html"
         },
         {
           "label": "Investment Analysis",
-          "url": "/services/investment-analysis.html"
+          "url": "./services/investment-analysis.html"
         },
         {
           "label": "Market Research",
-          "url": "/services/market-research.html"
+          "url": "./services/market-research.html"
         }
       ]
     },
     {
       "label": "About",
-      "url": "/about.html"
+      "url": "./about.html"
     },
     {
       "label": "Contact",
-      "url": "/contact.html"
+      "url": "./contact.html"
     }
   ]
 }
