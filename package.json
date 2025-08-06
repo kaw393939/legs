@@ -36,7 +36,8 @@
     "deploy:gh-pages": "gh-pages -d dist",
     "student-deploy": "git add . && git commit -m \"feat: update site content\" && git push origin main && npm run deploy",
     "quick-deploy": "npm run student-deploy",
-    "deploy:easy": "node scripts/deploy-student.js"
+    "deploy:easy": "node scripts/deploy-student.js",
+    "help": "echo '🚀 DEPLOYMENT OPTIONS FOR STUDENTS:\n1. npm run deploy:easy (interactive)\n2. npm run student-deploy (automatic)\n3. Double-click deploy.bat (Windows)\n\n📖 Read STUDENT-DEPLOY-GUIDE.md for full instructions'"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.0.0",

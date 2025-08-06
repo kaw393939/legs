@@ -1,0 +1,28 @@
+:host {
+  display: block;
+  background: #1a202c;
+  color: white;
+  padding: 3rem 0;
+  margin-top: 4rem;
+  border-top: 1px solid #2d3748;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+  color: #a0aec0;
+}
+
+.footer-content p:first-child {
+  color: white;
+  font-weight: 500;
+}
