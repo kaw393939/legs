@@ -42,6 +42,14 @@ export class BaseComponent extends HTMLElement {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = `${basePath}/components/${componentName}/${componentName}.css`;
+
+    // Handle CSS loading errors gracefully
+    link.onerror = () => {
+      console.log(
+        `CSS file not found for ${componentName} component - this is optional`,
+      );
+    };
+
     this.shadowRoot.appendChild(link);
   }
 
