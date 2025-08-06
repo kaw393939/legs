@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig(({ mode }) => {
   const isProduction = mode === 'production';
@@ -88,7 +89,28 @@ export default defineConfig(({ mode }) => {
     },
 
     // Plugin configuration
-    plugins: [],
+    plugins: [
+      viteStaticCopy({
+        targets: [
+          {
+            src: 'components/Header/*',
+            dest: 'components/Header',
+          },
+          {
+            src: 'components/Hero/*',
+            dest: 'components/Hero',
+          },
+          {
+            src: 'components/PropertyCard/*',
+            dest: 'components/PropertyCard',
+          },
+          {
+            src: 'components/Footer/*',
+            dest: 'components/Footer',
+          },
+        ],
+      }),
+    ],
 
     // CSS preprocessing
     css: {
