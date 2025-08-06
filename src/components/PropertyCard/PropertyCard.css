@@ -5,7 +5,7 @@
 .property-card {
   background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px rgb(0, 0, 0, 0.05);
   overflow: hidden;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -16,7 +16,7 @@
 
 .property-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 25px rgb(0, 0, 0, 0.15);
 }
 
 .property-image-container {
@@ -140,7 +140,7 @@
 .property-features {
   list-style: none;
   padding: 0;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1.5rem;
   flex: 1;
 }
 

@@ -12,12 +12,15 @@
   .sm\:block {
     display: block;
   }
+
   .sm\:hidden {
     display: none;
   }
+
   .sm\:flex {
     display: flex;
   }
+
   .sm\:grid {
     display: grid;
   }
@@ -27,12 +30,15 @@
   .md\:block {
     display: block;
   }
+
   .md\:hidden {
     display: none;
   }
+
   .md\:flex {
     display: flex;
   }
+
   .md\:grid {
     display: grid;
   }
@@ -42,12 +48,15 @@
   .lg\:block {
     display: block;
   }
+
   .lg\:hidden {
     display: none;
   }
+
   .lg\:flex {
     display: flex;
   }
+
   .lg\:grid {
     display: grid;
   }
@@ -57,12 +66,15 @@
   .xl\:block {
     display: block;
   }
+
   .xl\:hidden {
     display: none;
   }
+
   .xl\:flex {
     display: flex;
   }
+
   .xl\:grid {
     display: grid;
   }

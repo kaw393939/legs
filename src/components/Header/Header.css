@@ -3,9 +3,9 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgb(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgb(0, 0, 0, 0.1);
 }
 
 .header {
@@ -87,7 +87,7 @@
   top: 100%;
   left: 0;
   background: white;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgb(0, 0, 0, 0.1);
   border-radius: 8px;
   padding: 1rem 0;
   min-width: 200px;
@@ -153,7 +153,7 @@
 .mobile-menu {
   display: none;
   background: white;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgb(0, 0, 0, 0.1);
   padding: 1rem 0;
 }
 
@@ -166,7 +166,7 @@
 .mobile-nav-links .nav-link {
   display: block;
   padding: 1rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgb(0, 0, 0, 0.1);
 }
 
 .mobile-nav-links .nav-link:last-child {

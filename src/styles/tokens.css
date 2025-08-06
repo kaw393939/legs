@@ -1,10 +1,10 @@
 /* Golden Ratio Design Tokens - Complete Implementation */
 :root {
   /* Golden Ratio Constants */
-  --phi: 1.618033988749;
-  --phi-inverse: 0.618033988749;
-  --phi-squared: 2.618033988749;
-  --phi-cubed: 4.236067977499;
+  --phi: 1.618;
+  --phi-inverse: 0.618;
+  --phi-squared: 2.618;
+  --phi-cubed: 4.236;
 
   /* Golden Ratio Typography Scale */
   --fs-caption: 0.618rem; /* ~9.888px */
@@ -73,10 +73,10 @@
   --radius-xl: var(--space-lg); /* ~20.94px */
 
   /* Shadows - Golden Ratio Blur and Spread */
-  --shadow-sm: 0 var(--space-nano) var(--space-xs) rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 var(--space-xs) var(--space-sm) rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 var(--space-sm) var(--space-md) rgba(0, 0, 0, 0.2);
-  --shadow-xl: 0 var(--space-md) var(--space-lg) rgba(0, 0, 0, 0.25);
+  --shadow-sm: 0 var(--space-nano) var(--space-xs) rgb(0, 0, 0, 0.1);
+  --shadow-md: 0 var(--space-xs) var(--space-sm) rgb(0, 0, 0, 0.15);
+  --shadow-lg: 0 var(--space-sm) var(--space-md) rgb(0, 0, 0, 0.2);
+  --shadow-xl: 0 var(--space-md) var(--space-lg) rgb(0, 0, 0, 0.25);
 
   /* Animation Timing - Golden Ratio Based */
   --timing-fast: 0.191s; /* φ⁻² × 0.5s */
@@ -118,7 +118,7 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     "Helvetica Neue",
-    Arial,
+    "Arial",
     sans-serif;
   font-size: var(--fs-body);
   line-height: var(--lh-normal);
@@ -321,16 +321,18 @@ p,
 .form-input:focus {
   outline: none;
   border-color: var(--brand-blue);
-  box-shadow: 0 0 0 var(--space-xs) rgba(25, 167, 196, 0.2);
+  box-shadow: 0 0 0 var(--space-xs) rgb(25, 167, 196, 0.2);
 }
 
 /* Utility Classes */
 .text-center {
   text-align: center;
 }
+
 .text-left {
   text-align: left;
 }
+
 .text-right {
   text-align: right;
 }
@@ -338,18 +340,23 @@ p,
 .mb-xs {
   margin-bottom: var(--space-xs);
 }
+
 .mb-sm {
   margin-bottom: var(--space-sm);
 }
+
 .mb-md {
   margin-bottom: var(--space-md);
 }
+
 .mb-lg {
   margin-bottom: var(--space-lg);
 }
+
 .mb-xl {
   margin-bottom: var(--space-xl);
 }
+
 .mb-2xl {
   margin-bottom: var(--space-2xl);
 }
@@ -357,18 +364,23 @@ p,
 .mt-xs {
   margin-top: var(--space-xs);
 }
+
 .mt-sm {
   margin-top: var(--space-sm);
 }
+
 .mt-md {
   margin-top: var(--space-md);
 }
+
 .mt-lg {
   margin-top: var(--space-lg);
 }
+
 .mt-xl {
   margin-top: var(--space-xl);
 }
+
 .mt-2xl {
   margin-top: var(--space-2xl);
 }
@@ -376,18 +388,23 @@ p,
 .p-xs {
   padding: var(--space-xs);
 }
+
 .p-sm {
   padding: var(--space-sm);
 }
+
 .p-md {
   padding: var(--space-md);
 }
+
 .p-lg {
   padding: var(--space-lg);
 }
+
 .p-xl {
   padding: var(--space-xl);
 }
+
 .p-2xl {
   padding: var(--space-2xl);
 }
@@ -396,15 +413,19 @@ p,
 .text-primary {
   color: var(--text-primary);
 }
+
 .text-secondary {
   color: var(--text-secondary);
 }
+
 .text-muted {
   color: var(--text-muted);
 }
+
 .text-brand {
   color: var(--brand-blue);
 }
+
 .text-accent {
   color: var(--accent-turquoise);
 }
@@ -412,12 +433,15 @@ p,
 .bg-light {
   background-color: var(--sand-light);
 }
+
 .bg-white {
   background-color: white;
 }
+
 .bg-brand {
   background-color: var(--brand-blue);
 }
+
 .bg-accent {
   background-color: var(--accent-turquoise);
 }
