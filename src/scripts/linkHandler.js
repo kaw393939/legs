@@ -23,25 +23,8 @@ class LinkHandler {
   }
 
   processLinks() {
-    // Process all links in the document
-    const links = document.querySelectorAll('a[href^="/"]');
-    links.forEach((link) => this.updateLink(link));
-
-    // Process all images in the document
-    const images = document.querySelectorAll('img[src^="/"]');
-    images.forEach((img) => this.updateImageSrc(img));
-
-    // Process custom components after they load
-    setTimeout(() => {
-      this.processComponentLinks();
-      this.fixHeaderLogo(); // Specific fix for header logo
-    }, 100);
-
-    // Additional check after more time for components to fully load
-    setTimeout(() => {
-      this.processComponentLinks();
-      this.fixHeaderLogo();
-    }, 500);
+    // Disabled - let Vite handle all path resolution automatically
+    return;
   }
 
   fixHeaderLogo() {
@@ -65,21 +48,8 @@ class LinkHandler {
   }
 
   processComponentLinks() {
-    // Find all custom components and process their shadow DOM links
-    const components = document.querySelectorAll(
-      'site-header, site-footer, hero-section, property-card',
-    );
-    components.forEach((component) => {
-      if (component.shadowRoot) {
-        const shadowLinks =
-          component.shadowRoot.querySelectorAll('a[href^="/"]');
-        shadowLinks.forEach((link) => this.updateLink(link));
-
-        const shadowImages =
-          component.shadowRoot.querySelectorAll('img[src^="/"]');
-        shadowImages.forEach((img) => this.updateImageSrc(img));
-      }
-    });
+    // Disabled - let Vite handle all path resolution automatically
+    return;
   }
 
   updateLink() {
