@@ -1,0 +1,233 @@
+:host {
+  display: block;
+}
+
+.property-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgb(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.property-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgb(0, 0, 0, 0.15);
+}
+
+.property-image-container {
+  position: relative;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+}
+
+.property-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.property-card:hover .property-image {
+  transform: scale(1.05);
+}
+
+.property-status {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-available {
+  background: #48bb78;
+  color: white;
+}
+
+.status-under-contract {
+  background: #ed8936;
+  color: white;
+}
+
+.status-sold {
+  background: #e53e3e;
+  color: white;
+}
+
+.property-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.property-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.property-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.property-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #3182ce;
+  margin-left: 1rem;
+  white-space: nowrap;
+}
+
+.property-location {
+  color: #718096;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.property-location::before {
+  content: '📍';
+  margin-right: 0.5rem;
+}
+
+.property-details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f7fafc;
+  border-radius: 8px;
+}
+
+.detail-item {
+  text-align: center;
+}
+
+.detail-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.property-bedrooms,
+.property-bathrooms,
+.property-sqft {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 1rem;
+}
+
+.property-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  flex: 1;
+}
+
+.property-features li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e2e8f0;
+  color: #4a5568;
+  font-size: 0.875rem;
+}
+
+.property-features li:last-child {
+  border-bottom: none;
+}
+
+.property-features li::before {
+  content: '✓';
+  color: #48bb78;
+  font-weight: bold;
+  margin-right: 0.75rem;
+}
+
+.investment-data {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
+}
+
+.investment-item {
+  text-align: center;
+}
+
+.investment-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #718096;
+  margin-bottom: 0.25rem;
+}
+
+.cap-rate,
+.rental-income,
+.roi-projection {
+  font-weight: 600;
+  color: #38a169;
+  font-size: 0.875rem;
+}
+
+.property-card.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: #e53e3e;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .property-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .property-price {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .property-details {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .detail-item {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .investment-data {
+    grid-template-columns: 1fr;
+  }
+
+  .investment-item {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+  }
+}

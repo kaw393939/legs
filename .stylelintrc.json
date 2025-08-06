@@ -1,0 +1,40 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "no-empty-source": null,
+    "import-notation": "string",
+    "color-function-notation": "legacy",
+    "alpha-value-notation": "number",
+    "hue-degree-notation": "number",
+    "color-hex-length": "short",
+    "media-feature-range-notation": "prefix",
+    "number-max-precision": 4,
+    "rule-empty-line-before": [
+      "always-multi-line",
+      {
+        "except": ["first-nested"],
+        "ignore": ["after-comment"]
+      }
+    ],
+    "selector-class-pattern": null,
+    "selector-id-pattern": null,
+    "font-family-name-quotes": "always-unless-keyword",
+    "value-keyword-case": [
+      "lower",
+      {
+        "ignoreKeywords": [
+          "BlinkMacSystemFont",
+          "Roboto",
+          "Oxygen",
+          "Ubuntu",
+          "Cantarell",
+          "Monaco",
+          "Consolas",
+          "Inter"
+        ]
+      }
+    ],
+    "shorthand-property-no-redundant-values": true,
+    "no-descending-specificity": null
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "main": [
+    {
+      "label": "Home",
+      "url": "/",
+      "active": true
+    },
+    {
+      "label": "Curriculum",
+      "url": "/curriculum.html",
+      "highlight": true
+    },
+    {
+      "label": "Properties",
+      "url": "/properties.html",
+      "dropdown": [
+        {
+          "label": "Luxury Homes",
+          "url": "/properties.html?category=luxury"
+        },
+        {
+          "label": "Investment Properties",
+          "url": "/properties.html?category=investment"
+        },
+        {
+          "label": "Commercial",
+          "url": "/properties.html?category=commercial"
+        }
+      ]
+    },
+    {
+      "label": "Services",
+      "url": "/services",
+      "dropdown": [
+        {
+          "label": "Property Management",
+          "url": "/services/property-management.html"
+        },
+        {
+          "label": "Investment Analysis",
+          "url": "/services/investment-analysis.html"
+        },
+        {
+          "label": "Market Research",
+          "url": "/services/market-research.html"
+        }
+      ]
+    },
+    {
+      "label": "About",
+      "url": "/about.html"
+    },
+    {
+      "label": "Contact",
+      "url": "/contact.html"
+    }
+  ]
+}
