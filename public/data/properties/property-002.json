@@ -33,11 +33,11 @@
     "Concierge service"
   ],
   "images": [
-    "/images/properties/property-002/exterior-1.jpg",
-    "/images/properties/property-002/living-room.jpg",
-    "/images/properties/property-002/kitchen.jpg",
-    "/images/properties/property-002/bedroom.jpg",
-    "/images/properties/property-002/balcony.jpg"
+    "/images/properties/property-002/exterior-1.svg",
+    "/images/placeholders/property-placeholder.svg",
+    "/images/placeholders/property-placeholder.svg",
+    "/images/placeholders/property-placeholder.svg",
+    "/images/placeholders/property-placeholder.svg"
   ],
   "investment_data": {
     "cap_rate": "6.8%",

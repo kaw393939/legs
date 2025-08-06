@@ -1,0 +1,108 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="commercialBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0fdf4"/>
+      <stop offset="100%" style="stop-color:#16a34a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#commercialBg)" opacity="0.1"/>
+  
+  <!-- Commercial building complex -->
+  <g transform="translate(50, 40)">
+    <!-- Main office building -->
+    <rect x="100" y="30" width="100" height="170" fill="#f8fafc" stroke="#475569" stroke-width="2"/>
+    
+    <!-- Left wing -->
+    <rect x="20" y="60" width="90" height="140" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+    
+    <!-- Right wing -->
+    <rect x="190" y="50" width="90" height="150" fill="#f1f5f9" stroke="#475569" stroke-width="2"/>
+    
+    <!-- Rooftops -->
+    <rect x="95" y="25" width="110" height="10" fill="#374151"/>
+    <rect x="15" y="55" width="100" height="10" fill="#374151"/>
+    <rect x="185" y="45" width="100" height="10" fill="#374151"/>
+    
+    <!-- Office windows grid -->
+    <g fill="#e0f2fe" stroke="#0891b2" stroke-width="1">
+      <!-- Main building windows -->
+      <g transform="translate(105, 50)">
+        <rect x="0" y="0" width="12" height="12"/>
+        <rect x="20" y="0" width="12" height="12"/>
+        <rect x="40" y="0" width="12" height="12"/>
+        <rect x="60" y="0" width="12" height="12"/>
+        <rect x="80" y="0" width="12" height="12"/>
+        
+        <rect x="0" y="20" width="12" height="12"/>
+        <rect x="20" y="20" width="12" height="12"/>
+        <rect x="40" y="20" width="12" height="12"/>
+        <rect x="60" y="20" width="12" height="12"/>
+        <rect x="80" y="20" width="12" height="12"/>
+        
+        <rect x="0" y="40" width="12" height="12"/>
+        <rect x="20" y="40" width="12" height="12"/>
+        <rect x="40" y="40" width="12" height="12"/>
+        <rect x="60" y="40" width="12" height="12"/>
+        <rect x="80" y="40" width="12" height="12"/>
+        
+        <rect x="0" y="60" width="12" height="12"/>
+        <rect x="20" y="60" width="12" height="12"/>
+        <rect x="40" y="60" width="12" height="12"/>
+        <rect x="60" y="60" width="12" height="12"/>
+        <rect x="80" y="60" width="12" height="12"/>
+        
+        <rect x="0" y="80" width="12" height="12"/>
+        <rect x="20" y="80" width="12" height="12"/>
+        <rect x="40" y="80" width="12" height="12"/>
+        <rect x="60" y="80" width="12" height="12"/>
+        <rect x="80" y="80" width="12" height="12"/>
+      </g>
+      
+      <!-- Left wing windows -->
+      <g transform="translate(30, 80)">
+        <rect x="0" y="0" width="10" height="10"/>
+        <rect x="15" y="0" width="10" height="10"/>
+        <rect x="30" y="0" width="10" height="10"/>
+        <rect x="45" y="0" width="10" height="10"/>
+        <rect x="60" y="0" width="10" height="10"/>
+        
+        <rect x="0" y="20" width="10" height="10"/>
+        <rect x="15" y="20" width="10" height="10"/>
+        <rect x="30" y="20" width="10" height="10"/>
+        <rect x="45" y="20" width="10" height="10"/>
+        <rect x="60" y="20" width="10" height="10"/>
+      </g>
+      
+      <!-- Right wing windows -->
+      <g transform="translate(200, 70)">
+        <rect x="0" y="0" width="10" height="10"/>
+        <rect x="15" y="0" width="10" height="10"/>
+        <rect x="30" y="0" width="10" height="10"/>
+        <rect x="45" y="0" width="10" height="10"/>
+        <rect x="60" y="0" width="10" height="10"/>
+        
+        <rect x="0" y="20" width="10" height="10"/>
+        <rect x="15" y="20" width="10" height="10"/>
+        <rect x="30" y="20" width="10" height="10"/>
+        <rect x="45" y="20" width="10" height="10"/>
+        <rect x="60" y="20" width="10" height="10"/>
+      </g>
+    </g>
+    
+    <!-- Main entrance -->
+    <rect x="130" y="170" width="40" height="30" fill="#1f2937" stroke="#111827" stroke-width="2"/>
+    <rect x="135" y="175" width="30" height="20" fill="#4b5563"/>
+    
+    <!-- Company sign -->
+    <rect x="110" y="45" width="80" height="15" fill="#16a34a" opacity="0.8"/>
+    <text x="150" y="55" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8" font-weight="600">
+      OFFICE COMPLEX
+    </text>
+  </g>
+  
+  <!-- Property label -->
+  <text x="200" y="270" text-anchor="middle" fill="#16a34a" font-family="Arial, sans-serif" font-size="16" font-weight="600">
+    Commercial Investment
+  </text>
+</svg>
