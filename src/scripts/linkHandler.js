@@ -82,18 +82,17 @@ class LinkHandler {
     });
   }
 
-  updateLink(link) {
+  updateLink() {
     // Let Vite handle all path resolution automatically
     // No manual processing needed - just return early
     return;
   }
 
-  updateImageSrc(img) {
+  updateImageSrc() {
     // Let Vite handle all path resolution automatically
     // No manual processing needed - just return early
     return;
   }
-
   observeNewLinks() {
     // Create a mutation observer to handle dynamically added links
     const observer = new MutationObserver((mutations) => {
