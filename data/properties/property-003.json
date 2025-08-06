@@ -33,11 +33,11 @@
     "Hiking trail access"
   ],
   "images": [
-    "/images/properties/property-003/exterior-1.jpg",
-    "/images/properties/property-003/living-room.jpg",
-    "/images/properties/property-003/kitchen.jpg",
-    "/images/properties/property-003/master-bedroom.jpg",
-    "/images/properties/property-003/deck.jpg",
+    "/images/properties/property-003/exterior-1.svg",
+    "/images/placeholders/property-placeholder.svg",
+    "/images/placeholders/property-placeholder.svg",
+    "/images/placeholders/property-placeholder.svg",
+    "/images/placeholders/property-placeholder.svg",
     "/images/properties/property-003/mountain-view.jpg"
   ],
   "investment_data": {

@@ -33,11 +33,11 @@
     "Smart home automation"
   ],
   "images": [
-    "/images/properties/property-001/exterior-1.jpg",
-    "/images/properties/property-001/living-room.jpg",
-    "/images/properties/property-001/kitchen.jpg",
-    "/images/properties/property-001/master-bedroom.jpg",
-    "/images/properties/property-001/pool.jpg",
+    "/images/properties/property-001/exterior-1.svg",
+    "/images/placeholders/property-placeholder.svg",
+    "/images/placeholders/property-placeholder.svg",
+    "/images/placeholders/property-placeholder.svg",
+    "/images/placeholders/property-placeholder.svg",
     "/images/properties/property-001/beach-view.jpg"
   ],
   "investment_data": {
