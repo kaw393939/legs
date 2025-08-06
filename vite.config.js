@@ -19,6 +19,7 @@ export default defineConfig(({ mode }) => {
           main: resolve(__dirname, 'src/index.html'),
           properties: resolve(__dirname, 'src/properties.html'),
           contact: resolve(__dirname, 'src/contact.html'),
+          404: resolve(__dirname, 'src/404.html'),
           propertyManagement: resolve(
             __dirname,
             'src/services/property-management.html',
