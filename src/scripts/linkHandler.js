@@ -34,7 +34,34 @@ class LinkHandler {
     // Process custom components after they load
     setTimeout(() => {
       this.processComponentLinks();
+      this.fixHeaderLogo(); // Specific fix for header logo
     }, 100);
+
+    // Additional check after more time for components to fully load
+    setTimeout(() => {
+      this.processComponentLinks();
+      this.fixHeaderLogo();
+    }, 500);
+  }
+
+  fixHeaderLogo() {
+    // Specific fix for GitHub Pages logo issue
+    if (window.location.hostname === 'kaw393939.github.io') {
+      const headerComponents = document.querySelectorAll('site-header');
+      headerComponents.forEach((header) => {
+        if (header.shadowRoot) {
+          const logoImg = header.shadowRoot.querySelector('.logo-image');
+          if (logoImg && logoImg.src && !logoImg.src.includes('/legs/')) {
+            console.log('Fixing header logo path:', logoImg.src);
+            logoImg.src = logoImg.src.replace(
+              'kaw393939.github.io/',
+              'kaw393939.github.io/legs/',
+            );
+            console.log('Fixed header logo path to:', logoImg.src);
+          }
+        }
+      });
+    }
   }
 
   processComponentLinks() {
@@ -129,6 +156,11 @@ class LinkHandler {
                 node.querySelectorAll && node.querySelectorAll('img[src^="/"]');
               if (images) {
                 images.forEach((img) => this.updateImageSrc(img));
+              }
+
+              // Fix header logo if header component is added
+              if (node.tagName === 'SITE-HEADER') {
+                setTimeout(() => this.fixHeaderLogo(), 100);
               }
             }
           });

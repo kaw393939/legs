@@ -33,8 +33,27 @@ export class Header extends BaseComponent {
       const navigationData = await response.json();
       this.renderNavigation(navigationData.main);
       this.updateLogoPaths();
+
+      // Additional check for GitHub Pages - keep trying to fix the logo
+      if (window.location.hostname === 'kaw393939.github.io') {
+        setTimeout(() => this.ensureCorrectLogoPaths(), 100);
+        setTimeout(() => this.ensureCorrectLogoPaths(), 500);
+        setTimeout(() => this.ensureCorrectLogoPaths(), 1000);
+      }
     } catch (error) {
       console.error('Failed to load navigation data:', error);
+    }
+  }
+
+  ensureCorrectLogoPaths() {
+    const logoImage = this.shadowRoot.querySelector('.logo-image');
+    if (logoImage && logoImage.src && !logoImage.src.includes('/legs/')) {
+      console.log('Re-fixing logo path from:', logoImage.src);
+      logoImage.src = logoImage.src.replace(
+        'kaw393939.github.io/',
+        'kaw393939.github.io/legs/',
+      );
+      console.log('Re-fixed logo path to:', logoImage.src);
     }
   }
 
