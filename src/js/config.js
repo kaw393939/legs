@@ -95,6 +95,14 @@ class Config {
       return this._basePath;
     }
 
+    // For navigation links, if we're already at the base path,
+    // return relative paths to avoid double base path
+    const currentPath = window.location.pathname;
+    if (currentPath.startsWith(this._basePath)) {
+      // Already at base path, return relative path
+      return cleanPath;
+    }
+
     // Combine base path with clean path
     return `${this._basePath}${cleanPath}`;
   }
