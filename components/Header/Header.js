@@ -66,7 +66,9 @@ export class Header extends BaseComponent {
     navItems.forEach((item) => {
       const link = document.createElement('a');
       // Use PathUtils for reliable path resolution
-      link.href = window.PathUtils ? window.PathUtils.resolvePath(item.url) : item.url;
+      link.href = window.PathUtils
+        ? window.PathUtils.resolvePath(item.url)
+        : item.url;
       link.textContent = item.label;
       link.className = 'nav-link';
 
@@ -91,7 +93,9 @@ export class Header extends BaseComponent {
     items.forEach((item) => {
       const link = document.createElement('a');
       // Use PathUtils for reliable path resolution
-      link.href = window.PathUtils ? window.PathUtils.resolvePath(item.url) : item.url;
+      link.href = window.PathUtils
+        ? window.PathUtils.resolvePath(item.url)
+        : item.url;
       link.textContent = item.label;
       link.className = 'dropdown-link';
       dropdown.appendChild(link);

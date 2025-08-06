@@ -112,7 +112,9 @@ export class PropertyCard extends BaseComponent {
     if (card) {
       card.addEventListener('click', () => {
         if (this.propertyId) {
-          window.location.href = window.PathUtils.resolvePath(`properties/${this.propertyId}.html`);
+          window.location.href = window.PathUtils.resolvePath(
+            `properties/${this.propertyId}.html`,
+          );
         }
       });
     }

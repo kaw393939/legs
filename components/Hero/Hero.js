@@ -18,7 +18,7 @@ export class Hero extends BaseComponent {
 
     // Wait for PathUtils to be available
     if (!window.PathUtils) {
-      await new Promise(resolve => {
+      await new Promise((resolve) => {
         const check = () => {
           if (window.PathUtils) resolve();
           else setTimeout(check, 10);
@@ -36,13 +36,15 @@ export class Hero extends BaseComponent {
   setDefaultPaths() {
     const primaryCTA = this.shadowRoot?.querySelector('.cta-primary');
     const secondaryCTA = this.shadowRoot?.querySelector('.cta-secondary');
-    
+
     if (primaryCTA && primaryCTA.href.endsWith('#')) {
       primaryCTA.href = window.PathUtils.resolvePath('properties.html');
     }
-    
+
     if (secondaryCTA && secondaryCTA.href.endsWith('#')) {
-      secondaryCTA.href = window.PathUtils.resolvePath('services/investment-analysis.html');
+      secondaryCTA.href = window.PathUtils.resolvePath(
+        'services/investment-analysis.html',
+      );
     }
   }
 
@@ -75,7 +77,9 @@ export class Hero extends BaseComponent {
     const secondaryCTA = this.shadowRoot.querySelector('.cta-secondary');
     if (secondaryCTA && heroData.cta_secondary) {
       secondaryCTA.textContent = heroData.cta_secondary.text;
-      secondaryCTA.href = window.PathUtils.resolvePath(heroData.cta_secondary.url);
+      secondaryCTA.href = window.PathUtils.resolvePath(
+        heroData.cta_secondary.url,
+      );
     }
 
     const bgImage = this.shadowRoot.querySelector('.hero-background');
