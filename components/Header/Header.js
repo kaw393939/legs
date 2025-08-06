@@ -40,16 +40,21 @@ export class Header extends BaseComponent {
   }
 
   updatePaths() {
-    // Let Vite handle all path resolution - no manual processing needed
+    // Use PathUtils for reliable path resolution
     const logoLink = this.shadowRoot.querySelector('.logo-link');
+    const logoImage = this.shadowRoot.querySelector('.logo-image');
     const ctaButton = this.shadowRoot.querySelector('.cta-button');
 
     if (logoLink) {
-      logoLink.href = './'; // Simple relative path to home
+      logoLink.href = window.PathUtils.resolvePath('');
+    }
+
+    if (logoImage) {
+      logoImage.src = window.PathUtils.resolvePath('images/logo.svg');
     }
 
     if (ctaButton) {
-      ctaButton.href = './contact.html'; // Simple relative path
+      ctaButton.href = window.PathUtils.resolvePath('contact.html');
     }
   }
 
@@ -60,8 +65,8 @@ export class Header extends BaseComponent {
     nav.innerHTML = '';
     navItems.forEach((item) => {
       const link = document.createElement('a');
-      // Let Vite handle path resolution automatically - no manual processing needed
-      link.href = item.url;
+      // Use PathUtils for reliable path resolution
+      link.href = window.PathUtils ? window.PathUtils.resolvePath(item.url) : item.url;
       link.textContent = item.label;
       link.className = 'nav-link';
 
@@ -85,8 +90,8 @@ export class Header extends BaseComponent {
 
     items.forEach((item) => {
       const link = document.createElement('a');
-      // Let Vite handle path resolution automatically - no manual processing needed
-      link.href = item.url;
+      // Use PathUtils for reliable path resolution
+      link.href = window.PathUtils ? window.PathUtils.resolvePath(item.url) : item.url;
       link.textContent = item.label;
       link.className = 'dropdown-link';
       dropdown.appendChild(link);

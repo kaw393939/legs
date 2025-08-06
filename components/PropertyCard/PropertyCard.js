@@ -65,7 +65,7 @@ export class PropertyCard extends BaseComponent {
 
     const image = this.shadowRoot.querySelector('.property-image');
     if (image && data.images && data.images.length > 0) {
-      image.src = data.images[0]; // Let Vite handle path resolution
+      image.src = window.PathUtils.resolvePath(data.images[0]);
       image.alt = data.title;
     }
 
@@ -112,7 +112,7 @@ export class PropertyCard extends BaseComponent {
     if (card) {
       card.addEventListener('click', () => {
         if (this.propertyId) {
-          window.location.href = `./properties/${this.propertyId}.html`; // Simple relative path
+          window.location.href = window.PathUtils.resolvePath(`properties/${this.propertyId}.html`);
         }
       });
     }
