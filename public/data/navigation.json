@@ -30,7 +30,7 @@
     },
     {
       "label": "Services",
-      "url": "./services",
+      "url": "./services.html",
       "dropdown": [
         {
           "label": "Property Management",
