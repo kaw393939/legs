@@ -1,3 +1,6 @@
+// Import styles
+import '../styles/main.css';
+
 // Import components
 import './components.js';
 
