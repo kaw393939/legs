@@ -32,8 +32,28 @@ export class Header extends BaseComponent {
       const response = await fetch(`${basePath}/data/navigation.json`);
       const navigationData = await response.json();
       this.renderNavigation(navigationData.main);
+      this.updateLogoPaths();
     } catch (error) {
       console.error('Failed to load navigation data:', error);
+    }
+  }
+
+  updateLogoPaths() {
+    // Update logo image src to use proper base path
+    const logoImage = this.shadowRoot.querySelector('.logo-image');
+    const logoLink = this.shadowRoot.querySelector('.logo-link');
+    const ctaButton = this.shadowRoot.querySelector('.cta-button');
+
+    if (logoImage && this.config) {
+      logoImage.src = this.config.resolvePath('/images/logo.svg');
+    }
+
+    if (logoLink && this.config) {
+      logoLink.href = this.config.resolvePath('/');
+    }
+
+    if (ctaButton && this.config) {
+      ctaButton.href = this.config.resolvePath('/contact.html');
     }
   }
 

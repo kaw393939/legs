@@ -3,6 +3,7 @@ import { BaseComponent } from '../BaseComponent.js';
 export class PropertyCard extends BaseComponent {
   constructor() {
     super('PropertyCard');
+    this.config = null;
   }
 
   static get observedAttributes() {
@@ -11,6 +12,22 @@ export class PropertyCard extends BaseComponent {
 
   get propertyId() {
     return this.getAttribute('property-id');
+  }
+
+  async connectedCallback() {
+    await super.connectedCallback();
+
+    // Import config module
+    try {
+      const configModule = await import('../../js/config.js');
+      this.config = configModule.default;
+    } catch (error) {
+      console.error('Failed to load config:', error);
+      // Fallback to basic path detection
+      this.config = {
+        resolvePath: (path) => (path.startsWith('/') ? path : `/${path}`),
+      };
+    }
   }
 
   async updateContent() {
@@ -48,7 +65,9 @@ export class PropertyCard extends BaseComponent {
 
     const image = this.shadowRoot.querySelector('.property-image');
     if (image && data.images && data.images.length > 0) {
-      image.src = data.images[0];
+      image.src = this.config
+        ? this.config.resolvePath(data.images[0])
+        : data.images[0];
       image.alt = data.title;
     }
 
@@ -95,7 +114,10 @@ export class PropertyCard extends BaseComponent {
     if (card) {
       card.addEventListener('click', () => {
         if (this.propertyId) {
-          window.location.href = `/properties/${this.propertyId}`;
+          const propertyUrl = this.config
+            ? this.config.resolvePath(`/properties/${this.propertyId}.html`)
+            : `/properties/${this.propertyId}.html`;
+          window.location.href = propertyUrl;
         }
       });
     }

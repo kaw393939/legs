@@ -27,6 +27,10 @@ class LinkHandler {
     const links = document.querySelectorAll('a[href^="/"]');
     links.forEach((link) => this.updateLink(link));
 
+    // Process all images in the document
+    const images = document.querySelectorAll('img[src^="/"]');
+    images.forEach((img) => this.updateImageSrc(img));
+
     // Process custom components after they load
     setTimeout(() => {
       this.processComponentLinks();
@@ -43,6 +47,10 @@ class LinkHandler {
         const shadowLinks =
           component.shadowRoot.querySelectorAll('a[href^="/"]');
         shadowLinks.forEach((link) => this.updateLink(link));
+
+        const shadowImages =
+          component.shadowRoot.querySelectorAll('img[src^="/"]');
+        shadowImages.forEach((img) => this.updateImageSrc(img));
       }
     });
   }
@@ -66,6 +74,25 @@ class LinkHandler {
     link.setAttribute('data-processed', 'true');
   }
 
+  updateImageSrc(img) {
+    const currentSrc = img.getAttribute('src');
+
+    // Skip if already processed or if it's an absolute URL
+    if (
+      !currentSrc ||
+      currentSrc.includes('://') ||
+      img.hasAttribute('data-src-processed') ||
+      !currentSrc.startsWith('/')
+    ) {
+      return;
+    }
+
+    // Resolve the path using our config
+    const resolvedPath = this.config.resolvePath(currentSrc);
+    img.src = resolvedPath;
+    img.setAttribute('data-src-processed', 'true');
+  }
+
   observeNewLinks() {
     // Create a mutation observer to handle dynamically added links
     const observer = new MutationObserver((mutations) => {
@@ -82,11 +109,26 @@ class LinkHandler {
                 this.updateLink(node);
               }
 
-              // Check for links within the added node
+              // Check if the added node is an image
+              if (
+                node.tagName === 'IMG' &&
+                node.src &&
+                node.src.startsWith('/')
+              ) {
+                this.updateImageSrc(node);
+              }
+
+              // Check for links and images within the added node
               const links =
                 node.querySelectorAll && node.querySelectorAll('a[href^="/"]');
               if (links) {
                 links.forEach((link) => this.updateLink(link));
+              }
+
+              const images =
+                node.querySelectorAll && node.querySelectorAll('img[src^="/"]');
+              if (images) {
+                images.forEach((img) => this.updateImageSrc(img));
               }
             }
           });
