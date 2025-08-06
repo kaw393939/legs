@@ -37,15 +37,18 @@ class LinkHandler {
         '.nav-link, .dropdown-link',
       );
       navLinks.forEach((link) => {
+        const href = link.getAttribute('href');
+
+        // Only process if href is a relative path that hasn't been processed yet
         if (
-          link.href &&
-          (link.href.includes('./') || link.href.endsWith('/'))
+          href &&
+          window.PathUtils &&
+          (href.startsWith('./') ||
+            href === '' ||
+            href === '.' ||
+            href === './')
         ) {
-          // These are the relative paths from navigation.json - resolve them
-          const href = link.getAttribute('href');
-          if (href && window.PathUtils) {
-            link.href = window.PathUtils.resolvePath(href);
-          }
+          link.href = window.PathUtils.resolvePath(href);
         }
       });
     }

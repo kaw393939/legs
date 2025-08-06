@@ -23,6 +23,12 @@ export function resolvePath(path) {
     return baseUrl;
   }
 
+  // If path is already the base URL, return as-is to prevent double processing
+  if (path === baseUrl) {
+    console.log('Path is already baseUrl, returning as-is:', path);
+    return path;
+  }
+
   // If path is already absolute (starts with http), return as-is
   if (path.startsWith('http')) {
     return path;
