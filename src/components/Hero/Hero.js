@@ -12,7 +12,9 @@ export class Hero extends BaseComponent {
   async updateContent() {
     try {
       const basePath = this.getBasePath();
-      const response = await fetch(`${basePath}/data/content/${this.page}.json`);
+      const response = await fetch(
+        `${basePath}/data/content/${this.page}.json`,
+      );
       const pageData = await response.json();
 
       if (pageData.hero) {

@@ -1,0 +1,237 @@
+{
+  "business-strategy": [
+    {
+      "title": "Strategic Business Analysis Framework",
+      "category": "business-strategy",
+      "difficulty": "intermediate",
+      "estimatedTime": "10-15 minutes",
+      "description": "Comprehensive framework for analyzing business opportunities using LEGS methodology",
+      "tags": ["analysis", "strategy", "framework", "decision-making"],
+      "prompt": "You are a strategic business consultant specializing in digital transformation. I need you to analyze [BUSINESS OPPORTUNITY/SITUATION] using the LEGS framework:\n\n**L**everage Analysis:\n- What existing resources, relationships, or platforms can be leveraged?\n- How can we amplify impact without proportional resource investment?\n- What network effects or viral potential exists?\n\n**E**conomics Evaluation:\n- What are the unit economics and scalability factors?\n- How does the golden ratio apply to pricing and resource allocation?\n- What are the true costs vs. potential returns?\n\n**G**rowth Strategy:\n- What are the most effective customer acquisition channels?\n- How can we apply Cialdini's principles for organic growth?\n- What viral or referral mechanisms can be built in?\n\n**S**ystems Design:\n- What processes need to be systematized for scale?\n- How can AI and automation reduce manual overhead?\n- What metrics will track progress toward objectives?\n\nProvide specific, actionable insights with implementation priorities.",
+      "expectedOutcomes": [
+        "Clear leverage opportunities identified",
+        "Economic viability assessment",
+        "Growth strategy with specific tactics",
+        "System requirements and metrics"
+      ],
+      "usageExamples": [
+        "Evaluating a new product launch",
+        "Analyzing competitive positioning",
+        "Assessing market entry strategies"
+      ]
+    },
+    {
+      "title": "Cialdini Principle Aplicator",
+      "category": "business-strategy",
+      "difficulty": "beginner",
+      "estimatedTime": "5-10 minutes",
+      "description": "Apply specific Cialdini principles to business scenarios",
+      "tags": ["psychology", "persuasion", "marketing", "conversion"],
+      "prompt": "You are a business psychologist expert in Cialdini's principles of persuasion. I want to apply the principle of [SPECIFIC PRINCIPLE: Reciprocity/Commitment/Social Proof/Authority/Liking/Scarcity] to [BUSINESS CONTEXT].\n\nAnalyze this using the following structure:\n\n1. **Principle Definition**: Explain how [PRINCIPLE] works psychologically\n2. **Current State Analysis**: How is this principle currently being used (or missed) in the situation?\n3. **Strategic Applications**: 3 specific ways to implement this principle\n4. **Ethical Implementation**: How to apply this authentically and ethically\n5. **Success Metrics**: How to measure the effectiveness\n6. **Risk Mitigation**: Potential backfire scenarios and how to avoid them\n\nProvide specific, implementable tactics with expected timelines and outcomes.",
+      "expectedOutcomes": [
+        "Clear understanding of psychological principle",
+        "Specific implementation tactics",
+        "Ethical guidelines for application",
+        "Measurable success criteria"
+      ],
+      "usageExamples": [
+        "Improving website conversion rates",
+        "Designing referral programs",
+        "Creating compelling content offers"
+      ]
+    },
+    {
+      "title": "Arbitrage Opportunity Identifier",
+      "category": "business-strategy",
+      "difficulty": "advanced",
+      "estimatedTime": "15-20 minutes",
+      "description": "Systematic approach to identifying digital arbitrage opportunities",
+      "tags": ["arbitrage", "opportunities", "analysis", "markets"],
+      "prompt": "You are a digital business strategist specializing in arbitrage opportunities. I want to identify arbitrage potential in [MARKET/INDUSTRY/PLATFORM].\n\nConduct a systematic arbitrage analysis:\n\n**Market Inefficiency Identification:**\n- Price disparities between platforms/regions\n- Information asymmetries that create opportunities\n- Timing mismatches in supply and demand\n- Regulatory or technical barriers creating gaps\n\n**Arbitrage Vector Analysis:**\n- Geographic arbitrage opportunities\n- Platform arbitrage (different marketplaces)\n- Temporal arbitrage (timing-based advantages)\n- Information arbitrage (knowledge gaps)\n- Skill arbitrage (capability mismatches)\n\n**Implementation Strategy:**\n- Required resources and capabilities\n- Risk assessment and mitigation strategies  \n- Scaling potential and sustainability\n- Competitive moats and defensibility\n\n**Action Plan:**\n- Immediate opportunities (can start this week)\n- Medium-term development needs\n- Long-term strategic positioning\n\nProvide specific examples with estimated ROI and implementation difficulty.",
+      "expectedOutcomes": [
+        "Specific arbitrage opportunities identified",
+        "Implementation roadmap with timelines",
+        "Risk assessment and mitigation strategies",
+        "ROI estimates and resource requirements"
+      ],
+      "usageExamples": [
+        "Finding undervalued digital assets",
+        "Identifying platform pricing inefficiencies",
+        "Discovering skill-based market gaps"
+      ]
+    },
+    {
+      "title": "Competitive Advantage Analyzer",
+      "category": "business-strategy",
+      "difficulty": "intermediate",
+      "estimatedTime": "10-15 minutes",
+      "description": "Identify and strengthen competitive advantages using strategic frameworks",
+      "tags": ["competition", "advantage", "moats", "differentiation"],
+      "prompt": "You are a strategic business analyst specializing in competitive advantage. I need to analyze the competitive landscape for [BUSINESS/PRODUCT/SERVICE].\n\nConduct a comprehensive competitive advantage analysis:\n\n**Current Competitive Position:**\n- Direct and indirect competitors analysis\n- Market share and positioning assessment\n- Unique value propositions comparison\n- Customer perception and brand strength\n\n**Advantage Categories Assessment:**\n- Cost advantages (economies of scale, efficiency)\n- Differentiation advantages (unique features, quality)\n- Network effects and platform advantages\n- Brand and reputation advantages\n- Regulatory or legal advantages\n- Resource and capability advantages\n\n**Moat Analysis:**\n- Switching costs for customers\n- Network effects strength\n- Economies of scale barriers\n- Brand loyalty and recognition\n- Intellectual property protection\n\n**Strategic Recommendations:**\n- Strengths to amplify and defend\n- Weaknesses to address or neutralize\n- New advantages to develop\n- Competitive threats to monitor\n\nProvide actionable strategies with implementation priorities and success metrics.",
+      "expectedOutcomes": [
+        "Clear competitive positioning assessment",
+        "Identified sustainable competitive advantages",
+        "Strategic recommendations with priorities",
+        "Competitive threat monitoring plan"
+      ],
+      "usageExamples": [
+        "Product launch competitive analysis",
+        "Market entry strategy development",
+        "Business model optimization"
+      ]
+    }
+  ],
+  "content-creation": [
+    {
+      "title": "Viral Content Formula Generator",
+      "category": "content-creation",
+      "difficulty": "intermediate",
+      "estimatedTime": "8-12 minutes",
+      "description": "Create content using proven viral mechanics and psychological triggers",
+      "tags": ["viral", "social media", "engagement", "psychology"],
+      "prompt": "You are a viral content strategist who understands the psychology of sharing. I need to create viral content for [PLATFORM] about [TOPIC/THEME].\n\nUse the viral content formula:\n\n**Hook Analysis:**\n- Pattern interrupt (unexpected angle)\n- Emotional trigger (curiosity, surprise, outrage, inspiration)\n- Relevance to target audience pain points\n- Visual or conceptual contrast\n\n**Content Architecture:**\n- Opening hook (first 3 seconds/words)\n- Value delivery (what they'll learn/gain)\n- Social proof elements (credibility indicators)\n- Engagement drivers (questions, polls, calls-to-action)\n- Shareability factors (quotable moments, practical tips)\n\n**Psychological Triggers:**\n- Apply 2-3 Cialdini principles strategically\n- Include social proof and authority signals\n- Create sense of urgency or exclusivity\n- Appeal to identity and values alignment\n\n**Distribution Strategy:**\n- Optimal posting times and hashtags\n- Cross-platform adaptation approach\n- Influencer outreach angles\n- Community seeding strategy\n\nProvide 3 different content variations with expected engagement predictions.",
+      "expectedOutcomes": [
+        "3 viral content variations ready to post",
+        "Platform-specific optimization recommendations",
+        "Psychological trigger implementation",
+        "Distribution and amplification strategy"
+      ],
+      "usageExamples": [
+        "LinkedIn thought leadership posts",
+        "Instagram/TikTok educational content",
+        "Twitter thread engagement drivers"
+      ]
+    },
+    {
+      "title": "Brand Voice Consistency Generator",
+      "category": "content-creation",
+      "difficulty": "beginner",
+      "estimatedTime": "5-8 minutes",
+      "description": "Maintain consistent brand voice across all content and platforms",
+      "tags": ["brand voice", "consistency", "messaging", "identity"],
+      "prompt": "You are a brand strategist specializing in voice and tone consistency. I need to create content that maintains my brand voice for [BRAND/BUSINESS].\n\nMy brand archetype is [HERO/OUTLAW/OTHER] with these characteristics:\n- [Key brand attributes]\n- [Target audience description]\n- [Core values and mission]\n\nContent Request: [Describe the specific content needed]\n\nEnsure brand voice consistency by:\n\n**Tone Calibration:**\n- Match the archetype's communication style\n- Align with audience expectations and preferences\n- Maintain consistent personality traits across content\n- Balance professionalism with authenticity\n\n**Language Guidelines:**\n- Use vocabulary that reflects brand sophistication level\n- Include brand-specific terminology and \"magic words\"\n- Maintain consistent sentence structure and rhythm\n- Apply appropriate formality level\n\n**Message Architecture:**\n- Lead with brand values and mission alignment\n- Include subtle brand differentiators\n- Reinforce key brand messages and themes\n- End with brand-appropriate calls-to-action\n\n**Quality Assurance:**\n- Review for off-brand language or concepts\n- Ensure message supports overall brand strategy\n- Verify alignment with customer journey stage\n\nProvide the content along with brand voice analysis and optimization notes.",
+      "expectedOutcomes": [
+        "On-brand content ready for publication",
+        "Brand voice consistency analysis",
+        "Optimization recommendations",
+        "Guidelines for future content creation"
+      ],
+      "usageExamples": [
+        "Social media post creation",
+        "Email newsletter content",
+        "Website copy development"
+      ]
+    }
+  ],
+  "development": [
+    {
+      "title": "Code Architecture Planner",
+      "category": "development",
+      "difficulty": "advanced",
+      "estimatedTime": "15-25 minutes",
+      "description": "Plan scalable, maintainable code architecture for complex projects",
+      "tags": ["architecture", "planning", "scalability", "best-practices"],
+      "prompt": "You are a senior software architect with expertise in modern web development. I need to plan the architecture for [PROJECT DESCRIPTION].\n\nProject Requirements:\n- [List specific functional requirements]\n- [Performance and scalability needs]\n- [Technology constraints or preferences]\n- [Team size and skill levels]\n\nProvide a comprehensive architecture plan:\n\n**System Architecture:**\n- High-level component diagram and relationships\n- Data flow and state management approach\n- API design and integration patterns\n- Database schema and data modeling\n\n**Technology Stack Recommendations:**\n- Frontend framework and tooling choices\n- Backend services and infrastructure\n- Database and caching solutions\n- DevOps and deployment strategies\n\n**Code Organization:**\n- Folder structure and file organization\n- Module boundaries and dependencies\n- Coding standards and style guidelines\n- Testing strategy and coverage goals\n\n**Scalability Considerations:**\n- Performance optimization strategies\n- Caching and CDN implementation\n- Database indexing and query optimization\n- Horizontal scaling preparation\n\n**Implementation Roadmap:**\n- MVP development priorities\n- Feature development phases\n- Technical debt management plan\n- Team onboarding and knowledge sharing\n\nInclude specific code examples for critical components and detailed implementation guidelines.",
+      "expectedOutcomes": [
+        "Complete system architecture documentation",
+        "Technology stack with rationale",
+        "Implementation roadmap with priorities",
+        "Code examples for key components"
+      ],
+      "usageExamples": [
+        "New application development planning",
+        "Legacy system modernization",
+        "Team project architecture design"
+      ]
+    },
+    {
+      "title": "Debugging Strategy Generator",
+      "category": "development",
+      "difficulty": "intermediate",
+      "estimatedTime": "10-15 minutes",
+      "description": "Systematic approach to debugging complex technical issues",
+      "tags": [
+        "debugging",
+        "troubleshooting",
+        "problem-solving",
+        "methodology"
+      ],
+      "prompt": "You are a senior developer known for systematic debugging skills. I'm facing this technical issue: [DETAILED PROBLEM DESCRIPTION]\n\nCurrent situation:\n- Environment: [Development/Staging/Production]\n- Technology stack: [List relevant technologies]\n- Error messages/symptoms: [Specific errors or behaviors]\n- Recent changes: [What changed before the issue appeared]\n\nApply systematic debugging methodology:\n\n**Problem Analysis:**\n- Reproduce the issue consistently\n- Isolate the problem scope and boundaries\n- Identify potential root causes (list 3-5 hypotheses)\n- Gather relevant error logs and stack traces\n\n**Investigation Strategy:**\n- Step-by-step verification approach for each hypothesis\n- Tools and commands to gather diagnostic information\n- Test cases to confirm or eliminate potential causes\n- Rollback or isolation strategies to narrow the scope\n\n**Solution Development:**\n- Specific fixes for the most likely root causes\n- Code changes with before/after examples\n- Configuration adjustments or environment changes\n- Verification steps to confirm the fix works\n\n**Prevention Strategy:**\n- Monitoring and alerting improvements\n- Code review checkpoints to catch similar issues\n- Documentation updates for team knowledge\n- Automated tests to prevent regression\n\nProvide specific commands, code snippets, and verification steps.",
+      "expectedOutcomes": [
+        "Systematic debugging plan with specific steps",
+        "Multiple solution approaches with code examples",
+        "Prevention strategies for future occurrences",
+        "Verification and testing procedures"
+      ],
+      "usageExamples": [
+        "Production bug investigation",
+        "Complex integration issues",
+        "Performance problem diagnosis"
+      ]
+    }
+  ],
+  "design": [
+    {
+      "title": "Golden Ratio Design System Generator",
+      "category": "design",
+      "difficulty": "intermediate",
+      "estimatedTime": "12-18 minutes",
+      "description": "Create harmonious design systems using golden ratio principles",
+      "tags": ["golden-ratio", "design-system", "mathematics", "aesthetics"],
+      "prompt": "You are a design systems architect who specializes in mathematical design principles. I need to create a design system for [PROJECT/BRAND] using golden ratio principles.\n\nProject Context:\n- Brand personality: [Describe brand characteristics]\n- Target audience: [Audience demographics and preferences]\n- Platform requirements: [Web/Mobile/Print specifications]\n- Functional needs: [Key user interactions and content types]\n\nCreate a comprehensive golden ratio design system:\n\n**Typography Scale:**\n- Base font size calculation using φ (1.618)\n- Heading hierarchy with golden ratio multipliers\n- Line height and spacing calculations\n- Font pairing recommendations based on mathematical harmony\n\n**Spacing and Layout:**\n- Margin and padding scale using golden ratio increments\n- Grid system with golden ratio proportions\n- Component sizing relationships\n- White space distribution principles\n\n**Color Theory Application:**\n- Primary color relationships using golden angle (137.5°)\n- Saturation and brightness scales with φ ratios\n- Color harmony rules based on mathematical relationships\n- Accessibility compliance with ratio-based contrast\n\n**Component Architecture:**\n- Button sizes and proportions\n- Card layouts and aspect ratios\n- Navigation element relationships\n- Form field spacing and alignment\n\n**Implementation Guidelines:**\n- CSS custom properties with golden ratio values\n- Design token structure and naming conventions\n- Responsive breakpoint calculations\n- Quality assurance checklist for design consistency\n\nProvide specific measurements, CSS code examples, and visual examples.",
+      "expectedOutcomes": [
+        "Complete design system with mathematical foundation",
+        "CSS custom properties and design tokens",
+        "Implementation guidelines and examples",
+        "Quality assurance checklist"
+      ],
+      "usageExamples": [
+        "Website design system creation",
+        "Brand identity development",
+        "Product interface design"
+      ]
+    },
+    {
+      "title": "Design Economics Calculator",
+      "category": "design",
+      "difficulty": "advanced",
+      "estimatedTime": "15-20 minutes",
+      "description": "Calculate ROI and business impact of design decisions",
+      "tags": ["design-economics", "roi", "business-impact", "investment"],
+      "prompt": "You are a design strategist who quantifies design's business impact. I need to calculate the economics of [DESIGN DECISION/INVESTMENT].\n\nDesign Investment Details:\n- Scope: [What design work is being considered]\n- Budget: [Estimated cost in time/money]\n- Timeline: [Implementation timeframe]\n- Resources: [Team members and tools required]\n\nCalculate design economics using this framework:\n\n**Investment Analysis:**\n- Direct costs (design time, tools, resources)\n- Opportunity costs (what else could be done instead)\n- Implementation costs (development, testing, deployment)\n- Maintenance costs (ongoing updates and optimization)\n\n**Return Calculations:**\n- Conversion rate improvements (quantify expected lift)\n- User engagement increases (time on site, pages per visit)\n- Brand perception enhancements (survey data, NPS improvements)\n- Operational efficiency gains (reduced support tickets, faster tasks)\n- Customer lifetime value increases\n\n**Risk Assessment:**\n- Design execution risks and mitigation strategies\n- Market reception uncertainties\n- Technical implementation challenges\n- Competitive response possibilities\n\n**Success Metrics:**\n- Leading indicators (early signals of success)\n- Lagging indicators (long-term business impact)\n- Measurement methodology and tools\n- Success threshold definitions\n\n**Recommendation:**\n- Go/no-go decision with rationale\n- Optimization opportunities to improve ROI\n- Phase implementation strategy if beneficial\n- Alternative approaches with different economics\n\nProvide specific calculations with assumptions clearly stated.",
+      "expectedOutcomes": [
+        "Detailed ROI calculation with assumptions",
+        "Risk assessment and mitigation strategies",
+        "Success metrics and measurement plan",
+        "Clear go/no-go recommendation"
+      ],
+      "usageExamples": [
+        "Website redesign business case",
+        "Design system investment justification",
+        "UX improvement prioritization"
+      ]
+    }
+  ],
+  "learning-acceleration": [
+    {
+      "title": "Concept Connection Mapper",
+      "category": "learning-acceleration",
+      "difficulty": "intermediate",
+      "estimatedTime": "8-12 minutes",
+      "description": "Connect new concepts to existing knowledge for deeper understanding",
+      "tags": ["learning", "connections", "understanding", "retention"],
+      "prompt": "You are a learning strategist who helps connect new concepts to existing knowledge. I'm trying to understand [NEW CONCEPT/TOPIC] and connect it to what I already know.\n\nMy existing knowledge base includes:\n- [List relevant prior knowledge and experiences]\n- [Current skill level in related areas]\n- [Professional or academic background]\n- [Recent learning topics]\n\nNew concept to master: [DETAILED DESCRIPTION OF NEW CONCEPT]\n\nCreate connection pathways using this framework:\n\n**Analogical Connections:**\n- Find 3 analogies from my existing knowledge\n- Explain how the new concept works like familiar systems\n- Highlight both similarities and important differences\n- Use concrete examples from my experience\n\n**Progressive Complexity:**\n- Start with the simplest version of the concept\n- Build complexity in logical steps\n- Connect each new layer to previously understood elements\n- Identify prerequisite concepts I should review\n\n**Application Bridges:**\n- Show how this concept applies to my current projects/interests\n- Identify immediate ways to practice or experiment\n- Connect to future learning goals and career objectives\n- Suggest real-world problems this concept could solve\n\n**Memory Palace Construction:**\n- Create vivid, memorable associations\n- Link to strong existing memories or knowledge\n- Use spatial or narrative organization\n- Include emotional connections for stronger retention\n\n**Validation Methods:**\n- Ways to test my understanding of the concept\n- Common misconceptions to watch for\n- Indicators that I've truly mastered the material\n- Next-level concepts that build on this foundation\n\nProvide specific examples and practice exercises tailored to my background.",
+      "expectedOutcomes": [
+        "Clear analogical connections to familiar concepts",
+        "Progressive learning pathway from simple to complex",
+        "Immediate application opportunities",
+        "Memory aids and retention strategies"
+      ],
+      "usageExamples": [
+        "Learning new programming concepts",
+        "Understanding business frameworks",
+        "Mastering design principles"
+      ]
+    }
+  ]
+}
