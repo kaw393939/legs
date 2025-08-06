@@ -1,6 +1,9 @@
 // Import styles
 import '../styles/main.css';
 
+// Import path utilities
+import '../js/pathUtils.js';
+
 // Import components
 import './components.js';
 

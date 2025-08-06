@@ -3,7 +3,6 @@ import { BaseComponent } from '../BaseComponent.js';
 export class Hero extends BaseComponent {
   constructor() {
     super('Hero');
-    this.config = null;
   }
 
   static get observedAttributes() {
@@ -17,16 +16,35 @@ export class Hero extends BaseComponent {
   async connectedCallback() {
     await super.connectedCallback();
 
-    // Import config module
-    try {
-      const configModule = await import('../../js/config.js');
-      this.config = configModule.default;
-    } catch (error) {
-      console.error('Failed to load config:', error);
-      // Fallback to basic path detection
-      this.config = {
-        resolvePath: (path) => (path.startsWith('/') ? path : `/${path}`),
-      };
+    // Wait for PathUtils to be available
+    if (!window.PathUtils) {
+      await new Promise((resolve) => {
+        const check = () => {
+          if (window.PathUtils) resolve();
+          else setTimeout(check, 10);
+        };
+        check();
+      });
+    }
+
+    // Set default paths after template loads
+    setTimeout(() => {
+      this.setDefaultPaths();
+    }, 100);
+  }
+
+  setDefaultPaths() {
+    const primaryCTA = this.shadowRoot?.querySelector('.cta-primary');
+    const secondaryCTA = this.shadowRoot?.querySelector('.cta-secondary');
+
+    if (primaryCTA && primaryCTA.href.endsWith('#')) {
+      primaryCTA.href = window.PathUtils.resolvePath('properties.html');
+    }
+
+    if (secondaryCTA && secondaryCTA.href.endsWith('#')) {
+      secondaryCTA.href = window.PathUtils.resolvePath(
+        'services/investment-analysis.html',
+      );
     }
   }
 
@@ -53,18 +71,20 @@ export class Hero extends BaseComponent {
     const primaryCTA = this.shadowRoot.querySelector('.cta-primary');
     if (primaryCTA && heroData.cta_primary) {
       primaryCTA.textContent = heroData.cta_primary.text;
-      primaryCTA.href = heroData.cta_primary.url; // Let Vite handle path resolution
+      primaryCTA.href = window.PathUtils.resolvePath(heroData.cta_primary.url);
     }
 
     const secondaryCTA = this.shadowRoot.querySelector('.cta-secondary');
     if (secondaryCTA && heroData.cta_secondary) {
       secondaryCTA.textContent = heroData.cta_secondary.text;
-      secondaryCTA.href = heroData.cta_secondary.url; // Let Vite handle path resolution
+      secondaryCTA.href = window.PathUtils.resolvePath(
+        heroData.cta_secondary.url,
+      );
     }
 
     const bgImage = this.shadowRoot.querySelector('.hero-background');
     if (bgImage && heroData.background_image) {
-      bgImage.style.backgroundImage = `url(${heroData.background_image})`; // Let Vite handle path resolution
+      bgImage.style.backgroundImage = `url(${window.PathUtils.resolvePath(heroData.background_image)})`;
     }
   }
 }

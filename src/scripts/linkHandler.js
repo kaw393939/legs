@@ -23,8 +23,32 @@ class LinkHandler {
   }
 
   processLinks() {
-    // Disabled - let Vite handle all path resolution automatically
-    return;
+    // Only process navigation links after components load
+    setTimeout(() => {
+      this.processNavigationLinks();
+    }, 200);
+  }
+
+  processNavigationLinks() {
+    // Process navigation links in header component
+    const headerComponent = document.querySelector('site-header');
+    if (headerComponent && headerComponent.shadowRoot) {
+      const navLinks = headerComponent.shadowRoot.querySelectorAll(
+        '.nav-link, .dropdown-link',
+      );
+      navLinks.forEach((link) => {
+        if (
+          link.href &&
+          (link.href.includes('./') || link.href.endsWith('/'))
+        ) {
+          // These are the relative paths from navigation.json - resolve them
+          const href = link.getAttribute('href');
+          if (href && window.PathUtils) {
+            link.href = window.PathUtils.resolvePath(href);
+          }
+        }
+      });
+    }
   }
 
   fixHeaderLogo() {
