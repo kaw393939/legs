@@ -15,23 +15,16 @@ export default defineConfig(({ mode }) => {
       viteStaticCopy({
         targets: [
           {
-            src: resolve(__dirname, 'src/components/Header/Header.html'),
+            src: 'components/Header/Header.html',
             dest: 'components/Header',
           },
           {
-            src: resolve(__dirname, 'src/components/Hero/Hero.html'),
+            src: 'components/Hero/Hero.html',
             dest: 'components/Hero',
           },
           {
-            src: resolve(
-              __dirname,
-              'src/components/PropertyCard/PropertyCard.html',
-            ),
+            src: 'components/PropertyCard/PropertyCard.html',
             dest: 'components/PropertyCard',
-          },
-          {
-            src: resolve(__dirname, 'src/components/Footer/Footer.html'),
-            dest: 'components/Footer',
           },
         ],
       }),
