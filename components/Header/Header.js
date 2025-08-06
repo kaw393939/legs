@@ -45,8 +45,13 @@ export class Header extends BaseComponent {
     const logoImage = this.shadowRoot.querySelector('.logo-image');
     const ctaButton = this.shadowRoot.querySelector('.cta-button');
 
+    console.log('Header updatePaths() called');
+    console.log('PathUtils available:', !!window.PathUtils);
+
     if (logoLink) {
-      logoLink.href = window.PathUtils.resolvePath('');
+      const resolvedPath = window.PathUtils.resolvePath('');
+      console.log('Setting logo link from empty string to:', resolvedPath);
+      logoLink.href = resolvedPath;
     }
 
     if (logoImage) {
@@ -62,13 +67,21 @@ export class Header extends BaseComponent {
     const nav = this.shadowRoot.querySelector('.nav-links');
     if (!nav) return;
 
+    console.log('Header renderNavigation() called with items:', navItems);
+
     nav.innerHTML = '';
     navItems.forEach((item) => {
       const link = document.createElement('a');
       // Use PathUtils for reliable path resolution
-      link.href = window.PathUtils
+      const resolvedHref = window.PathUtils
         ? window.PathUtils.resolvePath(item.url)
         : item.url;
+
+      console.log(
+        `Navigation item "${item.label}": "${item.url}" -> "${resolvedHref}"`,
+      );
+
+      link.href = resolvedHref;
       link.textContent = item.label;
       link.className = 'nav-link';
 
