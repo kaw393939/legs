@@ -11,9 +11,7 @@ export class Header extends BaseComponent {
   }
 
   async connectedCallback() {
-    await super.connectedCallback();
-
-    // Import config module
+    // Import config module first
     try {
       const configModule = await import('../../js/config.js');
       this.config = configModule.default;
@@ -24,6 +22,9 @@ export class Header extends BaseComponent {
         resolvePath: (path) => (path.startsWith('/') ? path : `/${path}`),
       };
     }
+
+    // Now call the parent connectedCallback which will load template
+    await super.connectedCallback();
   }
 
   async updateContent() {
@@ -32,45 +33,16 @@ export class Header extends BaseComponent {
       const response = await fetch(`${basePath}/data/navigation.json`);
       const navigationData = await response.json();
       this.renderNavigation(navigationData.main);
-      this.updateLogoPaths();
-
-      // Additional check for GitHub Pages - keep trying to fix the logo
-      if (window.location.hostname === 'kaw393939.github.io') {
-        setTimeout(() => this.ensureCorrectLogoPaths(), 100);
-        setTimeout(() => this.ensureCorrectLogoPaths(), 500);
-        setTimeout(() => this.ensureCorrectLogoPaths(), 1000);
-      }
+      this.updatePaths();
     } catch (error) {
       console.error('Failed to load navigation data:', error);
     }
   }
 
-  ensureCorrectLogoPaths() {
-    const logoImage = this.shadowRoot.querySelector('.logo-image');
-    if (logoImage && logoImage.src && !logoImage.src.includes('/legs/')) {
-      console.log('Re-fixing logo path from:', logoImage.src);
-      logoImage.src = logoImage.src.replace(
-        'kaw393939.github.io/',
-        'kaw393939.github.io/legs/',
-      );
-      console.log('Re-fixed logo path to:', logoImage.src);
-    }
-  }
-
-  updateLogoPaths() {
-    // Update logo image src to use proper base path
-    const logoImage = this.shadowRoot.querySelector('.logo-image');
+  updatePaths() {
+    // Update non-logo paths that still need dynamic resolution
     const logoLink = this.shadowRoot.querySelector('.logo-link');
     const ctaButton = this.shadowRoot.querySelector('.cta-button');
-
-    console.log('Header updateLogoPaths - config:', this.config);
-    console.log('Header updateLogoPaths - base path:', this.config?.basePath);
-
-    if (logoImage && this.config) {
-      const resolvedLogoPath = this.config.resolvePath('/images/logo.svg');
-      console.log('Resolved logo path:', resolvedLogoPath);
-      logoImage.src = resolvedLogoPath;
-    }
 
     if (logoLink && this.config) {
       logoLink.href = this.config.resolvePath('/');

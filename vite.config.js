@@ -11,6 +11,32 @@ export default defineConfig(({ mode }) => {
     root: 'src',
     publicDir: '../public',
 
+    plugins: [
+      viteStaticCopy({
+        targets: [
+          {
+            src: resolve(__dirname, 'src/components/Header/Header.html'),
+            dest: 'components/Header',
+          },
+          {
+            src: resolve(__dirname, 'src/components/Hero/Hero.html'),
+            dest: 'components/Hero',
+          },
+          {
+            src: resolve(
+              __dirname,
+              'src/components/PropertyCard/PropertyCard.html',
+            ),
+            dest: 'components/PropertyCard',
+          },
+          {
+            src: resolve(__dirname, 'src/components/Footer/Footer.html'),
+            dest: 'components/Footer',
+          },
+        ],
+      }),
+    ],
+
     // Define global variables available to the app
     define: {
       __APP_BASE_PATH__: JSON.stringify(base),
@@ -92,43 +118,6 @@ export default defineConfig(({ mode }) => {
     preview: {
       port: 4173,
       open: true,
-    },
-
-    // Plugin configuration
-    plugins: [
-      viteStaticCopy({
-        targets: [
-          {
-            src: 'components/Header/*',
-            dest: 'components/Header',
-          },
-          {
-            src: 'components/Hero/*',
-            dest: 'components/Hero',
-          },
-          {
-            src: 'components/PropertyCard/*',
-            dest: 'components/PropertyCard',
-          },
-          {
-            src: 'components/Footer/*',
-            dest: 'components/Footer',
-          },
-        ],
-      }),
-    ],
-
-    // CSS preprocessing
-    css: {
-      postcss: {
-        plugins: [],
-      },
-    },
-
-    // Optimization
-    optimizeDeps: {
-      include: [],
-      exclude: [],
     },
   };
 });

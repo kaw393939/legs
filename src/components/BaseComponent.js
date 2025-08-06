@@ -9,9 +9,8 @@ export class BaseComponent extends HTMLElement {
 
   // Get the base path for the application
   getBasePath() {
-    // In development, no base path needed
-    // In production on GitHub Pages, use /legs/
-    return window.location.hostname === 'localhost' ? '' : '/legs';
+    // Use Vite's base configuration
+    return import.meta.env.BASE_URL.replace(/\/$/, ''); // Remove trailing slash
   }
 
   async connectedCallback() {
