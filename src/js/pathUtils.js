@@ -11,18 +11,24 @@
 export function resolvePath(path) {
   const baseUrl = import.meta.env.BASE_URL || '/';
 
+  // Debug logging to track the issue
+  console.log('PathUtils.resolvePath called with:', { path, baseUrl });
+
   // If no path or empty string, return just the base URL
   if (!path || path === '' || path === '.' || path === './') {
+    console.log('Empty path detected, returning baseUrl:', baseUrl);
     return baseUrl;
   }
 
   // If path is already absolute (starts with http), return as-is
   if (path.startsWith('http')) {
+    console.log('Absolute URL detected, returning as-is:', path);
     return path;
   }
 
   // If path is data URI, return as-is
   if (path.startsWith('data:')) {
+    console.log('Data URI detected, returning as-is:', path);
     return path;
   }
 
@@ -39,12 +45,18 @@ export function resolvePath(path) {
 
   // If cleanPath is empty after processing, return base URL
   if (!cleanPath) {
+    console.log(
+      'Clean path is empty after processing, returning baseUrl:',
+      baseUrl,
+    );
     return baseUrl;
   }
 
   // Ensure base URL ends with / and combine with clean path
   const normalizedBase = baseUrl.endsWith('/') ? baseUrl : baseUrl + '/';
-  return normalizedBase + cleanPath;
+  const result = normalizedBase + cleanPath;
+  console.log('Resolved path result:', { cleanPath, normalizedBase, result });
+  return result;
 }
 
 /**
