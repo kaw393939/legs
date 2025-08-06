@@ -33,7 +33,10 @@
     "prepare": "husky install",
     "semantic-release": "semantic-release",
     "deploy": "npm run build && npm run deploy:gh-pages",
-    "deploy:gh-pages": "gh-pages -d dist"
+    "deploy:gh-pages": "gh-pages -d dist",
+    "student-deploy": "git add . && git commit -m \"feat: update site content\" && git push origin main && npm run deploy",
+    "quick-deploy": "npm run student-deploy",
+    "deploy:easy": "node scripts/deploy-student.js"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.0.0",
